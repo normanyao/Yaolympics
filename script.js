@@ -94,6 +94,65 @@ const YAOLYMPICS_DATA = {
       ]
     }
   ],
+
+  {
+      year: 2014,
+      location: "Your Original Spot",
+      theme: "The OG Yaolympics",
+      blurb:
+        "The year it all began. Questionable rules, chaotic scoring, unforgettable moments.",
+      teams: [
+        {
+          name: "Team Legend",
+          members: ["Player 1", "Player 2"],
+          color: "gold" // make gold for the champs if you want
+        },
+        {
+          name: "Team Chaos",
+          members: ["Player 3", "Player 4"],
+          color: "silver"
+        },
+        {
+          name: "Team Underdogs",
+          members: ["Player 5", "Player 6"],
+          color: "bronze"
+        }
+      ],
+      results: [
+        {
+          event: "2v2 Basketball",
+          winner: "Team Legend",
+          note: "Started the dynasty."
+        },
+        {
+          event: "Relay Swim",
+          winner: "Team Chaos",
+          note: "Came out of nowhere."
+        }
+      ],
+      championTeam: "Team Legend",
+      media: [
+        {
+          label: "2014 Group Photo",
+          type: "photo",
+          url: "photos/2014/group-photo.jpg"
+        },
+        {
+          label: "Iconic Moment",
+          type: "photo",
+          url: "photos/2014/iconic-moment.jpg"
+        },
+        {
+          label: "2014 Highlight Video",
+          type: "video",
+          url: "photos/2014/highlight.mp4"
+        }
+      ]
+    }
+
+    // you can keep other years after this if you want; the buttons are sorted by year
+  ],
+  
   hallOfFame: [
     {
       title: "Most Championships",
