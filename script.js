@@ -23,9 +23,9 @@ const YAOLYMPICS_DATA = {
       championTeam: "Splash Bros",
       media: [
         {
-          label: "Highlight Photo",
+          label: "Dock Chaos",
           type: "photo",
-          url: "photos/2024/highlight.jpg" // adjust or remove if you don't have this yet
+          url: "photos/2024/dock-chaos.jpg"
         }
       ]
     },
@@ -57,34 +57,6 @@ const YAOLYMPICS_DATA = {
           label: "Half-court Shot Video",
           type: "video",
           url: "https://example.com/yaolympics-2023-halfcourt"
-        }
-      ]
-    },
-    {
-      year: 2022,
-      location: "Original Backyard",
-      theme: "The Beginning",
-      blurb:
-        "Where the legend started, with a broken net and a stopwatch app.",
-      teams: [
-        { name: "Day 1 Legends", members: ["Alice", "Dana"], color: "gold" },
-        { name: "We Didn’t Stretch", members: ["Ben", "Eli"], color: "silver" },
-        { name: "Mystery Meat", members: ["Chris", "Frank"], color: "bronze" }
-      ],
-      results: [
-        { event: "HORSE", winner: "Day 1 Legends", note: "" },
-        {
-          event: "Backyard Dash",
-          winner: "We Didn’t Stretch",
-          note: "Pulled hamstring count: 1"
-        }
-      ],
-      championTeam: "Day 1 Legends",
-      media: [
-        {
-          label: "First Ever Group Photo",
-          type: "photo",
-          url: "photos/2022/group.jpg" // adjust/remove as needed
         }
       ]
     },
@@ -128,51 +100,25 @@ const YAOLYMPICS_DATA = {
         {
           label: "2014 Group Photo",
           type: "photo",
-          url: "photos/2014/IMG_6059.JPG" // <- change to your real filename
-        },
-        {
-          label: "Iconic Moment",
-          type: "photo",
-          url: "photos/2014/IMG_6059.JPG" // <- change to your real filename
+          url: "photos/2014/group-photo.jpg" // change to match your real file
         },
         {
           label: "2014 Highlight Video",
           type: "video",
-          url: "photos/2014/MVI_6039.MOV" // <- change to your real filename
+          url: "photos/2014/highlight.mp4" // change to match your real file
         }
       ]
     }
   ],
-  hallOfFame: [
-    {
-      title: "Most Championships",
-      name: "Alice",
-      detail: "Part of the winning team 3 times.",
-      note: "Rumored to train for Yaolympics in the off-season."
-    },
-    {
-      title: "Most Iconic Choke",
-      name: "Ben",
-      detail: "Missed 4 straight game-point free throws (2023).",
-      note: "Video evidence exists and is replayed annually."
-    },
-    {
-      title: "Best Hype Person",
-      name: "Dana",
-      detail: "Invented the official Yaolympics chant.",
-      note: "Volume: 10/10. Lyrics: 6/10. Vibes: 15/10."
-    }
-  ]
-
   players: [
     {
       id: "norman",
       name: "Norman Yao",
-      nickname: "Commissioner",
+      nickname: "The Commissioner",
       joinedYear: 2014,
-      hometown: "Somewhere, USA",
+      hometown: "Example City",
       funFact: "Has never missed a Yaolympics.",
-      photoUrl: "photos/profiles/norman.jpg", // optional; you can leave "" for now
+      photoUrl: "photos/profiles/norman.jpg", // optional
       yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
     {
@@ -180,9 +126,9 @@ const YAOLYMPICS_DATA = {
       name: "Friend One",
       nickname: "The Closer",
       joinedYear: 2014,
-      hometown: "Another Place",
+      hometown: "",
       funFact: "Hit the game winner in 2018 and won’t let anyone forget it.",
-      photoUrl: "photos/profiles/friend1.jpg",
+      photoUrl: "",
       yearsAttended: [2014, 2015, 2016, 2017, 2018]
     },
     {
@@ -196,7 +142,6 @@ const YAOLYMPICS_DATA = {
       yearsAttended: [2017, 2018, 2019, 2020, 2021]
     }
   ]
-
 };
 
 // ------------------------
@@ -210,43 +155,54 @@ function $(selector) {
 function createEl(tag, className, text) {
   const el = document.createElement(tag);
   if (className) el.className = className;
-  if (text) el.textContent = text;
+  if (text !== undefined && text !== null) el.textContent = text;
   return el;
 }
 
 // ------------------------
-// 3. RENDER YEAR BUTTONS
+// 3. SELECT POPULATION
 // ------------------------
 
-function renderYearButtons() {
-  const container = $("#yearButtons");
-  if (!container) return;
+function populateSeasonSelect() {
+  const select = $("#seasonSelect");
+  if (!select) return;
 
-  container.innerHTML = "";
+  // Clear everything except placeholder
+  select.innerHTML = "";
+  const placeholder = createEl("option", null, "Select season…");
+  placeholder.value = "";
+  select.appendChild(placeholder);
 
   const sortedYears = [...YAOLYMPICS_DATA.years].sort(
     (a, b) => b.year - a.year
   );
 
-  sortedYears.forEach((yearObj, index) => {
-    const btn = createEl("button", "year-button", String(yearObj.year));
-    btn.dataset.year = String(yearObj.year);
-    if (index === 0) {
-      btn.classList.add("active");
-    }
-    btn.addEventListener("click", () => {
-      document
-        .querySelectorAll(".year-button")
-        .forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      renderYearDetail(yearObj.year);
-    });
-    container.appendChild(btn);
+  sortedYears.forEach((yearObj) => {
+    const opt = createEl("option", null, `Yaolympics ${yearObj.year}`);
+    opt.value = String(yearObj.year);
+    select.appendChild(opt);
   });
+}
 
-  if (sortedYears.length > 0) {
-    renderYearDetail(sortedYears[0].year);
-  }
+function populatePlayerSelect() {
+  const select = $("#playerSelect");
+  if (!select) return;
+
+  select.innerHTML = "";
+  const placeholder = createEl("option", null, "Select player…");
+  placeholder.value = "";
+  select.appendChild(placeholder);
+
+  const sortedPlayers = [...YAOLYMPICS_DATA.players].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+
+  sortedPlayers.forEach((p) => {
+    const label = p.nickname ? `${p.name} “${p.nickname}”` : p.name;
+    const opt = createEl("option", null, label);
+    opt.value = p.id;
+    select.appendChild(opt);
+  });
 }
 
 // ------------------------
@@ -254,62 +210,58 @@ function renderYearButtons() {
 // ------------------------
 
 function renderYearDetail(year) {
-  const target = $("#year-detail");
-  if (!target) return;
+  const introCard = $("#introCard");
+  const yearDetail = $("#yearDetail");
+  const playerDetail = $("#playerDetail");
+  if (!yearDetail) return;
 
   const yearObj = YAOLYMPICS_DATA.years.find((y) => y.year === year);
-  if (!yearObj) {
-    target.innerHTML = "<p>Year not found.</p>";
-    return;
-  }
+  if (!yearObj) return;
 
-  const card = createEl("div", "year-card");
+  // Show year card, hide others
+  if (introCard) introCard.classList.add("hidden");
+  yearDetail.classList.remove("hidden");
+  if (playerDetail) playerDetail.classList.add("hidden");
 
-  const header = createEl("div", "year-header");
-  const title = createEl("div", "year-title", `Yaolympics ${yearObj.year}`);
-  const meta = createEl("div", "year-meta");
+  yearDetail.innerHTML = "";
 
-  const loc = createEl("span", null, `📍 ${yearObj.location}`);
-  const theme = createEl("span", null, `🎭 ${yearObj.theme}`);
-  const champ = createEl(
-    "span",
-    null,
-    `🏆 Champions: ${yearObj.championTeam}`
+  const title = createEl("h2", null, `Yaolympics ${yearObj.year}`);
+  const blurb = createEl("p", null, yearObj.blurb || "");
+
+  const meta = createEl("div", "detail-meta");
+  meta.appendChild(createEl("span", null, `📍 ${yearObj.location}`));
+  meta.appendChild(createEl("span", null, `🎭 ${yearObj.theme}`));
+  meta.appendChild(
+    createEl("span", null, `🏆 Champions: ${yearObj.championTeam}`)
   );
 
-  meta.append(loc, theme, champ);
-  header.append(title, meta);
+  const layout = createEl("div", "two-column");
 
-  const blurb = createEl("p", "section-subtitle", yearObj.blurb || "");
-
-  const layout = createEl("div", "year-layout");
-
-  // LEFT COLUMN: teams
-  const leftCol = createEl("div", "card-block");
-  const teamsHeading = createEl("h3", null, "Teams");
-  const teamList = createEl("ul", "team-list");
+  // Left: teams
+  const teamsBlock = createEl("div", "card-block");
+  teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
+  const teamList = createEl("ul", "simple-list");
   yearObj.teams.forEach((t) => {
     const li = createEl("li");
-    const nameSpan = createEl("span", null, t.name + " ");
+    const nameSpan = createEl("span", null, `${t.name} `);
     const membersSpan = createEl(
       "span",
-      "team-members",
+      null,
       `(${t.members.join(", ")})`
     );
+    li.append(nameSpan, membersSpan);
     if (t.color === "gold") {
       const badge = createEl("span", "badge gold", "Defending Champs");
-      li.append(nameSpan, membersSpan, document.createTextNode(" "), badge);
-    } else {
-      li.append(nameSpan, membersSpan);
+      li.append(" ", badge);
     }
     teamList.appendChild(li);
   });
-  leftCol.append(teamsHeading, teamList);
+  teamsBlock.appendChild(teamList);
 
-  // RIGHT COLUMN: results + media gallery
-  const rightCol = createEl("div", "card-block");
-  const resultsHeading = createEl("h3", null, "Results");
-  const resultsList = createEl("ul", "results-list");
+  // Right: results + media
+  const rightBlock = createEl("div", "card-block");
+  rightBlock.appendChild(createEl("div", "section-heading", "Results"));
+  const resultsList = createEl("ul", "simple-list");
   yearObj.results.forEach((r) => {
     const li = createEl(
       "li",
@@ -318,214 +270,173 @@ function renderYearDetail(year) {
     );
     resultsList.appendChild(li);
   });
-
-  rightCol.append(resultsHeading, resultsList);
-
-  const mediaHeading = createEl("h3", null, "Media");
-  rightCol.appendChild(mediaHeading);
+  rightBlock.appendChild(resultsList);
 
   const media = yearObj.media || [];
   const photos = media.filter((m) => m.type === "photo");
   const videos = media.filter((m) => m.type === "video");
 
-  if (photos.length === 0 && videos.length === 0) {
-    const empty = createEl(
-      "p",
-      "section-subtitle",
-      "No media added yet."
+  if (photos.length > 0 || videos.length > 0) {
+    rightBlock.appendChild(
+      createEl("div", "section-heading", "Media")
     );
-    rightCol.appendChild(empty);
-  } else {
-    // Photo grid
-    if (photos.length > 0) {
-      const gallery = createEl("div", "gallery-grid");
-      photos.forEach((m) => {
-        const item = createEl("a", "gallery-item");
-        item.href = m.url;
-        item.target = "_blank";
-        item.rel = "noopener noreferrer";
-
-        const img = document.createElement("img");
-        img.src = m.url;
-        img.alt = m.label || "";
-
-        const label = createEl(
-          "div",
-          "gallery-item-label",
-          m.label || ""
-        );
-
-        item.append(img, label);
-        gallery.appendChild(item);
-      });
-      rightCol.appendChild(gallery);
-    }
-
-    // Videos
-    if (videos.length > 0) {
-      const videosWrapper = createEl("div", "video-list");
-      videos.forEach((m) => {
-        const cardVideo = createEl("div", "video-card");
-        const titleVideo = createEl(
-          "div",
-          "video-title",
-          m.label || "Video"
-        );
-
-        const url = m.url || "";
-        const isDirectVideo =
-          url.endsWith(".mp4") ||
-          url.endsWith(".webm") ||
-          url.endsWith(".ogg");
-
-        if (isDirectVideo && !/youtube\.com|youtu\.be/.test(url)) {
-          const player = document.createElement("video");
-          player.controls = true;
-          player.src = url;
-          cardVideo.append(titleVideo, player);
-        } else {
-          const link = createEl("a");
-          link.href = url;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.textContent = "▶️ Watch video";
-          cardVideo.append(titleVideo, link);
-        }
-
-        videosWrapper.appendChild(cardVideo);
-      });
-      rightCol.appendChild(videosWrapper);
-    }
   }
 
-  layout.append(leftCol, rightCol);
-  card.append(header, blurb, layout);
+  if (photos.length > 0) {
+    const gallery = createEl("div", "gallery-grid");
+    photos.forEach((m) => {
+      const item = createEl("a", "gallery-item");
+      item.href = m.url;
+      item.target = "_blank";
+      item.rel = "noopener noreferrer";
 
-  target.innerHTML = "";
-  target.appendChild(card);
-}
-
-// ------------------------
-// 5. HALL OF FAME
-// ------------------------
-
-function renderHallOfFame() {
-  const container = $("#hofContent");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  YAOLYMPICS_DATA.hallOfFame.forEach((entry) => {
-    const card = createEl("div", "hof-card");
-    const title = createEl("div", "hof-title", entry.title);
-    const meta = createEl(
-      "div",
-      "hof-meta",
-      `${entry.name} · ${entry.detail}`
-    );
-    const note = createEl("div", "hof-note", entry.note);
-    card.append(title, meta, note);
-    container.appendChild(card);
-  });
-}
-
-// ------------------------
-// 6. PROFILES
-// ------------------------
-
-function renderProfiles() {
-  const container = $("#profilesGrid");
-  if (!container || !YAOLYMPICS_DATA.players) return;
-
-  container.innerHTML = "";
-
-  YAOLYMPICS_DATA.players.forEach((p) => {
-    const card = createEl("div", "profile-card");
-
-    // Header: avatar + name/nickname
-    const header = createEl("div", "profile-header");
-
-    const avatar = createEl("div", "profile-avatar");
-    if (p.photoUrl) {
       const img = document.createElement("img");
-      img.src = p.photoUrl;
-      img.alt = p.name;
-      avatar.appendChild(img);
-    } else {
-      // Initials fallback
-      const initials = p.name
-        .split(" ")
-        .map((part) => part[0])
-        .join("")
-        .toUpperCase()
-        .slice(0, 3);
-      avatar.textContent = initials;
-    }
+      img.src = m.url;
+      img.alt = m.label || "";
 
-    const nameBlock = document.createElement("div");
-    const nameEl = createEl("div", "profile-name", p.name);
-    const nickEl = createEl(
-      "div",
-      "profile-nickname",
-      p.nickname ? `“${p.nickname}”` : ""
-    );
-    nameBlock.append(nameEl, nickEl);
+      const label = createEl("div", "gallery-item-label", m.label || "");
+      item.append(img, label);
+      gallery.appendChild(item);
+    });
+    rightBlock.appendChild(gallery);
+  }
 
-    header.append(avatar, nameBlock);
-
-    // Meta: since, years attended, hometown
-    const meta = createEl("div", "profile-meta");
-
-    if (p.joinedYear) {
-      meta.appendChild(
-        createEl(
-          "div",
-          "profile-meta-item",
-          `Yaolympian since ${p.joinedYear}`
-        )
+  if (videos.length > 0) {
+    const videosWrapper = createEl("div", "video-list");
+    videos.forEach((m) => {
+      const cardVideo = createEl("div", "video-card");
+      const titleVideo = createEl(
+        "div",
+        "video-title",
+        m.label || "Video"
       );
-    }
 
-    if (Array.isArray(p.yearsAttended) && p.yearsAttended.length > 0) {
-      const count = p.yearsAttended.length;
-      const first = Math.min(...p.yearsAttended);
-      const last = Math.max(...p.yearsAttended);
-      const range =
-        first === last ? `${first}` : `${first}–${last}`;
-      meta.appendChild(
-        createEl(
-          "div",
-          "profile-meta-item",
-          `${count} appearances (${range})`
-        )
-      );
-    }
+      const url = m.url || "";
+      const isDirectVideo =
+        url.endsWith(".mp4") ||
+        url.endsWith(".webm") ||
+        url.endsWith(".ogg");
 
-    if (p.hometown) {
-      meta.appendChild(
-        createEl("div", "profile-meta-item", `🏡 ${p.hometown}`)
-      );
-    }
+      if (isDirectVideo && !/youtube\.com|youtu\.be/.test(url)) {
+        const player = document.createElement("video");
+        player.controls = true;
+        player.src = url;
+        cardVideo.append(titleVideo, player);
+      } else {
+        const link = createEl("a");
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "▶️ Watch video";
+        cardVideo.append(titleVideo, link);
+      }
 
-    // Fun fact
-    const fun = createEl(
-      "div",
-      "profile-funfact",
-      p.funFact || ""
-    );
+      videosWrapper.appendChild(cardVideo);
+    });
+    rightBlock.appendChild(videosWrapper);
+  }
 
-    card.append(header, meta, fun);
-    container.appendChild(card);
-  });
+  layout.append(teamsBlock, rightBlock);
+
+  yearDetail.append(title, blurb, meta, layout);
 }
 
 // ------------------------
-// 6. RANDOM MOMENT BUTTON
+// 5. RENDER PLAYER DETAIL
+// ------------------------
+
+function renderPlayerDetail(playerId) {
+  const introCard = $("#introCard");
+  const yearDetail = $("#yearDetail");
+  const playerDetail = $("#playerDetail");
+  if (!playerDetail) return;
+
+  const p = YAOLYMPICS_DATA.players.find((pl) => pl.id === playerId);
+  if (!p) return;
+
+  // Show player card, hide others
+  if (introCard) introCard.classList.add("hidden");
+  if (yearDetail) yearDetail.classList.add("hidden");
+  playerDetail.classList.remove("hidden");
+
+  playerDetail.innerHTML = "";
+
+  const header = createEl("div", "profile-header");
+  const avatar = createEl("div", "profile-avatar");
+
+  if (p.photoUrl) {
+    const img = document.createElement("img");
+    img.src = p.photoUrl;
+    img.alt = p.name;
+    avatar.appendChild(img);
+  } else {
+    const initials = p.name
+      .split(" ")
+      .map((part) => part[0])
+      .join("")
+      .toUpperCase()
+      .slice(0, 3);
+    avatar.textContent = initials;
+  }
+
+  const nameBlock = document.createElement("div");
+  const nameEl = createEl("div", "profile-name", p.name);
+  const nickEl = createEl(
+    "div",
+    "profile-nickname",
+    p.nickname ? `“${p.nickname}”` : ""
+  );
+  nameBlock.append(nameEl, nickEl);
+  header.append(avatar, nameBlock);
+
+  const meta = createEl("div", "profile-meta");
+  if (p.joinedYear) {
+    meta.appendChild(
+      createEl(
+        "div",
+        "profile-meta-item",
+        `Yaolympian since ${p.joinedYear}`
+      )
+    );
+  }
+
+  if (Array.isArray(p.yearsAttended) && p.yearsAttended.length > 0) {
+    const count = p.yearsAttended.length;
+    const first = Math.min(...p.yearsAttended);
+    const last = Math.max(...p.yearsAttended);
+    const range = first === last ? `${first}` : `${first}–${last}`;
+    meta.appendChild(
+      createEl(
+        "div",
+        "profile-meta-item",
+        `${count} appearances (${range})`
+      )
+    );
+  }
+
+  if (p.hometown) {
+    meta.appendChild(
+      createEl("div", "profile-meta-item", `🏡 ${p.hometown}`)
+    );
+  }
+
+  const fun = createEl(
+    "div",
+    "profile-funfact",
+    p.funFact || ""
+  );
+
+  playerDetail.append(header, meta, fun);
+}
+
+// ------------------------
+// 6. RANDOM SEASON BUTTON
 // ------------------------
 
 function setupRandomMoment() {
   const btn = $("#randomMomentBtn");
   if (!btn) return;
+
   btn.addEventListener("click", () => {
     const years = YAOLYMPICS_DATA.years;
     if (years.length === 0) return;
@@ -533,21 +444,22 @@ function setupRandomMoment() {
     const randomYearObj =
       years[Math.floor(Math.random() * years.length)];
 
+    // Update select UI
+    const seasonSelect = $("#seasonSelect");
+    const playerSelect = $("#playerSelect");
+    if (seasonSelect) {
+      seasonSelect.value = String(randomYearObj.year);
+    }
+    if (playerSelect) {
+      playerSelect.value = "";
+    }
+
     renderYearDetail(randomYearObj.year);
 
-    // Update active button
-    document
-      .querySelectorAll(".year-button")
-      .forEach((b) => b.classList.remove("active"));
-    const active = Array.from(document.querySelectorAll(".year-button")).find(
-      (b) => Number(b.dataset.year) === randomYearObj.year
-    );
-    if (active) active.classList.add("active");
-
-    // Smooth scroll to detail
-    const detailSection = document.getElementById("year-detail");
-    if (detailSection) {
-      detailSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Scroll to content
+    const contentArea = document.getElementById("contentArea");
+    if (contentArea) {
+      contentArea.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 }
@@ -556,11 +468,47 @@ function setupRandomMoment() {
 // 7. INIT
 // ------------------------
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
-  renderYearButtons();
-  renderHallOfFame();
-  renderProfiles();
+  populateSeasonSelect();
+  populatePlayerSelect();
+
+  const seasonSelect = $("#seasonSelect");
+  const playerSelect = $("#playerSelect");
+
+  if (seasonSelect) {
+    seasonSelect.addEventListener("change", (e) => {
+      const value = e.target.value;
+      if (!value) {
+        // Show intro if nothing selected
+        const introCard = $("#introCard");
+        const yearDetail = $("#yearDetail");
+        const playerDetail = $("#playerDetail");
+        if (introCard) introCard.classList.remove("hidden");
+        if (yearDetail) yearDetail.classList.add("hidden");
+        if (playerDetail) playerDetail.classList.add("hidden");
+        return;
+      }
+      if (playerSelect) playerSelect.value = "";
+      renderYearDetail(Number(value));
+    });
+  }
+
+  if (playerSelect) {
+    playerSelect.addEventListener("change", (e) => {
+      const value = e.target.value;
+      if (!value) {
+        const introCard = $("#introCard");
+        const yearDetail = $("#yearDetail");
+        const playerDetail = $("#playerDetail");
+        if (introCard) introCard.classList.remove("hidden");
+        if (yearDetail) yearDetail.classList.add("hidden");
+        if (playerDetail) playerDetail.classList.add("hidden");
+        return;
+      }
+      if (seasonSelect) seasonSelect.value = "";
+      renderPlayerDetail(value);
+    });
+  }
+
   setupRandomMoment();
 });
