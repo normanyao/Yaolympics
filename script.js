@@ -430,6 +430,96 @@ function renderHallOfFame() {
 }
 
 // ------------------------
+// 6. PROFILES
+// ------------------------
+
+function renderProfiles() {
+  const container = $("#profilesGrid");
+  if (!container || !YAOLYMPICS_DATA.players) return;
+
+  container.innerHTML = "";
+
+  YAOLYMPICS_DATA.players.forEach((p) => {
+    const card = createEl("div", "profile-card");
+
+    // Header: avatar + name/nickname
+    const header = createEl("div", "profile-header");
+
+    const avatar = createEl("div", "profile-avatar");
+    if (p.photoUrl) {
+      const img = document.createElement("img");
+      img.src = p.photoUrl;
+      img.alt = p.name;
+      avatar.appendChild(img);
+    } else {
+      // Initials fallback
+      const initials = p.name
+        .split(" ")
+        .map((part) => part[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 3);
+      avatar.textContent = initials;
+    }
+
+    const nameBlock = document.createElement("div");
+    const nameEl = createEl("div", "profile-name", p.name);
+    const nickEl = createEl(
+      "div",
+      "profile-nickname",
+      p.nickname ? `“${p.nickname}”` : ""
+    );
+    nameBlock.append(nameEl, nickEl);
+
+    header.append(avatar, nameBlock);
+
+    // Meta: since, years attended, hometown
+    const meta = createEl("div", "profile-meta");
+
+    if (p.joinedYear) {
+      meta.appendChild(
+        createEl(
+          "div",
+          "profile-meta-item",
+          `Yaolympian since ${p.joinedYear}`
+        )
+      );
+    }
+
+    if (Array.isArray(p.yearsAttended) && p.yearsAttended.length > 0) {
+      const count = p.yearsAttended.length;
+      const first = Math.min(...p.yearsAttended);
+      const last = Math.max(...p.yearsAttended);
+      const range =
+        first === last ? `${first}` : `${first}–${last}`;
+      meta.appendChild(
+        createEl(
+          "div",
+          "profile-meta-item",
+          `${count} appearances (${range})`
+        )
+      );
+    }
+
+    if (p.hometown) {
+      meta.appendChild(
+        createEl("div", "profile-meta-item", `🏡 ${p.hometown}`)
+      );
+    }
+
+    // Fun fact
+    const fun = createEl(
+      "div",
+      "profile-funfact",
+      p.funFact || ""
+    );
+
+    card.append(header, meta, fun);
+    container.appendChild(card);
+  });
+}
+
+// ------------------------
 // 6. RANDOM MOMENT BUTTON
 // ------------------------
 
