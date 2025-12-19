@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Yaolympics | The Official Chronicles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">🏅 Yaolympics</div>
+    <nav class="main-nav">
+      <a href="#timeline">Years</a>
+      <a href="#hall-of-fame">Hall of Fame</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>The Yaolympics Chronicles</h1>
+        <p class="hero-tagline">
+          Three teams. Questionable athleticism. Eternal bragging rights.
+        </p>
+        <button id="randomMomentBtn" class="primary-btn">
+          🎲 Random Moment
+        </button>
+      </div>
+    </section>
+
+    <section id="timeline" class="timeline-section">
+      <h2>Seasons</h2>
+      <p class="section-subtitle">Click a year to relive the chaos.</p>
+      <div id="yearButtons" class="year-buttons"></div>
+    </section>
+
+    <section id="year-detail" class="year-detail-section">
+      <!-- Filled by script.js -->
+    </section>
+
+    <section id="hall-of-fame" class="hof-section">
+      <h2>Hall of Fame</h2>
+      <div id="hofContent" class="hof-grid">
+        <!-- Filled by script.js -->
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2>What is Yaolympics?</h2>
+      <p>
+        Yaolympics is an annual gathering of college friends split into
+        three teams of two, battling it out across events like 2v2 basketball,
+        relay swimming, and whatever else seems fun (or mildly dangerous) that year.
+      </p>
+      <p>
+        This site is the official record of legendary wins, heartbreaking
+        chokes, and the kind of highlights that probably shouldn’t be
+        replayed in slow motion.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤️, trash talk, and sore hamstrings.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
