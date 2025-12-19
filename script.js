@@ -128,17 +128,17 @@ const YAOLYMPICS_DATA = {
         {
           label: "2014 Group Photo",
           type: "photo",
-          url: "photos/2014/group-photo.jpg" // <- change to your real filename
+          url: "photos/2014/IMG_6059.JPG" // <- change to your real filename
         },
         {
           label: "Iconic Moment",
           type: "photo",
-          url: "photos/2014/iconic-moment.jpg" // <- change to your real filename
+          url: "photos/2014/IMG_6059.JPG" // <- change to your real filename
         },
         {
           label: "2014 Highlight Video",
           type: "video",
-          url: "photos/2014/highlight.mp4" // <- change to your real filename
+          url: "photos/2014/MVI_6039.MOV" // <- change to your real filename
         }
       ]
     }
