@@ -1,0 +1,329 @@
+:root {
+  --bg: #050816;
+  --bg-alt: #0b1020;
+  --card-bg: #111827;
+  --accent: #f59e0b;
+  --accent-soft: rgba(245, 158, 11, 0.1);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2937;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #111827 0, #020617 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), transparent);
+  backdrop-filter: blur(14px);
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.main-nav a {
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+
+.main-nav a:hover {
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--accent);
+}
+
+.hero {
+  padding: 4rem 1.5rem 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 42rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.4rem);
+  margin-bottom: 0.6rem;
+}
+
+.hero-tagline {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.primary-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: radial-gradient(circle at top left, #fbbf24, #f97316);
+  color: #111827;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+  transform: translateY(0);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+}
+
+.timeline-section,
+.year-detail-section,
+.hof-section,
+.about-section {
+  padding: 1rem 1.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.timeline-section h2,
+.year-detail-section h2,
+.hof-section h2,
+.about-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.year-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.year-button {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  background: rgba(15, 23, 42, 0.7);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border 0.15s ease, background 0.15s ease, color 0.15s ease,
+    transform 0.08s ease;
+}
+
+.year-button:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.year-button.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.year-card {
+  margin-top: 1.2rem;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  background: radial-gradient(circle at top left, #111827, #020617 70%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.year-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.year-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.year-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.year-meta span {
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--border);
+}
+
+.year-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 800px) {
+  .year-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.card-block {
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--border);
+}
+
+.card-block h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
+}
+
+.team-list,
+.results-list,
+.media-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-list li,
+.results-list li,
+.media-list li {
+  font-size: 0.9rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed rgba(31, 41, 55, 0.7);
+}
+
+.team-list li:last-child,
+.results-list li:last-child,
+.media-list li:last-child {
+  border-bottom: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  color: var(--muted);
+}
+
+.badge.gold {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.media-list a {
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.16em;
+}
+
+.media-list a:hover {
+  color: var(--accent);
+}
+
+.hof-section {
+  padding-top: 0.5rem;
+}
+
+.hof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hof-card {
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--border);
+}
+
+.hof-title {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.hof-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.hof-note {
+  font-size: 0.9rem;
+}
+
+.about-section p {
+  margin: 0.4rem 0;
+  color: var(--muted);
+  max-width: 52rem;
+}
+
+.site-footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
