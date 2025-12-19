@@ -163,6 +163,40 @@ const YAOLYMPICS_DATA = {
       note: "Volume: 10/10. Lyrics: 6/10. Vibes: 15/10."
     }
   ]
+
+  players: [
+    {
+      id: "norman",
+      name: "Norman Yao",
+      nickname: "Commissioner",
+      joinedYear: 2014,
+      hometown: "Somewhere, USA",
+      funFact: "Has never missed a Yaolympics.",
+      photoUrl: "photos/profiles/norman.jpg", // optional; you can leave "" for now
+      yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+    },
+    {
+      id: "friend1",
+      name: "Friend One",
+      nickname: "The Closer",
+      joinedYear: 2014,
+      hometown: "Another Place",
+      funFact: "Hit the game winner in 2018 and won’t let anyone forget it.",
+      photoUrl: "photos/profiles/friend1.jpg",
+      yearsAttended: [2014, 2015, 2016, 2017, 2018]
+    },
+    {
+      id: "friend2",
+      name: "Friend Two",
+      nickname: "Wildcard",
+      joinedYear: 2017,
+      hometown: "",
+      funFact: "Shows up late but always brings the chaos.",
+      photoUrl: "",
+      yearsAttended: [2017, 2018, 2019, 2020, 2021]
+    }
+  ]
+
 };
 
 // ------------------------
