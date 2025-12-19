@@ -2,73 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Yaolympics | The Official Chronicles</title>
+  <title>Yaolympics | Official Chronicles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">🏅 Yaolympics</div>
-    <nav class="main-nav">
-      <a href="#timeline">Years</a>
-      <a href="#profiles">Yaolympian Profiles</a>
-      <a href="#hall-of-fame">Hall of Fame</a>
-      <a href="#about">About</a>
-    </nav>
+    <div class="logo">
+      🏅 Yaolympics
+    </div>
+    <div class="header-controls">
+      <div class="control-group">
+        <label for="seasonSelect">Seasons</label>
+        <select id="seasonSelect">
+          <option value="">Select season…</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="playerSelect">Yaolympians</label>
+        <select id="playerSelect">
+          <option value="">Select player…</option>
+        </select>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section id="hero" class="hero">
-      <div class="hero-content">
+    <section class="hero" id="hero">
+      <div class="hero-inner">
         <h1>The Yaolympics Chronicles</h1>
         <p class="hero-tagline">
-          Three teams. Questionable athleticism. Eternal bragging rights.
+          An annual saga of college friends, questionable athleticism, and eternal bragging rights.
         </p>
         <button id="randomMomentBtn" class="primary-btn">
-          🎲 Random Moment
+          🎲 Random Season
         </button>
       </div>
     </section>
 
-    <section id="timeline" class="timeline-section">
-      <h2>Seasons</h2>
-      <p class="section-subtitle">Click a year to relive the chaos.</p>
-      <div id="yearButtons" class="year-buttons"></div>
-    </section>
-
-    <section id="year-detail" class="year-detail-section">
-      <!-- Filled by script.js -->
-    </section>
-
-    <section id="hall-of-fame" class="hof-section">
-      <h2>Hall of Fame</h2>
-      <div id="hofContent" class="hof-grid">
-        <!-- Filled by script.js -->
+    <section id="contentArea" class="content-area">
+      <div id="introCard" class="detail-card">
+        <h2>Welcome to Yaolympics</h2>
+        <p>
+          This site chronicles the many years of Yaolympics — a yearly gathering of friends split into
+          three teams of two, battling across events like 2v2 basketball, relay swimming, and whatever
+          ridiculous challenges get invented that year.
+        </p>
+        <p>
+          Use the <strong>Seasons</strong> dropdown in the top-right to jump to a specific year, or the
+          <strong>Yaolympians</strong> dropdown to view player profiles and lore.
+        </p>
       </div>
-    </section>
 
-    <section id="profiles" class="profiles-section">
-  <h2>Yaolympian Profiles</h2>
-  <p class="section-subtitle">
-    The legends, the lifers, and the ring-chasers who make Yaolympics what it is.
-  </p>
-  <div id="profilesGrid" class="profiles-grid">
-    <!-- Filled by script.js -->
-  </div>
-</section>
-
-    <section id="about" class="about-section">
-      <h2>What is Yaolympics?</h2>
-      <p>
-        Yaolympics is an annual gathering of college friends split into
-        three teams of two, battling it out across events like 2v2 basketball,
-        relay swimming, and whatever else seems fun (or mildly dangerous) that year.
-      </p>
-      <p>
-        This site is the official record of legendary wins, heartbreaking
-        chokes, and the kind of highlights that probably shouldn’t be
-        replayed in slow motion.
-      </p>
+      <div id="yearDetail" class="detail-card hidden"></div>
+      <div id="playerDetail" class="detail-card hidden"></div>
     </section>
   </main>
 
@@ -76,6 +63,6 @@
     <p>Made with ❤️, trash talk, and sore hamstrings.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=1"></script>
 </body>
 </html>
