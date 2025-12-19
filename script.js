@@ -238,11 +238,7 @@ function renderYearDetail(year) {
   const card = createEl("div", "year-card");
 
   const header = createEl("div", "year-header");
-  const title = createEl(
-    "div",
-    "year-title",
-    `Yaolympics ${yearObj.year}`
-  );
+  const title = createEl("div", "year-title", `Yaolympics ${yearObj.year}`);
   const meta = createEl("div", "year-meta");
 
   const loc = createEl("span", null, `📍 ${yearObj.location}`);
@@ -260,6 +256,7 @@ function renderYearDetail(year) {
 
   const layout = createEl("div", "year-layout");
 
+  // LEFT COLUMN: teams
   const leftCol = createEl("div", "card-block");
   const teamsHeading = createEl("h3", null, "Teams");
   const teamList = createEl("ul", "team-list");
@@ -281,6 +278,7 @@ function renderYearDetail(year) {
   });
   leftCol.append(teamsHeading, teamList);
 
+  // RIGHT COLUMN: results + media gallery
   const rightCol = createEl("div", "card-block");
   const resultsHeading = createEl("h3", null, "Results");
   const resultsList = createEl("ul", "results-list");
@@ -293,26 +291,84 @@ function renderYearDetail(year) {
     resultsList.appendChild(li);
   });
 
-  const mediaHeading = createEl("h3", null, "Media");
-  const mediaList = createEl("ul", "media-list");
-  if (yearObj.media && yearObj.media.length > 0) {
-    yearObj.media.forEach((m) => {
-      const li = createEl("li");
-      const typeEmoji = m.type === "video" ? "▶️" : "📸";
-      const link = createEl("a");
-      link.href = m.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = `${typeEmoji} ${m.label}`;
-      li.appendChild(link);
-      mediaList.appendChild(li);
-    });
-  } else {
-    const li = createEl("li", null, "No media added yet.");
-    mediaList.appendChild(li);
-  }
+  rightCol.append(resultsHeading, resultsList);
 
-  rightCol.append(resultsHeading, resultsList, mediaHeading, mediaList);
+  const mediaHeading = createEl("h3", null, "Media");
+  rightCol.appendChild(mediaHeading);
+
+  const media = yearObj.media || [];
+  const photos = media.filter((m) => m.type === "photo");
+  const videos = media.filter((m) => m.type === "video");
+
+  if (photos.length === 0 && videos.length === 0) {
+    const empty = createEl(
+      "p",
+      "section-subtitle",
+      "No media added yet."
+    );
+    rightCol.appendChild(empty);
+  } else {
+    // Photo grid
+    if (photos.length > 0) {
+      const gallery = createEl("div", "gallery-grid");
+      photos.forEach((m) => {
+        const item = createEl("a", "gallery-item");
+        item.href = m.url;
+        item.target = "_blank";
+        item.rel = "noopener noreferrer";
+
+        const img = document.createElement("img");
+        img.src = m.url;
+        img.alt = m.label || "";
+
+        const label = createEl(
+          "div",
+          "gallery-item-label",
+          m.label || ""
+        );
+
+        item.append(img, label);
+        gallery.appendChild(item);
+      });
+      rightCol.appendChild(gallery);
+    }
+
+    // Videos
+    if (videos.length > 0) {
+      const videosWrapper = createEl("div", "video-list");
+      videos.forEach((m) => {
+        const cardVideo = createEl("div", "video-card");
+        const titleVideo = createEl(
+          "div",
+          "video-title",
+          m.label || "Video"
+        );
+
+        const url = m.url || "";
+        const isDirectVideo =
+          url.endsWith(".mp4") ||
+          url.endsWith(".webm") ||
+          url.endsWith(".ogg");
+
+        if (isDirectVideo && !/youtube\.com|youtu\.be/.test(url)) {
+          const player = document.createElement("video");
+          player.controls = true;
+          player.src = url;
+          cardVideo.append(titleVideo, player);
+        } else {
+          const link = createEl("a");
+          link.href = url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = "▶️ Watch video";
+          cardVideo.append(titleVideo, link);
+        }
+
+        videosWrapper.appendChild(cardVideo);
+      });
+      rightCol.appendChild(videosWrapper);
+    }
+  }
 
   layout.append(leftCol, rightCol);
   card.append(header, blurb, layout);
@@ -320,6 +376,7 @@ function renderYearDetail(year) {
   target.innerHTML = "";
   target.appendChild(card);
 }
+
 
 // ------------------------
 // 5. HALL OF FAME
