@@ -67,21 +67,9 @@ const YAOLYMPICS_DATA = {
       blurb:
         "The year it all began. Questionable rules, chaotic scoring, unforgettable moments.",
       teams: [
-        {
-          name: "Team Legend",
-          members: ["Player 1", "Player 2"],
-          color: "gold"
-        },
-        {
-          name: "Team Chaos",
-          members: ["Player 3", "Player 4"],
-          color: "silver"
-        },
-        {
-          name: "Team Underdogs",
-          members: ["Player 5", "Player 6"],
-          color: "bronze"
-        }
+        { name: "Team Legend", members: ["Player 1", "Player 2"], color: "gold" },
+        { name: "Team Chaos", members: ["Player 3", "Player 4"], color: "silver" },
+        { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
       ],
       results: [
         {
@@ -100,12 +88,12 @@ const YAOLYMPICS_DATA = {
         {
           label: "2014 Group Photo",
           type: "photo",
-          url: "photos/2014/group-photo.jpg" // change to match your real file
+          url: "photos/2014/group-photo.jpg" // change to your real file
         },
         {
           label: "2014 Highlight Video",
           type: "video",
-          url: "photos/2014/highlight.mp4" // change to match your real file
+          url: "photos/2014/highlight.mp4" // change to your real file
         }
       ]
     }
@@ -118,7 +106,7 @@ const YAOLYMPICS_DATA = {
       joinedYear: 2014,
       hometown: "Example City",
       funFact: "Has never missed a Yaolympics.",
-      photoUrl: "photos/profiles/norman.jpg", // optional
+      photoUrl: "photos/norman.jpg", // optional; change or leave ""
       yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
     {
@@ -167,7 +155,6 @@ function populateSeasonSelect() {
   const select = $("#seasonSelect");
   if (!select) return;
 
-  // Clear everything except placeholder
   select.innerHTML = "";
   const placeholder = createEl("option", null, "Select season…");
   placeholder.value = "";
@@ -218,7 +205,6 @@ function renderYearDetail(year) {
   const yearObj = YAOLYMPICS_DATA.years.find((y) => y.year === year);
   if (!yearObj) return;
 
-  // Show year card, hide others
   if (introCard) introCard.classList.add("hidden");
   yearDetail.classList.remove("hidden");
   if (playerDetail) playerDetail.classList.add("hidden");
@@ -354,7 +340,6 @@ function renderPlayerDetail(playerId) {
   const p = YAOLYMPICS_DATA.players.find((pl) => pl.id === playerId);
   if (!p) return;
 
-  // Show player card, hide others
   if (introCard) introCard.classList.add("hidden");
   if (yearDetail) yearDetail.classList.add("hidden");
   playerDetail.classList.remove("hidden");
@@ -444,7 +429,6 @@ function setupRandomMoment() {
     const randomYearObj =
       years[Math.floor(Math.random() * years.length)];
 
-    // Update select UI
     const seasonSelect = $("#seasonSelect");
     const playerSelect = $("#playerSelect");
     if (seasonSelect) {
@@ -456,7 +440,6 @@ function setupRandomMoment() {
 
     renderYearDetail(randomYearObj.year);
 
-    // Scroll to content
     const contentArea = document.getElementById("contentArea");
     if (contentArea) {
       contentArea.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -479,7 +462,6 @@ document.addEventListener("DOMContentLoaded", () => {
     seasonSelect.addEventListener("change", (e) => {
       const value = e.target.value;
       if (!value) {
-        // Show intro if nothing selected
         const introCard = $("#introCard");
         const yearDetail = $("#yearDetail");
         const playerDetail = $("#playerDetail");
