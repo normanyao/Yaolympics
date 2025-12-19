@@ -556,8 +556,11 @@ function setupRandomMoment() {
 // 7. INIT
 // ------------------------
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
   renderYearButtons();
   renderHallOfFame();
+  renderProfiles();
   setupRandomMoment();
 });
