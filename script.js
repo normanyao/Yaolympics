@@ -136,17 +136,16 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
       id: "Timothy",
       name: "Tim Kovachy",
       displayName: 'Tim "The Magyar" Kovachy',
-      nickname: "The Magyan",
+      nickname: "The Magyar",
       joinedYear: 2017,
       hometown: "Portola Valley",
       funFact: "Shows up late but always brings the chaos.",
       photoUrl: "photos/yaolympians/tim_kovachy_yaolympian.png",
-      bio: `Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure 
-      what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in 
-      NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the 
-      celebrated course "Justice" by Prof. Michael Sandel. JB makes three(!) appearances in the Justice MOOC that has been watched by over 2.74M people on youtube; 
-      he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs
-      to the promised land.`,
+      bio: `Much like L. Ron Hubbard, Prof. Kovachy worships at a different altar than most - the Altar of the Slav (n.b. 15 3/4). A renowned physcist who grapples with the coldest
+      matter in Illinois, TimK was the ill-fated roommate of The Commissioner. Ill-fated for being forced to eat the Yench daily, host table tennis club meetings in knee
+      deep snow, and accused of gaily eating strawberries. Does he have a lazy eye? Maybe. Does he have two? Maybe. Surely only an atom interferometer can answer such mysteries of 
+      the universe. Average at best at most events, each year TimK manages to surprise his fellow Yaolympians. Did he really single-handedly best Pengyao and JimLizzle in 
+      poker? Is that TimK studying gomoku in a dark corner? Does he snore louder than a walrus in heat?  Why yes, yes to all of the above!`,
       yearsAttended: [2017, 2018, 2019, 2020, 2021]
     }
   ]
