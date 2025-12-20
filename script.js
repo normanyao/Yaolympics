@@ -105,7 +105,7 @@ const YAOLYMPICS_DATA = {
       displayName: 'Nicolae "The Gypsy" Done',
       nickname: "The Gypsy",
       joinedYear: 2014,
-      hometown: "Buzău, Romania",
+      hometown: "Example City",
       funFact: "Has never missed a Yaolympics.",
       photoUrl: "photos/yaolympians/nicolae_done_yaolympian.png",
       bio: "Write Nicolae's legendary Yaolympics backstory here. This text will appear under the photo, in a narrower column.",
