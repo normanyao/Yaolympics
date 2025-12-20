@@ -297,6 +297,30 @@ function shuffleArray(arr) {
   return a;
 }
 
+function createYearCollage(year) {
+  const urls = YEAR_COLLAGE_IMAGES[year];
+  if (!urls || urls.length === 0) return null;
+
+  // Shuffle and take up to 9 images
+  const shuffled = shuffleArray(urls);
+  const subset = shuffled.slice(0, 9);
+
+  const wrapper = createEl("div", "year-collage");
+  const grid = createEl("div", "year-collage-grid");
+
+  subset.forEach((url) => {
+    const item = createEl("div", "year-collage-item");
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = `Yaolympics ${year} moment`;
+    item.appendChild(img);
+    grid.appendChild(item);
+  });
+
+  wrapper.appendChild(grid);
+  return wrapper;
+}
+
 // ------------------------
 // 5. RENDER YEAR DETAIL
 // ------------------------
