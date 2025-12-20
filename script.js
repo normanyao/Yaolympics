@@ -488,6 +488,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const seasonSelect = $("#seasonSelect");
   const playerSelect = $("#playerSelect");
 
+  const homeLink = $("#homeLink");
+
+  if (homeLink) {
+    homeLink.addEventListener("click", () => {
+      if (seasonSelect) seasonSelect.value = "";
+      if (playerSelect) playerSelect.value = "";
+      setView("intro");
+    });
+  }
+
   // Start on intro: hero + intro card visible
   setView("intro");
 
