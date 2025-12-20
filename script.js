@@ -447,7 +447,14 @@ function renderYearDetail(year) {
 
   layout.append(teamsBlock, rightBlock);
 
-  yearDetail.append(title, blurb, meta, layout);
+  // 👉 NEW: build a collage for this year (if we have images)
+  const collage = createYearCollage(yearObj.year);
+
+  yearDetail.append(title, blurb, meta);
+  if (collage) {
+    yearDetail.appendChild(collage);
+  }
+  yearDetail.appendChild(layout);
 }
 
 // ------------------------
