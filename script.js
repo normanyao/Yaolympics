@@ -111,7 +111,8 @@ const YAOLYMPICS_DATA = {
       bio: "The fearless leader of The Caravan! A master of watermelon heists, the king of swimming and billiards, and a self-proclaimed Renaissance man,
          Dr. Done hails from the quaint Romanian village of Buzau. He made his ways to the halls of Harvard College with an intrepid spirit and deep insights into
         the Diels Alder reaction. After arriving at Harvard, he quickly splurged approximately 100,000 Romanian Leu on a boombox and could be seen proudly walking 
-        around campus with this eyesore on his shoulder.   ",
+        around campus with this eyesore on his shoulder (like a true gangsta). Dr. Done was the roommate of fellow Yaolympian Dr. JBL and the two could be seen
+          trudging listlessly toward crew practice or taking selfies with Larry Summers. ",
       yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
     {
