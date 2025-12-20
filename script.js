@@ -133,12 +133,12 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
       yearsAttended: [2014, 2015, 2016, 2017, 2018]
     },
     {
-      id: "friend2",
-      name: "Friend Two",
-      displayName: 'Friend Two "Wildcard"',
-      nickname: "Wildcard",
+      id: "Timothy",
+      name: "Tim Kovachy",
+      displayName: 'Tim "The Magyar" Kovachy',
+      nickname: "The Magyan",
       joinedYear: 2017,
-      hometown: "",
+      hometown: "Portola Valley",
       funFact: "Shows up late but always brings the chaos.",
       photoUrl: "photos/friend2.jpg",
       bio: `Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure 
@@ -433,6 +433,7 @@ function renderPlayerDetail(playerId) {
 
 
 
+
 function setupRandomMoment() {
   const btn = $("#randomMomentBtn");
   if (!btn) return;
@@ -446,12 +447,18 @@ function setupRandomMoment() {
     const seasonSelect = $("#seasonSelect");
     const playerSelect = $("#playerSelect");
 
-    const total = years.length + players.length;
-    const idx = Math.floor(Math.random() * total);
+    // Decide whether to pick a season or a player
+    let pickType = Math.random() < 0.5 ? "season" : "player";
 
-    // First part of the range -> random season
-    if (idx < years.length) {
-      const randomYearObj = years[idx];
+    // If that type has no entries, fall back to the other
+    if (pickType === "season" && years.length === 0 && players.length > 0) {
+      pickType = "player";
+    } else if (pickType === "player" && players.length === 0 && years.length > 0) {
+      pickType = "season";
+    }
+
+    if (pickType === "season") {
+      const randomYearObj = years[Math.floor(Math.random() * years.length)];
 
       if (seasonSelect) seasonSelect.value = String(randomYearObj.year);
       if (playerSelect) playerSelect.value = "";
@@ -459,8 +466,7 @@ function setupRandomMoment() {
       renderYearDetail(randomYearObj.year);
       setView("season");
     } else {
-      // Second part of the range -> random Yaolympian
-      const player = players[idx - years.length];
+      const player = players[Math.floor(Math.random() * players.length)];
 
       if (playerSelect) playerSelect.value = player.id;
       if (seasonSelect) seasonSelect.value = "";
