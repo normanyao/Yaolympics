@@ -313,9 +313,10 @@ a {
   background: #f3f4f6;
 }
 
+
 .year-collage-item img {
   width: 100%;
-  height: 170px;
+  height: 260px; /* was 170px */
   object-fit: cover;
   display: block;
 }
