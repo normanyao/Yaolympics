@@ -431,39 +431,43 @@ function renderPlayerDetail(playerId) {
 // 7. RANDOM SEASON BUTTON
 // ------------------------
 
+
+
 function setupRandomMoment() {
   const btn = $("#randomMomentBtn");
   if (!btn) return;
 
   btn.addEventListener("click", () => {
     const years = YAOLYMPICS_DATA.years;
-    if (years.length === 0) return;
+    const players = YAOLYMPICS_DATA.players;
 
-    const randomYearObj =
-      years[Math.floor(Math.random() * years.length)];
+    if (years.length === 0 && players.length === 0) return;
 
     const seasonSelect = $("#seasonSelect");
     const playerSelect = $("#playerSelect");
 
-    const homeLink = $("#homeLink");
+    const total = years.length + players.length;
+    const idx = Math.floor(Math.random() * total);
 
-    if (homeLink) {
-      homeLink.addEventListener("click", () => {
-        if (seasonSelect) seasonSelect.value = "";
-        if (playerSelect) playerSelect.value = "";
-        setView("intro");
-      });
-    }
+    // First part of the range -> random season
+    if (idx < years.length) {
+      const randomYearObj = years[idx];
 
-    if (seasonSelect) {
-      seasonSelect.value = String(randomYearObj.year);
-    }
-    if (playerSelect) {
-      playerSelect.value = "";
-    }
+      if (seasonSelect) seasonSelect.value = String(randomYearObj.year);
+      if (playerSelect) playerSelect.value = "";
 
-    renderYearDetail(randomYearObj.year);
-    setView("season");
+      renderYearDetail(randomYearObj.year);
+      setView("season");
+    } else {
+      // Second part of the range -> random Yaolympian
+      const player = players[idx - years.length];
+
+      if (playerSelect) playerSelect.value = player.id;
+      if (seasonSelect) seasonSelect.value = "";
+
+      renderPlayerDetail(player.id);
+      setView("player");
+    }
   });
 }
 
