@@ -133,6 +133,23 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
       yearsAttended: [2014, 2015, 2016, 2017, 2018]
     },
     {
+      id: "Brandon",
+      name: "Brandon Liebeskind",
+      displayName: 'Brandon "The Jew" Liebeskind',
+      nickname: "The Jew",
+      joinedYear: 2014,
+      hometown: "",
+      funFact: "Hit the game winner in 2018 and won’t let anyone forget it.",
+      photoUrl: "photos/yaolympians/brandon_liebeskind_yaolympian.png",
+      bio: `Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure 
+      what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in 
+      NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the 
+      celebrated course "Justice" by Prof. Michael Sandel. JB makes three(!) appearances in the Justice MOOC that has been watched by over 2.74M people on youtube; 
+      he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs
+      to the promised land.`,
+      yearsAttended: [2014, 2015, 2016, 2017, 2018]
+    },
+    {
       id: "Timothy",
       name: "Tim Kovachy",
       displayName: 'Tim "The Magyar" Kovachy',
