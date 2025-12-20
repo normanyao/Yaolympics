@@ -107,7 +107,7 @@ const YAOLYMPICS_DATA = {
       joinedYear: 2014,
       hometown: "Example City",
       funFact: "Has never missed a Yaolympics.",
-      photoUrl: "photos/nicolae.jpg",
+      photoUrl: "photos/yaolympians/nicolae_done_yaolympian.png",
       bio: "Write Nicolae's legendary Yaolympics backstory here. This text will appear under the photo, in a narrower column.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
