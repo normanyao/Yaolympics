@@ -88,12 +88,12 @@ const YAOLYMPICS_DATA = {
         {
           label: "2014 Group Photo",
           type: "photo",
-          url: "photos/2014/group-photo.jpg" // change to your real file
+          url: "photos/2014/group-photo.jpg"
         },
         {
           label: "2014 Highlight Video",
           type: "video",
-          url: "photos/2014/highlight.mp4" // change to your real file
+          url: "photos/2014/highlight.mp4"
         }
       ]
     }
@@ -107,7 +107,7 @@ const YAOLYMPICS_DATA = {
       joinedYear: 2014,
       hometown: "Example City",
       funFact: "Has never missed a Yaolympics.",
-      photoUrl: "photos/nicolae.jpg", // large portrait
+      photoUrl: "photos/nicolae.jpg",
       bio: "Write Nicolae's legendary Yaolympics backstory here. This text will appear under the photo, in a narrower column.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
@@ -154,7 +154,44 @@ function createEl(tag, className, text) {
 }
 
 // ------------------------
-// 3. SELECT POPULATION
+// 3. VIEW STATE
+// ------------------------
+
+function setView(view) {
+  const hero = $("#hero");
+  const introCard = $("#introCard");
+  const yearDetail = $("#yearDetail");
+  const playerDetail = $("#playerDetail");
+
+  if (!hero || !introCard || !yearDetail || !playerDetail) return;
+
+  if (view === "intro") {
+    hero.classList.remove("hidden");
+    introCard.classList.remove("hidden");
+    yearDetail.classList.add("hidden");
+    playerDetail.classList.add("hidden");
+  } else if (view === "season") {
+    hero.classList.add("hidden");
+    introCard.classList.add("hidden");
+    yearDetail.classList.remove("hidden");
+    playerDetail.classList.add("hidden");
+  } else if (view === "player") {
+    hero.classList.add("hidden");
+    introCard.classList.add("hidden");
+    yearDetail.classList.add("hidden");
+    playerDetail.classList.remove("hidden");
+  }
+
+  if (view !== "intro") {
+    const contentArea = document.getElementById("contentArea");
+    if (contentArea) {
+      contentArea.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+}
+
+// ------------------------
+// 4. SELECT POPULATION
 // ------------------------
 
 function populateSeasonSelect() {
@@ -199,21 +236,15 @@ function populatePlayerSelect() {
 }
 
 // ------------------------
-// 4. RENDER YEAR DETAIL
+// 5. RENDER YEAR DETAIL
 // ------------------------
 
 function renderYearDetail(year) {
-  const introCard = $("#introCard");
   const yearDetail = $("#yearDetail");
-  const playerDetail = $("#playerDetail");
   if (!yearDetail) return;
 
   const yearObj = YAOLYMPICS_DATA.years.find((y) => y.year === year);
   if (!yearObj) return;
-
-  if (introCard) introCard.classList.add("hidden");
-  yearDetail.classList.remove("hidden");
-  if (playerDetail) playerDetail.classList.add("hidden");
 
   yearDetail.innerHTML = "";
 
@@ -334,25 +365,15 @@ function renderYearDetail(year) {
 }
 
 // ------------------------
-// 5. RENDER PLAYER DETAIL
+// 6. RENDER PLAYER DETAIL
 // ------------------------
 
 function renderPlayerDetail(playerId) {
-  const introCard = $("#introCard");
-  const yearDetail = $("#yearDetail");
   const playerDetail = $("#playerDetail");
-  const hero = $("#hero");
   if (!playerDetail) return;
 
   const p = YAOLYMPICS_DATA.players.find((pl) => pl.id === playerId);
   if (!p) return;
-
-  // Hide hero/logo for player page
-  if (hero) hero.classList.add("hidden");
-
-  if (introCard) introCard.classList.add("hidden");
-  if (yearDetail) yearDetail.classList.add("hidden");
-  playerDetail.classList.remove("hidden");
 
   playerDetail.innerHTML = "";
 
@@ -390,16 +411,10 @@ function renderPlayerDetail(playerId) {
   page.appendChild(bio);
 
   playerDetail.appendChild(page);
-
-  // Scroll to top so the name starts the page
-  const contentArea = document.getElementById("contentArea");
-  if (contentArea) {
-    contentArea.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
 }
 
 // ------------------------
-// 6. RANDOM SEASON BUTTON
+// 7. RANDOM SEASON BUTTON
 // ------------------------
 
 function setupRandomMoment() {
@@ -415,9 +430,6 @@ function setupRandomMoment() {
 
     const seasonSelect = $("#seasonSelect");
     const playerSelect = $("#playerSelect");
-    const hero = $("#hero");
-    const introCard = $("#introCard");
-    const playerDetail = $("#playerDetail");
 
     if (seasonSelect) {
       seasonSelect.value = String(randomYearObj.year);
@@ -425,21 +437,14 @@ function setupRandomMoment() {
     if (playerSelect) {
       playerSelect.value = "";
     }
-    if (hero) hero.classList.add("hidden");
-    if (introCard) introCard.classList.add("hidden");
-    if (playerDetail) playerDetail.classList.add("hidden");
 
     renderYearDetail(randomYearObj.year);
-
-    const contentArea = document.getElementById("contentArea");
-    if (contentArea) {
-      contentArea.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    setView("season");
   });
 }
 
 // ------------------------
-// 7. INIT
+// 8. INIT
 // ------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -448,57 +453,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const seasonSelect = $("#seasonSelect");
   const playerSelect = $("#playerSelect");
-  const hero = $("#hero");
+
+  // Start on intro: hero + intro card visible
+  setView("intro");
 
   if (seasonSelect) {
     seasonSelect.addEventListener("change", (e) => {
       const value = e.target.value;
-      const introCard = $("#introCard");
-      const yearDetail = $("#yearDetail");
-      const playerDetail = $("#playerDetail");
-
       if (!value) {
-        // Back to intro: show hero and intro, hide details
-        if (introCard) introCard.classList.remove("hidden");
-        if (yearDetail) yearDetail.classList.add("hidden");
-        if (playerDetail) playerDetail.classList.add("hidden");
-        if (hero) hero.classList.remove("hidden");
+        // back to intro
+        if (playerSelect) playerSelect.value = "";
+        setView("intro");
         return;
       }
 
-      // Season selected: hide hero + intro, show season
-      if (hero) hero.classList.add("hidden");
-      if (introCard) introCard.classList.add("hidden");
-      if (playerDetail) playerDetail.classList.add("hidden");
-
       if (playerSelect) playerSelect.value = "";
       renderYearDetail(Number(value));
+      setView("season");
     });
   }
 
   if (playerSelect) {
     playerSelect.addEventListener("change", (e) => {
       const value = e.target.value;
-      const introCard = $("#introCard");
-      const yearDetail = $("#yearDetail");
-      const playerDetail = $("#playerDetail");
-
       if (!value) {
-        // Back to intro: show hero and intro, hide details
-        if (introCard) introCard.classList.remove("hidden");
-        if (yearDetail) yearDetail.classList.add("hidden");
-        if (playerDetail) playerDetail.classList.add("hidden");
-        if (hero) hero.classList.remove("hidden");
+        // back to intro
+        if (seasonSelect) seasonSelect.value = "";
+        setView("intro");
         return;
       }
 
-      // Player selected: hide hero + intro + season, show player
-      if (hero) hero.classList.add("hidden");
-      if (introCard) introCard.classList.add("hidden");
-      if (yearDetail) yearDetail.classList.add("hidden");
-
       if (seasonSelect) seasonSelect.value = "";
       renderPlayerDetail(value);
+      setView("player");
     });
   }
 
