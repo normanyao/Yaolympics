@@ -283,6 +283,30 @@ a {
 
 /* Gallery */
 
+.year-collage {
+  margin: 1rem 0 1.25rem;
+}
+
+.year-collage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.year-collage-item {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #f3f4f6;
+}
+
+.year-collage-item img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
