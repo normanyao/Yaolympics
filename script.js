@@ -168,6 +168,29 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
   ]
 };
 
+const YEAR_COLLAGE_IMAGES = {
+  2014: [
+    "photos/2014/IMG_1860.JPG",
+    "photos/2014/IMG_2026.JPG",
+    "photos/2014/IMG_2030.JPG",
+    "photos/2014/IMG_2031.JPG",
+    "photos/2014/IMG_2032.JPG",
+    "photos/2014/IMG_2033.JPG",
+    "photos/2014/IMG_2035.jpg",
+    "photos/2014/IMG_2037.jpg",
+    "photos/2014/IMG_2038.JPG",
+    "photos/2014/IMG_6059.JPG",
+    "photos/2014/IMG_6060.JPG",
+    "photos/2014/IMG_6061.JPG",
+    "photos/2014/IMG_6062.JPG",
+    "photos/2014/IMG_6063.JPG",
+    "photos/2014/IMG_6064.JPG",
+    "photos/2014/IMG_6065.JPG",
+    "photos/2014/IMG_6066.JPG",
+    "photos/2014/IMG_6067.JPG",
+  ],
+};
+
 // ------------------------
 // 2. DOM HELPERS
 // ------------------------
