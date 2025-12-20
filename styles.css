@@ -351,65 +351,41 @@ a {
   text-underline-offset: 0.16em;
 }
 
-/* Player profile */
+/* Player page */
 
-.profile-header {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.7rem;
+.player-page {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.profile-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 999px;
-  overflow: hidden;
-  border: 1px solid var(--border);
+.player-page-title {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  letter-spacing: 0.04em;
+}
+
+.player-page-photo-wrapper {
+  margin-top: 1.4rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: #fee2e2;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #b91c1c;
 }
 
-.profile-avatar img {
+.player-page-photo {
+  max-width: 260px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profile-name {
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-
-.profile-nickname {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.profile-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.7rem;
-}
-
-.profile-meta-item {
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  background: #f9fafb;
+  border-radius: 1.25rem;
   border: 1px solid var(--border);
-  font-size: 0.78rem;
-  color: var(--muted);
+  box-shadow: var(--shadow-soft);
 }
 
-.profile-funfact {
-  font-size: 0.9rem;
+.player-page-bio {
+  margin: 1.6rem auto 0;
+  max-width: 640px;
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: var(--muted);
+  text-align: left;
 }
 
 /* Footer */
