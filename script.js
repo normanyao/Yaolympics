@@ -445,6 +445,16 @@ function setupRandomMoment() {
     const seasonSelect = $("#seasonSelect");
     const playerSelect = $("#playerSelect");
 
+    const homeLink = $("#homeLink");
+
+    if (homeLink) {
+      homeLink.addEventListener("click", () => {
+        if (seasonSelect) seasonSelect.value = "";
+        if (playerSelect) playerSelect.value = "";
+        setView("intro");
+      });
+    }
+
     if (seasonSelect) {
       seasonSelect.value = String(randomYearObj.year);
     }
