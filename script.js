@@ -107,7 +107,7 @@ const YAOLYMPICS_DATA = {
       joinedYear: 2014,
       hometown: "Example City",
       funFact: "Has never missed a Yaolympics.",
-      photoUrl: "photos/nicolae.jpg", // large portrait photo
+      photoUrl: "photos/nicolae.jpg", // large portrait
       bio: "Write Nicolae's legendary Yaolympics backstory here. This text will appear under the photo, in a narrower column.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
@@ -120,7 +120,7 @@ const YAOLYMPICS_DATA = {
       hometown: "",
       funFact: "Hit the game winner in 2018 and won’t let anyone forget it.",
       photoUrl: "photos/friend1.jpg",
-      bio: "Short bio for Friend One. You can talk about signature moments, archetype, and recurring jokes.",
+      bio: "Short bio for Friend One. Signature moments, archetype, and running jokes go here.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018]
     },
     {
@@ -212,7 +212,7 @@ function renderYearDetail(year) {
   const yearObj = YAOLYMPICS_DATA.years.find((y) => y.year === year);
   if (!yearObj) return;
 
-  // Show hero on season view
+  // Show hero for seasons
   if (hero) hero.classList.remove("hidden");
 
   if (introCard) introCard.classList.add("hidden");
@@ -376,7 +376,6 @@ function renderPlayerDetail(playerId) {
     img.alt = p.name;
     photoWrapper.appendChild(img);
   } else {
-    // simple placeholder block if no photo yet
     const placeholder = createEl("div", "player-page-photo");
     placeholder.style.display = "flex";
     placeholder.style.alignItems = "center";
@@ -395,6 +394,12 @@ function renderPlayerDetail(playerId) {
   page.appendChild(bio);
 
   playerDetail.appendChild(page);
+
+  // Scroll to top of content so the name is at the top of the page
+  const contentArea = document.getElementById("contentArea");
+  if (contentArea) {
+    contentArea.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 // ------------------------
