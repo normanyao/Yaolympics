@@ -100,33 +100,39 @@ const YAOLYMPICS_DATA = {
   ],
   players: [
     {
-      id: "norman",
-      name: "Norman Yao",
-      nickname: "The Commissioner",
+      id: "nicolae",
+      name: "Nicolae Done",
+      displayName: 'Nicolae "The Gypsy" Done',
+      nickname: "The Gypsy",
       joinedYear: 2014,
       hometown: "Example City",
       funFact: "Has never missed a Yaolympics.",
-      photoUrl: "photos/norman.jpg", // optional; change or leave ""
+      photoUrl: "photos/nicolae.jpg", // large portrait photo
+      bio: "Write Nicolae's legendary Yaolympics backstory here. This text will appear under the photo, in a narrower column.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
     {
       id: "friend1",
       name: "Friend One",
+      displayName: 'Friend One "The Closer"',
       nickname: "The Closer",
       joinedYear: 2014,
       hometown: "",
       funFact: "Hit the game winner in 2018 and won’t let anyone forget it.",
-      photoUrl: "",
+      photoUrl: "photos/friend1.jpg",
+      bio: "Short bio for Friend One. You can talk about signature moments, archetype, and recurring jokes.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018]
     },
     {
       id: "friend2",
       name: "Friend Two",
+      displayName: 'Friend Two "Wildcard"',
       nickname: "Wildcard",
       joinedYear: 2017,
       hometown: "",
       funFact: "Shows up late but always brings the chaos.",
-      photoUrl: "",
+      photoUrl: "photos/friend2.jpg",
+      bio: "Short bio for Friend Two. Describe why everyone is nervous when they step onto the court.",
       yearsAttended: [2017, 2018, 2019, 2020, 2021]
     }
   ]
@@ -200,10 +206,14 @@ function renderYearDetail(year) {
   const introCard = $("#introCard");
   const yearDetail = $("#yearDetail");
   const playerDetail = $("#playerDetail");
+  const hero = $("#hero");
   if (!yearDetail) return;
 
   const yearObj = YAOLYMPICS_DATA.years.find((y) => y.year === year);
   if (!yearObj) return;
+
+  // Show hero on season view
+  if (hero) hero.classList.remove("hidden");
 
   if (introCard) introCard.classList.add("hidden");
   yearDetail.classList.remove("hidden");
@@ -335,10 +345,14 @@ function renderPlayerDetail(playerId) {
   const introCard = $("#introCard");
   const yearDetail = $("#yearDetail");
   const playerDetail = $("#playerDetail");
+  const hero = $("#hero");
   if (!playerDetail) return;
 
   const p = YAOLYMPICS_DATA.players.find((pl) => pl.id === playerId);
   if (!p) return;
+
+  // Hide hero/logo for player page
+  if (hero) hero.classList.add("hidden");
 
   if (introCard) introCard.classList.add("hidden");
   if (yearDetail) yearDetail.classList.add("hidden");
@@ -346,72 +360,41 @@ function renderPlayerDetail(playerId) {
 
   playerDetail.innerHTML = "";
 
-  const header = createEl("div", "profile-header");
-  const avatar = createEl("div", "profile-avatar");
+  const page = createEl("div", "player-page");
 
+  const displayName =
+    p.displayName ||
+    (p.nickname ? `${p.name} "${p.nickname}"` : p.name);
+
+  const title = createEl("h1", "player-page-title", displayName);
+  page.appendChild(title);
+
+  const photoWrapper = createEl("div", "player-page-photo-wrapper");
   if (p.photoUrl) {
-    const img = document.createElement("img");
+    const img = createEl("img", "player-page-photo");
     img.src = p.photoUrl;
     img.alt = p.name;
-    avatar.appendChild(img);
+    photoWrapper.appendChild(img);
   } else {
-    const initials = p.name
-      .split(" ")
-      .map((part) => part[0])
-      .join("")
-      .toUpperCase()
-      .slice(0, 3);
-    avatar.textContent = initials;
+    // simple placeholder block if no photo yet
+    const placeholder = createEl("div", "player-page-photo");
+    placeholder.style.display = "flex";
+    placeholder.style.alignItems = "center";
+    placeholder.style.justifyContent = "center";
+    placeholder.style.background = "#e5e7eb";
+    placeholder.textContent = "Add a photo for this legend.";
+    photoWrapper.appendChild(placeholder);
   }
+  page.appendChild(photoWrapper);
 
-  const nameBlock = document.createElement("div");
-  const nameEl = createEl("div", "profile-name", p.name);
-  const nickEl = createEl(
-    "div",
-    "profile-nickname",
-    p.nickname ? `“${p.nickname}”` : ""
-  );
-  nameBlock.append(nameEl, nickEl);
-  header.append(avatar, nameBlock);
+  const bioText =
+    p.bio ||
+    "Add a description here: greatest performances, running jokes, and what they bring to Yaolympics.";
 
-  const meta = createEl("div", "profile-meta");
-  if (p.joinedYear) {
-    meta.appendChild(
-      createEl(
-        "div",
-        "profile-meta-item",
-        `Yaolympian since ${p.joinedYear}`
-      )
-    );
-  }
+  const bio = createEl("div", "player-page-bio", bioText);
+  page.appendChild(bio);
 
-  if (Array.isArray(p.yearsAttended) && p.yearsAttended.length > 0) {
-    const count = p.yearsAttended.length;
-    const first = Math.min(...p.yearsAttended);
-    const last = Math.max(...p.yearsAttended);
-    const range = first === last ? `${first}` : `${first}–${last}`;
-    meta.appendChild(
-      createEl(
-        "div",
-        "profile-meta-item",
-        `${count} appearances (${range})`
-      )
-    );
-  }
-
-  if (p.hometown) {
-    meta.appendChild(
-      createEl("div", "profile-meta-item", `🏡 ${p.hometown}`)
-    );
-  }
-
-  const fun = createEl(
-    "div",
-    "profile-funfact",
-    p.funFact || ""
-  );
-
-  playerDetail.append(header, meta, fun);
+  playerDetail.appendChild(page);
 }
 
 // ------------------------
@@ -431,12 +414,15 @@ function setupRandomMoment() {
 
     const seasonSelect = $("#seasonSelect");
     const playerSelect = $("#playerSelect");
+    const hero = $("#hero");
+
     if (seasonSelect) {
       seasonSelect.value = String(randomYearObj.year);
     }
     if (playerSelect) {
       playerSelect.value = "";
     }
+    if (hero) hero.classList.remove("hidden");
 
     renderYearDetail(randomYearObj.year);
 
@@ -457,20 +443,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const seasonSelect = $("#seasonSelect");
   const playerSelect = $("#playerSelect");
+  const hero = $("#hero");
 
   if (seasonSelect) {
     seasonSelect.addEventListener("change", (e) => {
       const value = e.target.value;
+      const introCard = $("#introCard");
+      const yearDetail = $("#yearDetail");
+      const playerDetail = $("#playerDetail");
+
       if (!value) {
-        const introCard = $("#introCard");
-        const yearDetail = $("#yearDetail");
-        const playerDetail = $("#playerDetail");
+        // back to intro
         if (introCard) introCard.classList.remove("hidden");
         if (yearDetail) yearDetail.classList.add("hidden");
         if (playerDetail) playerDetail.classList.add("hidden");
+        if (hero) hero.classList.remove("hidden");
         return;
       }
+
       if (playerSelect) playerSelect.value = "";
+      if (hero) hero.classList.remove("hidden");
       renderYearDetail(Number(value));
     });
   }
@@ -478,15 +470,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (playerSelect) {
     playerSelect.addEventListener("change", (e) => {
       const value = e.target.value;
+      const introCard = $("#introCard");
+      const yearDetail = $("#yearDetail");
+      const playerDetail = $("#playerDetail");
+
       if (!value) {
-        const introCard = $("#introCard");
-        const yearDetail = $("#yearDetail");
-        const playerDetail = $("#playerDetail");
+        // back to intro
         if (introCard) introCard.classList.remove("hidden");
         if (yearDetail) yearDetail.classList.add("hidden");
         if (playerDetail) playerDetail.classList.add("hidden");
+        if (hero) hero.classList.remove("hidden");
         return;
       }
+
       if (seasonSelect) seasonSelect.value = "";
       renderPlayerDetail(value);
     });
