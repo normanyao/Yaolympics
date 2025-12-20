@@ -136,7 +136,12 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
       hometown: "",
       funFact: "Shows up late but always brings the chaos.",
       photoUrl: "photos/friend2.jpg",
-      bio: "Short bio for Friend Two. Describe why everyone is nervous when they step onto the court.",
+      bio: `Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure 
+      what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in 
+      NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the 
+      celebrated course "Justice" by Prof. Michael Sandel. JB makes three(!) appearances in the Justice MOOC that has been watched by over 2.74M people on youtube; 
+      he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs
+      to the promised land.`,
       yearsAttended: [2017, 2018, 2019, 2020, 2021]
     }
   ]
