@@ -140,7 +140,7 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
       joinedYear: 2017,
       hometown: "Portola Valley",
       funFact: "Shows up late but always brings the chaos.",
-      photoUrl: "photos/friend2.jpg",
+      photoUrl: "photos/yaolympians/tim_kovachy_yaolympian.png",
       bio: `Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure 
       what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in 
       NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the 
