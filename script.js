@@ -197,6 +197,14 @@ const YAOLYMPICS_DATA = {
 // Collage images (2014 only for now)
 
 const YEAR_COLLAGE_IMAGES = {
+  2012: [
+    "photos/2012/IMG_0578.JPG",
+    "photos/2012/IMG_0584.JPG",
+    "photos/2012/IMG_0585.JPG",
+    "photos/2012/IMG_0587.JPG",
+    "photos/2012/IMG_0624.JPG",
+    "photos/2012/IMG_0635.JPG"
+  ],
   2013: [
     "photos/2013/2013_yaolympics_champs.jpg",
     "photos/2013/IMG_2013JB.JPG",
