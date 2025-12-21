@@ -145,7 +145,7 @@ const YAOLYMPICS_DATA = {
         { event: "Table Tennis Doubles" },
         { event: "Billiards" }
       ],
-      championTeam: "We were all winners: The Yaolympians",
+      championTeam: "We were all winners back then: The Yaolympians",
       media: [] // <= no highlight video
     }
   ],
