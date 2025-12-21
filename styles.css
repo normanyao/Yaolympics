@@ -161,7 +161,7 @@ a {
 }
 
 .hero-logo-card img {
-  max-width: 600px; /* bigger logo */
+  max-width: 600px;
   width: 100%;
   height: auto;
   display: block;
@@ -221,7 +221,12 @@ a {
   font-weight: 700;
   margin-top: 0.2rem;
   margin-bottom: 0.3rem;
-  color: var(--accent);
+  color: var(--text); /* full line uses normal text color */
+}
+
+.champion-team-name {
+  font-style: italic;
+  color: var(--accent); /* e.g. "Chicken Dinner" highlight */
 }
 
 .detail-card p {
@@ -363,12 +368,12 @@ a {
 
 .year-collage-item img {
   width: 100%;
-  height: 260px; /* taller so heads aren't cut off as much */
+  height: 260px;
   object-fit: cover;
   display: block;
 }
 
-/* Gallery (year media photos if you use them) */
+/* Gallery (if you use photo media) */
 
 .gallery-grid {
   display: grid;
@@ -474,7 +479,7 @@ a {
 .player-page-bio {
   margin: 1.6rem auto 0;
   max-width: 640px;
-  font-size: 1.4rem; /* 1.5x bigger text */
+  font-size: 1.4rem;
   line-height: 1.7;
   color: var(--muted);
   text-align: left;
