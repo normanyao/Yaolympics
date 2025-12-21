@@ -221,12 +221,12 @@ a {
   font-weight: 700;
   margin-top: 0.2rem;
   margin-bottom: 0.3rem;
-  color: var(--text); /* full line uses normal text color */
+  color: var(--text);
 }
 
 .champion-team-name {
   font-style: italic;
-  color: var(--accent); /* e.g. "Chicken Dinner" highlight */
+  color: var(--accent);
 }
 
 .detail-card p {
@@ -277,12 +277,34 @@ a {
   margin-bottom: 0.6rem;
 }
 
+/* Hero photo for special years (e.g. 2013) */
+
+.year-hero-photo-wrapper {
+  margin: 1.1rem 0 1.3rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  background: #f3f4f6;
+}
+
+.year-hero-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Two-column layout */
 
 .two-column {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+/* Single-column layout for years with no highlight video (e.g. 2013) */
+.single-column {
   margin-top: 0.8rem;
 }
 
@@ -371,50 +393,6 @@ a {
   height: 260px;
   object-fit: cover;
   display: block;
-}
-
-/* Gallery (if you use photo media) */
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.6rem;
-  margin-top: 0.5rem;
-}
-
-.gallery-item {
-  position: relative;
-  border-radius: 0.9rem;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: #f3f4f6;
-  cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.12s ease,
-    border-color 0.12s ease;
-}
-
-.gallery-item img {
-  display: block;
-  width: 100%;
-  height: 110px;
-  object-fit: cover;
-}
-
-.gallery-item-label {
-  position: absolute;
-  left: 0.4rem;
-  bottom: 0.35rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  background: rgba(17, 24, 39, 0.84);
-  font-size: 0.7rem;
-  color: #f9fafb;
-}
-
-.gallery-item:hover {
-  transform: translateY(-1px);
-  border-color: var(--accent);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
 }
 
 /* Videos */
