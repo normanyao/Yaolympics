@@ -105,8 +105,6 @@ const YAOLYMPICS_DATA = {
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The OG Yaolympics",
       blurb: "The year it all began!",
-      // 👇 This special hero photo will be shown big instead of a collage
-      heroPhoto: "photos/2013/2013_yaolympics_champs.jpg", // TODO: change to your real file
       teams: [
         { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "gold" },
         { name: "Jew Gypsy", members: ["Nicolae Done", "Brandon Liebeskind"], color: "silver" },
@@ -181,8 +179,18 @@ const YAOLYMPICS_DATA = {
 
 // Collage images (2014 only for now)
 
-
 const YEAR_COLLAGE_IMAGES = {
+  2013: [
+    "photos/2013/2013_yaolympics_champs.jpg",
+    "photos/2013/IMG_2013JB.JPG",
+    "photos/2013/IMG_2013JB2.JPG",
+    "photos/2013/IMG_2863.JPG",
+    "photos/2013/IMG_2864.JPG",
+    "photos/2013/IMG_4583.JPG",
+    "photos/2013/IMG_4584.JPG",
+    "photos/2013/IMG_4585.JPG",
+    "photos/2013/USopen_2013.jpg"
+  ],
   2014: [
     "photos/2014/IMG_1860.JPG",
     "photos/2014/IMG_2026.JPG",
