@@ -48,8 +48,8 @@ const YAOLYMPICS_DATA = {
         "The Year of the Doctors!",
       teams: [
         { name: "Donetello and Liunardo", members: ["Jin Bin Liu", "Nicolae Done"], color: "gold" },
-        { name: "Team Sacko", members: ["Jim Li", "Nicolae Done"], color: "silver" },
-        { name: "Jin and Jews", members: ["Jin Bin Liu", "Brandon Liebeskind"], color: "bronze" }
+        { name: "Ridge 05", members: ["Brandon Liebeskind", "The Commish"], color: "silver" },
+        { name: "BLS", members: ["Patrick Wu", "Jim Li"], color: "bronze" }
       ],
       results: [
         { event: "Beer Pong" },
@@ -61,10 +61,10 @@ const YAOLYMPICS_DATA = {
         { event: "Table Tennis Doubles" },
         { event: "Billiards" }
       ],
-      championTeam: "Romaniyao: Nicolae Done and The Commish",
+      championTeam: "Donetello and Liunardo: Nicolae Done and Jin Bin Liu",
       media: [
         {
-          label: "2015 Confessional Video",
+          label: "2015 Highlight Video",
           type: "video",
           url: "photos/2015/patrick_confessional_v2.mp4"
         }
