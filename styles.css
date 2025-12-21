@@ -52,7 +52,6 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
-
 .logo-text {
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -62,6 +61,8 @@ a {
   border: none;
   padding: 0;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .header-controls {
@@ -109,6 +110,31 @@ a {
   }
 }
 
+/* Buttons */
+
+.primary-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(to right, #fbbf24, #f97316);
+  color: #111827;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
+  transform: translateY(0);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.3);
+}
+
 /* Hero (intro only) */
 
 .hero {
@@ -135,7 +161,7 @@ a {
 }
 
 .hero-logo-card img {
-  max-width: 600px;
+  max-width: 600px; /* bigger logo */
   width: 100%;
   height: auto;
   display: block;
@@ -147,29 +173,6 @@ a {
   font-size: 0.98rem;
 }
 
-.primary-btn {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0.8rem 1.4rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: linear-gradient(to right, #fbbf24, #f97316);
-  color: #111827;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
-  transform: translateY(0);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-
-.primary-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.3);
-}
-
 /* Content area */
 
 .content-area {
@@ -178,29 +181,6 @@ a {
   padding: 0 1.5rem 2.5rem;
   margin: 0 auto;
   flex: 1;
-}
-
-/* Year page heading */
-#yearDetail h2 {
-  font-size: 2.2rem;      /* bigger title */
-  text-align: center;     
-  margin-bottom: 0.5rem;
-}
-
-/* Year page blurb (the first paragraph under the heading) */
-#yearDetail > p:first-of-type {
-  font-size: 1.15rem;     /* larger blurb text */
-  text-align: center;
-}
-
-/* Year page meta chips (location, theme, champions) */
-#yearDetail .detail-meta {
-  justify-content: center;   /* center the pill row under the blurb */
-}
-
-#yearDetail .detail-meta span {
-  font-size: 0.95rem;        /* bigger text in pills */
-  padding: 0.35rem 0.8rem;   /* slightly larger pills */
 }
 
 .detail-card {
@@ -218,7 +198,30 @@ a {
 .detail-card h2 {
   margin-top: 0;
   margin-bottom: 0.6rem;
-  font-size: 1.5rem;
+}
+
+/* Year page heading & blurb */
+
+#yearDetail h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+#yearDetail > p:first-of-type {
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+/* Big champions line */
+
+.year-champions {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+  color: var(--accent);
 }
 
 .detail-card p {
@@ -226,11 +229,17 @@ a {
   color: var(--muted);
 }
 
+/* Meta chips */
+
 .detail-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 0.75rem 0 1rem;
+}
+
+#yearDetail .detail-meta {
+  justify-content: center;
 }
 
 .detail-meta span {
@@ -242,11 +251,28 @@ a {
   color: var(--muted);
 }
 
+#yearDetail .detail-meta span {
+  font-size: 0.95rem;
+  padding: 0.35rem 0.8rem;
+}
+
+/* Section headings in cards */
+
 .section-heading {
   font-size: 1.05rem;
   margin-top: 1rem;
   margin-bottom: 0.4rem;
 }
+
+#yearDetail .section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Two-column layout */
 
 .two-column {
   display: grid;
@@ -304,12 +330,11 @@ a {
   background: var(--accent-soft);
 }
 
-/* Gallery */
+/* Year collage */
 
 .year-collage {
   margin: 1rem 0 1.25rem;
 }
-
 
 .year-collage-grid {
   display: grid;
@@ -336,13 +361,14 @@ a {
   background: #f3f4f6;
 }
 
-
 .year-collage-item img {
   width: 100%;
-  height: 260px; /* was 170px */
+  height: 260px; /* taller so heads aren't cut off as much */
   object-fit: cover;
   display: block;
 }
+
+/* Gallery (year media photos if you use them) */
 
 .gallery-grid {
   display: grid;
@@ -438,7 +464,7 @@ a {
 }
 
 .player-page-photo {
-  max-width: 520px; /* doubled from 260px */
+  max-width: 520px;
   width: 100%;
   border-radius: 1.25rem;
   border: 1px solid var(--border);
@@ -448,7 +474,7 @@ a {
 .player-page-bio {
   margin: 1.6rem auto 0;
   max-width: 640px;
-  font-size: 1.4rem;
+  font-size: 1.4rem; /* 1.5x bigger text */
   line-height: 1.7;
   color: var(--muted);
   text-align: left;
