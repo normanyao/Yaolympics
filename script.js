@@ -48,8 +48,8 @@ const YAOLYMPICS_DATA = {
         "The Year of the Yao",
       teams: [
         { name: "YAO know what I MING", members: ["Patrick Wu", "The Commish"], color: "gold" },
-        { name: "Team Chaos", members: ["Jim Li", "Nicolae Done"], color: "silver" },
-        { name: "Team Underdogs", members: ["Jin Bin Liu", "Brandon Liebeskind"], color: "bronze" }
+        { name: "Team Sacko", members: ["Jim Li", "Nicolae Done"], color: "silver" },
+        { name: "Jin and Jews", members: ["Jin Bin Liu", "Brandon Liebeskind"], color: "bronze" }
       ],
       results: [
         { event: "Beer Pong" },
