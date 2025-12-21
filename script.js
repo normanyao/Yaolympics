@@ -361,36 +361,36 @@ function renderYearDetail(year) {
   // Left: Teams + Events
   const teamsBlock = createEl("div", "card-block");
 
+  // Teams heading
   teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
 
-  const teamList = createEl("ul", "simple-list teams-list");
-  yearObj.teams.forEach((t) => {
-    const li = createEl("li");
-    const nameSpan = createEl("span", null, `${t.name} `);
-    const membersSpan = createEl("span", null, `(${t.members.join(", ")})`);
-    li.append(nameSpan, membersSpan);
-    teamList.appendChild(li);
-  });
-  teamsBlock.appendChild(teamList);
-
-
-  teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
-
+  // Teams list: name on first line, members on second, indented
   const teamList = createEl("ul", "simple-list teams-list");
   yearObj.teams.forEach((t) => {
     const li = createEl("li", "team-item");
-  
+
     const nameLine = createEl("div", "team-name", t.name);
     const membersLine = createEl(
       "div",
       "team-members",
       `(${t.members.join(", ")})`
     );
-  
+
     li.append(nameLine, membersLine);
     teamList.appendChild(li);
   });
   teamsBlock.appendChild(teamList);
+
+  // Events heading
+  teamsBlock.appendChild(createEl("div", "section-heading", "Events"));
+
+  // Events list: just event names
+  const eventsList = createEl("ul", "simple-list events-list");
+  yearObj.results.forEach((r) => {
+    const li = createEl("li", null, r.event || "");
+    eventsList.appendChild(li);
+  });
+  teamsBlock.appendChild(eventsList);
 
 
   let layout;
