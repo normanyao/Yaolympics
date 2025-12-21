@@ -263,8 +263,8 @@ function createYearCollage(year) {
   const urls = YEAR_COLLAGE_IMAGES[year];
   if (!urls || urls.length === 0) return null;
 
-  // For debugging: show ALL images so we can see which are broken
-  const subset = urls;
+  const shuffled = shuffleArray(urls);
+  const subset = shuffled.slice(0, 9);
 
   const wrapper = createEl("div", "year-collage");
   const grid = createEl("div", "year-collage-grid");
