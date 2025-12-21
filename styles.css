@@ -234,11 +234,53 @@ a {
   color: var(--muted);
 }
 
-/* Bigger intro text on the front page */
+
+/* Front-page intro layout with trophy on the right */
+#introCard .intro-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+#introCard .intro-text {
+  flex: 2;
+}
+
+/* Bigger front-page lore text */
 #introCard p {
-  font-size: 1.2rem;    /* try 1.4rem if you want it huge */
+  font-size: 1.3rem;        /* bump up/down to taste */
   line-height: 1.8;
-  color: var(--text);   /* darker, more readable than muted */
+  color: var(--text);
+}
+
+/* Trophy column */
+.intro-trophy {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.intro-trophy img {
+  max-width: 180px;         /* good for tall/skinny image */
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Stack nicely on small screens */
+@media (max-width: 800px) {
+  #introCard .intro-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro-trophy {
+    margin-top: 1rem;
+  }
 }
 
 /* Meta chips */
