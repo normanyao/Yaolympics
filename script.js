@@ -62,10 +62,10 @@ const YAOLYMPICS_DATA = {
     },
     {
       year: 2014,
-      location: "Your Original Spot",
+      location: "The Yaolympics Village: Basking Ridge, NJ",
       theme: "The OG Yaolympics",
       blurb:
-        "The year it all began. Questionable rules, chaotic scoring, unforgettable moments.",
+        "The year it all began!",
       teams: [
         { name: "Team Legend", members: ["Nicolae", "JB"], color: "gold" },
         { name: "Team Chaos", members: ["Brandon", "Tim"], color: "silver" },
@@ -74,16 +74,16 @@ const YAOLYMPICS_DATA = {
       results: [
         {
           event: "2v2 Basketball",
-          winner: "Team Legend",
-          note: "Started the dynasty."
+          winner: "",
+          note: ""
         },
         {
           event: "Relay Swim",
-          winner: "Team Chaos",
-          note: "Came out of nowhere."
+          winner: "",
+          note: ""
         }
       ],
-      championTeam: "Team Legend",
+      championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
       media: [
         {
           label: "2014 Highlight Video",
