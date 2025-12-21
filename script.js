@@ -77,9 +77,13 @@ const YAOLYMPICS_DATA = {
         { name: "The Doctors", members: ["Jim Li", "The Commish"], color: "bronze" }
       ],
       results: [
+        { event: "Beer Pong" },
         { event: "2v2 Basketball" },
-        { event: "Relay Swim" },
-        { event: "Watermelon Heist" },
+        { event: "Tennis Doubles" },
+        { event: "Swimming Relay" },
+        { event: "Foosball" },
+        { event: "Team Texas Hold'em Poker" },
+        { event: "Table Tennis Doubles" },
         { event: "Billiards" }
       ],
       // Renders as: 🏆 Champions: *Chicken Dinner* Patrick Wu and Jin Bin Liu
