@@ -62,7 +62,7 @@ const YAOLYMPICS_DATA = {
     },
     {
       year: 2014,
-      location: "The Yaolympics Village: Basking Ridge, NJ",
+      location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The OG Yaolympics",
       blurb:
         "The year it all began!",
@@ -74,16 +74,18 @@ const YAOLYMPICS_DATA = {
       results: [
         {
           event: "2v2 Basketball",
-          winner: "",
-          note: ""
+          winner: "Team Legend",
+          note: "Started the dynasty."
         },
         {
           event: "Relay Swim",
-          winner: "",
-          note: ""
+          winner: "Team Chaos",
+          note: "Came out of nowhere."
         }
       ],
-      championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
+      // You can change this to e.g.
+      // "Chicken Dinner: Patrick Wu and Jin Bin Liu"
+      championTeam: "Chicken Dinner - Patrick Wu and Jin Bin Liu",
       media: [
         {
           label: "2014 Highlight Video",
@@ -310,11 +312,28 @@ function renderYearDetail(year) {
 
   const title = createEl("h2", null, `Yaolympics ${yearObj.year}`);
 
-  const championsLine = createEl(
-    "div",
-    "year-champions",
-    `🏆 Champions: ${yearObj.championTeam}`
-  );
+  // Big champions line with styled team name
+  const championsLine = createEl("div", "year-champions");
+  const championsLabel = document.createElement("span");
+  championsLabel.textContent = "🏆 Champions: ";
+  championsLine.appendChild(championsLabel);
+
+  const teamText = yearObj.championTeam || "";
+  const parts = teamText.split(":"); // "Chicken Dinner: Patrick Wu..." -> ["Chicken Dinner", " Patrick Wu..."]
+
+  if (parts.length >= 2) {
+    const namePart = parts[0].trim();
+    const restPart = parts.slice(1).join(":").trim();
+
+    const nameSpan = document.createElement("span");
+    nameSpan.className = "champion-team-name";
+    nameSpan.textContent = namePart;
+
+    championsLine.appendChild(nameSpan);
+    championsLine.appendChild(document.createTextNode(`: ${restPart}`));
+  } else {
+    championsLine.appendChild(document.createTextNode(teamText));
+  }
 
   const blurb = createEl("p", null, yearObj.blurb || "");
 
@@ -324,6 +343,7 @@ function renderYearDetail(year) {
 
   const layout = createEl("div", "two-column");
 
+  // Left: Teams + Events
   const teamsBlock = createEl("div", "card-block");
 
   teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
@@ -355,6 +375,7 @@ function renderYearDetail(year) {
   });
   teamsBlock.appendChild(eventsList);
 
+  // Right: Highlight Video
   const rightBlock = createEl("div", "card-block");
   rightBlock.appendChild(
     createEl("div", "section-heading", "Highlight Video")
