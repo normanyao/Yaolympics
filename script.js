@@ -65,10 +65,44 @@ const YAOLYMPICS_DATA = {
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The OG Yaolympics",
       blurb:
+        "Year two: The Madness Continues and the Trophy is awarded for the first time!",
+      teams: [
+        { name: "YAO know what I MING", members: ["Patrick Wu", "The Commish"], color: "gold" },
+        { name: "Team Chaos", members: ["Brandon", "Tim"], color: "silver" },
+        { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
+      ],
+      results: [
+        {
+          event: "2v2 Basketball",
+          winner: "Team Legend",
+          note: "Started the dynasty."
+        },
+        {
+          event: "Relay Swim",
+          winner: "Team Chaos",
+          note: "Came out of nowhere."
+        }
+      ],
+      // You can change this to e.g.
+      // "Chicken Dinner: Patrick Wu and Jin Bin Liu"
+      championTeam: "YAO know what I MING: Patrick Wu and The Commish",
+      media: [
+        {
+          label: "2014 Highlight Video",
+          type: "video",
+          url: "photos/2014/MVI_6039.MOV"
+        }
+      ]
+    }
+    {
+      year: 2013,
+      location: "The Yaolympic Village: Basking Ridge, NJ",
+      theme: "The OG Yaolympics",
+      blurb:
         "The year it all began!",
       teams: [
-        { name: "Team Legend", members: ["Nicolae", "JB"], color: "gold" },
-        { name: "Team Chaos", members: ["Brandon", "Tim"], color: "silver" },
+        { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "gold" },
+        { name: "Shame", members: ["Brandon", "Tim"], color: "silver" },
         { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
       ],
       results: [
