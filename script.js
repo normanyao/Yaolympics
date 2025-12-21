@@ -40,7 +40,36 @@ const YAOLYMPICS_DATA = {
       championTeam: "Bricklayers",
       media: []
     },
-
+    {
+      year: 2016,
+      location: "The Yaolympic Village: Basking Ridge, NJ",
+      theme: "Hi ya! Gypsy turtles for the win!",
+      blurb:
+        "The Year of the Doctors!",
+      teams: [
+        { name: "Donetello and Liunardo", members: ["Jin Bin Liu", "Nicolae Done"], color: "gold" },
+        { name: "Team Sacko", members: ["Jim Li", "Nicolae Done"], color: "silver" },
+        { name: "Jin and Jews", members: ["Jin Bin Liu", "Brandon Liebeskind"], color: "bronze" }
+      ],
+      results: [
+        { event: "Beer Pong" },
+        { event: "2v2 Basketball" },
+        { event: "Tennis Doubles" },
+        { event: "Swimming Relay" },
+        { event: "Foosball" },
+        { event: "Team Texas Hold'em Poker" },
+        { event: "Table Tennis Doubles" },
+        { event: "Billiards" }
+      ],
+      championTeam: "Romaniyao: Nicolae Done and The Commish",
+      media: [
+        {
+          label: "2015 Confessional Video",
+          type: "video",
+          url: "photos/2015/patrick_confessional_v2.mp4"
+        }
+      ]
+    },
     {
       year: 2015,
       location: "The Yaolympic Village: Basking Ridge, NJ",
