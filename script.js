@@ -346,106 +346,89 @@ function renderYearDetail(year) {
 
   const layout = createEl("div", "two-column");
 
-  // Left: teams
-  const teamsBlock = createEl("div", "card-block");
-  teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
-  const teamList = createEl("ul", "simple-list");
-  yearObj.teams.forEach((t) => {
-    const li = createEl("li");
-    const nameSpan = createEl("span", null, `${t.name} `);
-    const membersSpan = createEl(
-      "span",
+const layout = createEl("div", "two-column");
+
+// Left: teams + events
+const teamsBlock = createEl("div", "card-block");
+
+// Teams heading
+teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
+
+// Teams list
+const teamList = createEl("ul", "simple-list");
+yearObj.teams.forEach((t) => {
+  const li = createEl("li");
+  const nameSpan = createEl("span", null, `${t.name} `);
+  const membersSpan = createEl("span", null, `(${t.members.join(", ")})`);
+  li.append(nameSpan, membersSpan);
+  if (t.color === "gold") {
+    const badge = createEl("span", "badge gold", "Defending Champs");
+    li.append(" ", badge);
+  }
+  teamList.appendChild(li);
+});
+teamsBlock.appendChild(teamList);
+
+// Events heading (below teams, same box)
+teamsBlock.appendChild(createEl("div", "section-heading", "Events"));
+
+// Events list (results)
+const eventsList = createEl("ul", "simple-list");
+yearObj.results.forEach((r) => {
+  const li = createEl(
+    "li",
+    null,
+    `${r.event} — ${r.winner}${r.note ? " • " + r.note : ""}`
+  );
+  eventsList.appendChild(li);
+});
+teamsBlock.appendChild(eventsList);
+
+// Right: single highlight video
+const rightBlock = createEl("div", "card-block");
+rightBlock.appendChild(
+  createEl("div", "section-heading", "Highlight Video")
+);
+
+const media = yearObj.media || [];
+const videos = media.filter((m) => m.type === "video");
+
+if (videos.length > 0) {
+  const m = videos[0]; // just the first video
+  const cardVideo = createEl("div", "video-card");
+  const titleVideo = createEl("div", "video-title", m.label || "Video");
+
+  const url = m.url || "";
+  const isDirectVideo =
+    url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg");
+
+  if (isDirectVideo && !/youtube\.com|youtu\.be/.test(url)) {
+    const player = document.createElement("video");
+    player.controls = true;
+    player.src = url;
+    cardVideo.append(titleVideo, player);
+  } else {
+    const link = createEl("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "▶️ Watch video";
+    cardVideo.append(titleVideo, link);
+  }
+
+  rightBlock.appendChild(cardVideo);
+} else {
+  // Fallback text if you haven't added a video yet
+  rightBlock.appendChild(
+    createEl(
+      "p",
       null,
-      `(${t.members.join(", ")})`
-    );
-    li.append(nameSpan, membersSpan);
-    if (t.color === "gold") {
-      const badge = createEl("span", "badge gold", "Defending Champs");
-      li.append(" ", badge);
-    }
-    teamList.appendChild(li);
-  });
-  teamsBlock.appendChild(teamList);
+      "Add a highlight video for this year in the data model."
+    )
+  );
+}
 
-  // Right: results + media
-  const rightBlock = createEl("div", "card-block");
-  rightBlock.appendChild(createEl("div", "section-heading", "Results"));
-  const resultsList = createEl("ul", "simple-list");
-  yearObj.results.forEach((r) => {
-    const li = createEl(
-      "li",
-      null,
-      `${r.event} — ${r.winner}${r.note ? " • " + r.note : ""}`
-    );
-    resultsList.appendChild(li);
-  });
-  rightBlock.appendChild(resultsList);
-
-  const media = yearObj.media || [];
-  const photos = media.filter((m) => m.type === "photo");
-  const videos = media.filter((m) => m.type === "video");
-
-  if (photos.length > 0 || videos.length > 0) {
-    rightBlock.appendChild(
-      createEl("div", "section-heading", "Media")
-    );
-  }
-
-  if (photos.length > 0) {
-    const gallery = createEl("div", "gallery-grid");
-    photos.forEach((m) => {
-      const item = createEl("a", "gallery-item");
-      item.href = m.url;
-      item.target = "_blank";
-      item.rel = "noopener noreferrer";
-
-      const img = document.createElement("img");
-      img.src = m.url;
-      img.alt = m.label || "";
-
-      const label = createEl("div", "gallery-item-label", m.label || "");
-      item.append(img, label);
-      gallery.appendChild(item);
-    });
-    rightBlock.appendChild(gallery);
-  }
-
-  if (videos.length > 0) {
-    const videosWrapper = createEl("div", "video-list");
-    videos.forEach((m) => {
-      const cardVideo = createEl("div", "video-card");
-      const titleVideo = createEl(
-        "div",
-        "video-title",
-        m.label || "Video"
-      );
-
-      const url = m.url || "";
-      const isDirectVideo =
-        url.endsWith(".mp4") ||
-        url.endsWith(".webm") ||
-        url.endsWith(".ogg");
-
-      if (isDirectVideo && !/youtube\.com|youtu\.be/.test(url)) {
-        const player = document.createElement("video");
-        player.controls = true;
-        player.src = url;
-        cardVideo.append(titleVideo, player);
-      } else {
-        const link = createEl("a");
-        link.href = url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.textContent = "▶️ Watch video";
-        cardVideo.append(titleVideo, link);
-      }
-
-      videosWrapper.appendChild(cardVideo);
-    });
-    rightBlock.appendChild(videosWrapper);
-  }
-
-  layout.append(teamsBlock, rightBlock);
+layout.append(teamsBlock, rightBlock);
 
   // 👉 NEW: build a collage for this year (if we have images)
   const collage = createYearCollage(yearObj.year);
