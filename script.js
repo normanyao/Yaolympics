@@ -33,7 +33,7 @@ const YAOLYMPICS_DATA = {
       year: 2023,
       location: "City Pool & Park",
       theme: "Urban Legends",
-      blurb: "First time in the city — fewer bugs, more spectators.",
+      blurb: "First time in the city - fewer bugs, more spectators.",
       teams: [
         { name: "Bricklayers", members: ["Alice", "Chris"], color: "gold" },
         { name: "Splash Zone", members: ["Ben", "Dana"], color: "silver" },
@@ -88,7 +88,7 @@ const YAOLYMPICS_DATA = {
         {
           label: "2014 Highlight Video",
           type: "video",
-          url: "photos/2014/MVI_6039.MOV" // adjust to your actual highlight clip if you like
+          url: "photos/2014/MVI_6039.MOV"
         }
       ]
     }
@@ -103,11 +103,7 @@ const YAOLYMPICS_DATA = {
       hometown: "Buzau, Romania",
       funFact: "Has never missed a Yaolympics.",
       photoUrl: "photos/yaolympians/nicolae_done_yaolympian.png",
-      bio: `The fearless leader of The Caravan! A master of watermelon heists, the king of swimming and billiards, and a self-proclaimed Renaissance man,
-Dr. Done hails from the quaint Romanian village of Buzau. He made his ways to the halls of Harvard College with an intrepid spirit and deep insights into
-the Diels Alder reaction. After arriving at Harvard, he quickly splurged approximately 100,000 Romanian Leu on a boombox and could be seen proudly walking 
-around campus with this eyesore on his shoulder (like a true gangsta). Dr. Done was the roommate of fellow Yaolympian Dr. JBL and the two could be seen
-trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
+      bio: "The fearless leader of The Caravan! A master of watermelon heists, the king of swimming and billiards, and a self-proclaimed Renaissance man, Dr. Done hails from the quaint Romanian village of Buzau. He made his ways to the halls of Harvard College with an intrepid spirit and deep insights into the Diels Alder reaction. After arriving at Harvard, he quickly splurged approximately 100,000 Romanian Leu on a boombox and could be seen proudly walking around campus with this eyesore on his shoulder (like a true gangsta). Dr. Done was the roommate of fellow Yaolympian Dr. JBL and the two could be seen trudging listlessly toward crew practice or taking selfies with Larry Summers.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
     {
@@ -117,14 +113,9 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
       nickname: "JB",
       joinedYear: 2014,
       hometown: "",
-      funFact: "Hit the game winner in 2018 and won’t let anyone forget it.",
+      funFact: "Hit the game winner in 2018 and won't let anyone forget it.",
       photoUrl: "photos/yaolympians/jinbin_liu_yaolympian.png",
-      bio: `Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure 
-      what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in 
-      NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the 
-      celebrated course "Justice" by Prof. Michael Sandel. JB makes three(!) appearances in the Justice MOOC that has been watched by over 2.74M people on youtube; 
-      he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs
-      to the promised land.`,
+      bio: "Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the celebrated course 'Justice' by Prof. Michael Sandel. JB makes three (!) appearances in the Justice MOOC that has been watched by over 2.74M people on YouTube; he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs to the promised land.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018]
     },
     {
@@ -134,14 +125,9 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
       nickname: "The Jew",
       joinedYear: 2014,
       hometown: "",
-      funFact: "Hit the game winner in 2018 and won’t let anyone forget it.",
+      funFact: "Hit the game winner in 2018 and won't let anyone forget it.",
       photoUrl: "photos/yaolympians/brandon_liebeskind_yaolympian.png",
-      bio: `Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure 
-      what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in 
-      NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the 
-      celebrated course "Justice" by Prof. Michael Sandel. JB makes three(!) appearances in the Justice MOOC that has been watched by over 2.74M people on youtube; 
-      he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs
-      to the promised land.`,
+      bio: "Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the celebrated course 'Justice' by Prof. Michael Sandel. JB makes three (!) appearances in the Justice MOOC that has been watched by over 2.74M people on YouTube; he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs to the promised land.",
       yearsAttended: [2014, 2015, 2016, 2017, 2018]
     },
     {
@@ -153,11 +139,7 @@ trudging listlessly toward crew practice or taking selfies with Larry Summers.`,
       hometown: "Portola Valley",
       funFact: "Shows up late but always brings the chaos.",
       photoUrl: "photos/yaolympians/tim_kovachy_yaolympian.png",
-      bio: `Much like L. Ron Hubbard, Prof. Kovachy worships at a different altar than most - the Altar of the Slav (n.b. 15 3/4). A renowned physcist who grapples with the coldest
-      matter in Illinois, TimK was the ill-fated roommate of The Commissioner. Ill-fated for being forced to eat the Yench daily, host table tennis club meetings in knee
-      deep snow, and accused of gaily eating strawberries. Does he have a lazy eye? Maybe. Does he have two? Maybe. Surely only an atom interferometer can answer such mysteries of 
-      the universe. Average at best at most events, each year TimK manages to surprise his fellow Yaolympians. Did he really single-handedly best Pengyao and JimLizzle in 
-      poker? Is that TimK studying gomoku in a dark corner? Does he snore louder than a walrus in heat?  Why yes, yes to all of the above!`,
+      bio: "Much like L. Ron Hubbard, Prof. Kovachy worships at a different altar than most - the Altar of the Slav (n.b. 15 3/4). A renowned physicist who grapples with the coldest matter in Illinois, TimK was the ill-fated roommate of The Commissioner. Ill-fated for being forced to eat the Yench daily, host table tennis club meetings in knee-deep snow, and accused of gaily eating strawberries. Does he have a lazy eye? Maybe. Does he have two? Maybe. Surely only an atom interferometer can answer such mysteries of the universe. Average at best at most events, each year TimK manages to surprise his fellow Yaolympians. Did he really single-handedly best Pengyao and JimLizzle in poker? Is that TimK studying gomoku in a dark corner? Does he snore louder than a walrus in heat? Yes, yes to all of the above!",
       yearsAttended: [2017, 2018, 2019, 2020, 2021]
     }
   ]
@@ -306,7 +288,7 @@ function populatePlayerSelect() {
   );
 
   sortedPlayers.forEach((p) => {
-    const label = p.nickname ? `${p.name} “${p.nickname}”` : p.name;
+    const label = p.nickname ? `${p.name} (${p.nickname})` : p.name;
     const opt = createEl("option", null, label);
     opt.value = p.id;
     select.appendChild(opt);
@@ -328,7 +310,6 @@ function renderYearDetail(year) {
 
   const title = createEl("h2", null, `Yaolympics ${yearObj.year}`);
 
-  // Big champions line under the heading
   const championsLine = createEl(
     "div",
     "year-champions",
@@ -343,13 +324,10 @@ function renderYearDetail(year) {
 
   const layout = createEl("div", "two-column");
 
-  // Left: Teams + Events
   const teamsBlock = createEl("div", "card-block");
 
-  // Teams heading
   teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
 
-  // Teams list
   const teamList = createEl("ul", "simple-list");
   yearObj.teams.forEach((t) => {
     const li = createEl("li");
@@ -364,10 +342,8 @@ function renderYearDetail(year) {
   });
   teamsBlock.appendChild(teamList);
 
-  // Events heading
   teamsBlock.appendChild(createEl("div", "section-heading", "Events"));
 
-  // Events list (results)
   const eventsList = createEl("ul", "simple-list");
   yearObj.results.forEach((r) => {
     const li = createEl(
@@ -379,7 +355,6 @@ function renderYearDetail(year) {
   });
   teamsBlock.appendChild(eventsList);
 
-  // Right: Highlight Video
   const rightBlock = createEl("div", "card-block");
   rightBlock.appendChild(
     createEl("div", "section-heading", "Highlight Video")
@@ -449,7 +424,7 @@ function renderPlayerDetail(playerId) {
   const page = createEl("div", "player-page");
 
   const displayName =
-    p.displayName || (p.nickname ? `${p.name} "${p.nickname}"` : p.name);
+    p.displayName || (p.nickname ? `${p.name} (${p.nickname})` : p.name);
 
   const title = createEl("h1", "player-page-title", displayName);
   page.appendChild(title);
@@ -476,4 +451,102 @@ function renderPlayerDetail(playerId) {
     "Add a description here: greatest performances, running jokes, and what they bring to Yaolympics.";
 
   const bio = createEl("div", "player-page-bio", bioText);
-  page.appe
+  page.appendChild(bio);
+
+  playerDetail.appendChild(page);
+}
+
+// ------------------------
+// Randgen button
+// ------------------------
+
+function setupRandomMoment() {
+  const btn = $("#randomMomentBtn");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    const years = YAOLYMPICS_DATA.years;
+    const players = YAOLYMPICS_DATA.players;
+
+    if (years.length === 0 && players.length === 0) return;
+
+    const seasonSelect = $("#seasonSelect");
+    const playerSelect = $("#playerSelect");
+
+    let pickType = Math.random() < 0.5 ? "season" : "player";
+
+    if (pickType === "season" && years.length === 0 && players.length > 0) {
+      pickType = "player";
+    } else if (
+      pickType === "player" &&
+      players.length === 0 &&
+      years.length > 0
+    ) {
+      pickType = "season";
+    }
+
+    if (pickType === "season") {
+      const randomYearObj = years[Math.floor(Math.random() * years.length)];
+
+      if (seasonSelect) seasonSelect.value = String(randomYearObj.year);
+      if (playerSelect) playerSelect.value = "";
+
+      renderYearDetail(randomYearObj.year);
+      setView("season");
+    } else {
+      const player = players[Math.floor(Math.random() * players.length)];
+
+      if (playerSelect) playerSelect.value = player.id;
+      if (seasonSelect) seasonSelect.value = "";
+
+      renderPlayerDetail(player.id);
+      setView("player");
+    }
+  });
+}
+
+// ------------------------
+// Init
+// ------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateSeasonSelect();
+  populatePlayerSelect();
+
+  const seasonSelect = $("#seasonSelect");
+  const playerSelect = $("#playerSelect");
+
+  setView("intro");
+
+  if (seasonSelect) {
+    seasonSelect.addEventListener("change", (e) => {
+      const value = e.target.value;
+      if (!value) {
+        if (playerSelect) playerSelect.value = "";
+        setView("intro");
+        return;
+      }
+
+      if (playerSelect) playerSelect.value = "";
+      renderYearDetail(Number(value));
+      setView("season");
+    });
+  }
+
+  if (playerSelect) {
+    playerSelect.addEventListener("change", (e) => {
+      const value = e.target.value;
+      if (!value) {
+        if (seasonSelect) seasonSelect.value = "";
+        setView("intro");
+        return;
+      }
+
+      if (seasonSelect) seasonSelect.value = "";
+      renderPlayerDetail(value);
+      setView("player");
+    });
+  }
+
+  setupRandomMoment();
+});
