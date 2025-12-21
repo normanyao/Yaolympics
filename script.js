@@ -61,7 +61,7 @@ const YAOLYMPICS_DATA = {
         { event: "Table Tennis Doubles" },
         { event: "Billiards" }
       ],
-      championTeam: "Donetello and Liunardo: Nicolae Done and Jin Bin Liu",
+      championTeam: "Yao BIN Winning: Jin Bin Liu and The Commish",
       media: [
         {
           label: "2017 Opening Ceremony Video",
