@@ -70,7 +70,7 @@ const YAOLYMPICS_DATA = {
       theme: "The OG Yaolympics",
       blurb: "The year it all began!",
       // 👇 This special hero photo will be shown big instead of a collage
-      heroPhoto: "photos/2013/yaolympics-2013-hero.jpg", // TODO: change to your real file
+      heroPhoto: "photos/2013/2013_yaolympics_champs.jpg", // TODO: change to your real file
       teams: [
         { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "gold" },
         { name: "Jew Gypsy", members: ["Nicolae Done", "Brandon Liebeskind"], color: "silver" },
