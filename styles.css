@@ -234,6 +234,13 @@ a {
   color: var(--muted);
 }
 
+/* Bigger intro text on the front page */
+#introCard p {
+  font-size: 1.2rem;    /* try 1.4rem if you want it huge */
+  line-height: 1.8;
+  color: var(--text);   /* darker, more readable than muted */
+}
+
 /* Meta chips */
 
 .detail-meta {
