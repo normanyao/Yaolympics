@@ -61,6 +61,39 @@ const YAOLYMPICS_DATA = {
       ]
     },
     {
+  year: 2013,
+  location: "The Yaolympic Village: Basking Ridge, NJ",
+  theme: "The OG Yaolympics",
+  blurb: "The year it all began!",
+  teams: [
+    { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "gold" },
+    { name: "Jew Gypsy", members: ["Nicolae Done", "Brandon Liebeskind"], color: "silver" },
+    { name: "The Doctors", members: ["Jim Li", "The Commish"], color: "bronze" }
+  ],
+  results: [
+    {
+      event: "2v2 Basketball",
+      winner: "Chicken Dinner",
+      note: "Started the dynasty."
+    },
+    {
+      event: "Relay Swim",
+      winner: "Jew Gypsy",
+      note: "Came out of nowhere."
+    }
+  ],
+  // Champions line will render as:
+  // 🏆 Champions: *Chicken Dinner* Patrick Wu and Jin Bin Liu
+  championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
+  media: [
+    {
+      label: "2013 Highlight Video",
+      type: "video",
+      url: "photos/2013/yaolympics-2013-highlight.mp4" // update when you have the real file
+    }
+  ]
+},
+    {
       year: 2014,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The OG Yaolympics",
@@ -86,40 +119,6 @@ const YAOLYMPICS_DATA = {
       // You can change this to e.g.
       // "Chicken Dinner: Patrick Wu and Jin Bin Liu"
       championTeam: "YAO know what I MING: Patrick Wu and The Commish",
-      media: [
-        {
-          label: "2014 Highlight Video",
-          type: "video",
-          url: "photos/2014/MVI_6039.MOV"
-        }
-      ]
-    }
-    {
-      year: 2013,
-      location: "The Yaolympic Village: Basking Ridge, NJ",
-      theme: "The OG Yaolympics",
-      blurb:
-        "The year it all began!",
-      teams:
-        { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "gold" },
-        { name: "Jew Gypsy", members: ["Nicolae Done", "Brandon Liebeskind"], color: "silver" },
-        { name: "The Doctors", members: ["Jim Li", "The Commish"], color: "bronze" }
-      ],
-      results: [
-        {
-          event: "2v2 Basketball",
-          winner: "Team Legend",
-          note: "Started the dynasty."
-        },
-        {
-          event: "Relay Swim",
-          winner: "Team Chaos",
-          note: "Came out of nowhere."
-        }
-      ],
-      // You can change this to e.g.
-      // "Chicken Dinner: Patrick Wu and Jin Bin Liu"
-      championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
       media: [
         {
           label: "2014 Highlight Video",
