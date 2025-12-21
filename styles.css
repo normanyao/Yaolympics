@@ -167,10 +167,12 @@ a {
   display: block;
 }
 
+
 .hero-tagline {
   color: var(--muted);
   margin-bottom: 1.4rem;
-  font-size: 0.98rem;
+  font-size: 1.3rem;      /* was 0.98rem */
+  line-height: 1.7;
 }
 
 /* Content area */
