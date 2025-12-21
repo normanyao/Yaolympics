@@ -180,6 +180,29 @@ a {
   flex: 1;
 }
 
+/* Year page heading */
+#yearDetail h2 {
+  font-size: 2.2rem;      /* bigger title */
+  text-align: center;     
+  margin-bottom: 0.5rem;
+}
+
+/* Year page blurb (the first paragraph under the heading) */
+#yearDetail > p:first-of-type {
+  font-size: 1.15rem;     /* larger blurb text */
+  text-align: center;
+}
+
+/* Year page meta chips (location, theme, champions) */
+#yearDetail .detail-meta {
+  justify-content: center;   /* center the pill row under the blurb */
+}
+
+#yearDetail .detail-meta span {
+  font-size: 0.95rem;        /* bigger text in pills */
+  padding: 0.35rem 0.8rem;   /* slightly larger pills */
+}
+
 .detail-card {
   border-radius: var(--radius-xl);
   padding: 1.6rem 1.6rem 1.8rem;
