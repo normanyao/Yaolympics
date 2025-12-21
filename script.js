@@ -40,6 +40,7 @@ const YAOLYMPICS_DATA = {
       championTeam: "Bricklayers",
       media: []
     },
+
     {
       year: 2015,
       location: "The Yaolympic Village: Basking Ridge, NJ",
@@ -123,6 +124,22 @@ const YAOLYMPICS_DATA = {
       // Renders as: 🏆 Champions: *Chicken Dinner* Patrick Wu and Jin Bin Liu
       championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
       media: [] // no video -> no highlight box
+    }
+    {
+      year: 2012,
+      location: "The Yaolympic Prototype: Basking Ridge, NJ",
+      theme: "Prequel to Greatness",
+      blurb: "Before it was Yaolympics, it was… whatever this was.",
+      teams: [
+        { name: "Proto-Champs", members: ["Player 1", "Player 2"], color: "gold" },
+        { name: "Beta Squad", members: ["Player 3", "Player 4"], color: "silver" }
+      ],
+      results: [
+        { event: "Basketball" },
+        { event: "Swimming" }
+      ],
+      championTeam: "Proto-Champs: Player 1 and Player 2",
+      media: [] // <= no highlight video
     }
   ],
   players: [
