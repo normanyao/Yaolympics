@@ -160,19 +160,21 @@ a {
   margin-bottom: 1rem;
 }
 
+
+
 .hero-logo-card img {
-  max-width: 600px;
+  max-width: 900px;
   width: 100%;
   height: auto;
   display: block;
 }
 
-
 .hero-tagline {
-  color: var(--muted);
+  color: #A51C30;       /* Harvard crimson-ish */
   margin-bottom: 1.4rem;
-  font-size: 1.3rem;      /* was 0.98rem */
+  font-size: 1.5rem;    /* bigger */
   line-height: 1.7;
+  font-weight: 600;     /* a bit bolder */
 }
 
 /* Content area */
