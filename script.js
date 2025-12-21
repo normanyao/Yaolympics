@@ -124,7 +124,7 @@ const YAOLYMPICS_DATA = {
       // Renders as: 🏆 Champions: *Chicken Dinner* Patrick Wu and Jin Bin Liu
       championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
       media: [] // no video -> no highlight box
-    }
+    },
     {
       year: 2012,
       location: "The Yaolympic Prototype: Basking Ridge, NJ",
