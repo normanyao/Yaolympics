@@ -67,9 +67,9 @@ const YAOLYMPICS_DATA = {
       blurb:
         "The year it all began. Questionable rules, chaotic scoring, unforgettable moments.",
       teams: [
-        { name: "Chicken Dinner", members: ["Player 1", "Player 2"], color: "gold" },
-        { name: "Team Chaos", members: ["Player 3", "Player 4"], color: "silver" },
-        { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
+        { name: "Chicken Dinner", members: ["Jin Bin Liu", "Patrick Wu"], color: "gold" },
+        { name: "Loser 1", members: ["Jim Li", "Norman Yao"], color: "silver" },
+        { name: "Loser 2", members: ["Nicolae Done", "Brandon Liebeskind"], color: "bronze" }
       ],
       results: [
         {
