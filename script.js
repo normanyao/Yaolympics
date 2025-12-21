@@ -330,7 +330,8 @@ function renderYearDetail(year) {
     nameSpan.textContent = namePart;
 
     championsLine.appendChild(nameSpan);
-    championsLine.appendChild(document.createTextNode(`: ${restPart}`));
+    championsLine.appendChild(document.createTextNode(` ${restPart}`));
+
   } else {
     championsLine.appendChild(document.createTextNode(teamText));
   }
