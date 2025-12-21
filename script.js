@@ -43,9 +43,9 @@ const YAOLYMPICS_DATA = {
     {
       year: 2015,
       location: "The Yaolympic Village: Basking Ridge, NJ",
-      theme: "The Second Cumming",
+      theme: "The Caravan Arrives",
       blurb:
-        "The Year of the Yao: PengYAO Wu becomes a two time champ!",
+        "Fognini in Five!",
       teams: [
         { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "gold" },
         { name: "Team Sacko", members: ["Jim Li", "Nicolae Done"], color: "silver" },
@@ -61,7 +61,7 @@ const YAOLYMPICS_DATA = {
         { event: "Table Tennis Doubles" },
         { event: "Billiards" }
       ],
-      championTeam: "YAO know what I MING: Patrick Wu and The Commish",
+      championTeam: "Romaniyao: Nicolae Done and The Commish",
       media: [
         {
           label: "2015 Confessional Video",
