@@ -373,15 +373,25 @@ function renderYearDetail(year) {
   });
   teamsBlock.appendChild(teamList);
 
-  teamsBlock.appendChild(createEl("div", "section-heading", "Events"));
 
-  const eventsList = createEl("ul", "simple-list events-list");
-  yearObj.results.forEach((r) => {
-    // Only list event name, ignore winner/note
-    const li = createEl("li", null, r.event || "");
-    eventsList.appendChild(li);
+  teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
+
+  const teamList = createEl("ul", "simple-list teams-list");
+  yearObj.teams.forEach((t) => {
+    const li = createEl("li", "team-item");
+  
+    const nameLine = createEl("div", "team-name", t.name);
+    const membersLine = createEl(
+      "div",
+      "team-members",
+      `(${t.members.join(", ")})`
+    );
+  
+    li.append(nameLine, membersLine);
+    teamList.appendChild(li);
   });
-  teamsBlock.appendChild(eventsList);
+  teamsBlock.appendChild(teamList);
+
 
   let layout;
 
