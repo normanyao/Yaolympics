@@ -41,6 +41,36 @@ const YAOLYMPICS_DATA = {
       media: []
     },
     {
+      year: 2017,
+      location: "The Yaolympic Village: Basking Ridge, NJ",
+      theme: "Hi ya! Gypsy turtles for the win!",
+      blurb:
+        "The Year of the Doctors!",
+      teams: [
+        { name: "Donetello and Liunardo", members: ["Jin Bin Liu", "Nicolae Done"], color: "gold" },
+        { name: "Ridge 05", members: ["Brandon Liebeskind", "The Commish"], color: "silver" },
+        { name: "BLS", members: ["Patrick Wu", "Jim Li"], color: "bronze" }
+      ],
+      results: [
+        { event: "Beer Pong" },
+        { event: "2v2 Basketball" },
+        { event: "Tennis Doubles" },
+        { event: "Swimming Relay" },
+        { event: "Foosball" },
+        { event: "Team Texas Hold'em Poker" },
+        { event: "Table Tennis Doubles" },
+        { event: "Billiards" }
+      ],
+      championTeam: "Donetello and Liunardo: Nicolae Done and Jin Bin Liu",
+      media: [
+        {
+          label: "2016 Highlight Video",
+          type: "video",
+          url: "photos/2016/2016_doctors_ceremony.mp4"
+        }
+      ]
+    },
+    {
       year: 2016,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "Hi ya! Gypsy turtles for the win!",
