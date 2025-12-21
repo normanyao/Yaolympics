@@ -392,10 +392,25 @@ a {
   border-bottom: 1px dashed #e5e7eb;
 }
 
-/* Bigger team names */
-.teams-list li {
-  font-size: 1.15rem;
-  font-weight: 600;
+
+
+/* Teams list: name + members on separate lines */
+.teams-list .team-item {
+  border-bottom: 1px dashed #e5e7eb;
+  padding: 0.4rem 0;
+}
+
+.teams-list .team-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.teams-list .team-members {
+  margin-left: 1rem;      /* slight indent */
+  margin-top: 0.1rem;
+  font-size: 1rem;
+  color: #A51C30;         /* crimson, matching Harvard color */
+  font-weight: 500;
 }
 
 /* Bigger event names */
