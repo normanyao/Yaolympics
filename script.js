@@ -353,23 +353,19 @@ function renderYearDetail(year) {
 
   teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
 
-  const teamList = createEl("ul", "simple-list");
+  const teamList = createEl("ul", "simple-list teams-list");
   yearObj.teams.forEach((t) => {
     const li = createEl("li");
     const nameSpan = createEl("span", null, `${t.name} `);
     const membersSpan = createEl("span", null, `(${t.members.join(", ")})`);
     li.append(nameSpan, membersSpan);
-    if (t.color === "gold") {
-      const badge = createEl("span", "badge gold", "Defending Champs");
-      li.append(" ", badge);
-    }
     teamList.appendChild(li);
   });
   teamsBlock.appendChild(teamList);
 
   teamsBlock.appendChild(createEl("div", "section-heading", "Events"));
 
-  const eventsList = createEl("ul", "simple-list");
+  const eventsList = createEl("ul", "simple-list events-list");
   yearObj.results.forEach((r) => {
     // Only list event name, ignore winner/note
     const li = createEl("li", null, r.event || "");
