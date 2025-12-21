@@ -85,7 +85,7 @@ const YAOLYMPICS_DATA = {
       ],
       // You can change this to e.g.
       // "Chicken Dinner: Patrick Wu and Jin Bin Liu"
-      championTeam: "Chicken Dinner - Patrick Wu and Jin Bin Liu",
+      championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
       media: [
         {
           label: "2014 Highlight Video",
