@@ -42,25 +42,31 @@ const YAOLYMPICS_DATA = {
     },
     {
       year: 2014,
-      location: "Your Original Spot",
-      theme: "The Second Coming",
+      location: "The Yaolympic Village: Basking Ridge, NJ",
+      theme: "The Second Cumming",
       blurb:
-        "Chaos returns. Rules slightly refined, rivalries fully ignited.",
+        "The Year of the Yao",
       teams: [
-        { name: "Team Legend", members: ["Nicolae", "JB"], color: "gold" },
-        { name: "Team Chaos", members: ["Brandon", "Tim"], color: "silver" },
-        { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
+        { name: "YAO know what I MING", members: ["Patrick Wu", "The Commish"], color: "gold" },
+        { name: "Team Chaos", members: ["Jim Li", "Nicolae Done"], color: "silver" },
+        { name: "Team Underdogs", members: ["Jin Bin Liu", "Brandon Liebeskind"], color: "bronze" }
       ],
       results: [
+        { event: "Beer Pong" },
         { event: "2v2 Basketball" },
-        { event: "Relay Swim" }
+        { event: "Tennis Doubles" },
+        { event: "Swimming Relay" },
+        { event: "Foosball" },
+        { event: "Team Texas Hold'em Poker" },
+        { event: "Table Tennis Doubles" },
+        { event: "Billiards" }
       ],
-      championTeam: "Team Legend",
+      championTeam: "YAO know what I MING: Patrick Wu and The Commish",
       media: [
         {
-          label: "2014 Highlight Video",
+          label: "2014 Confessional Video",
           type: "video",
-          url: "photos/2014/MVI_6039.MOV"
+          url: "photos/2014/MVI_6056.mp4"
         }
       ]
     },
