@@ -41,6 +41,36 @@ const YAOLYMPICS_DATA = {
       media: []
     },
     {
+      year: 2015,
+      location: "The Yaolympic Village: Basking Ridge, NJ",
+      theme: "The Second Cumming",
+      blurb:
+        "The Year of the Yao: PengYAO Wu becomes a two time champ!",
+      teams: [
+        { name: "YAO know what I MING", members: ["Patrick Wu", "The Commish"], color: "gold" },
+        { name: "Team Sacko", members: ["Jim Li", "Nicolae Done"], color: "silver" },
+        { name: "Jin and Jews", members: ["Jin Bin Liu", "Brandon Liebeskind"], color: "bronze" }
+      ],
+      results: [
+        { event: "Beer Pong" },
+        { event: "2v2 Basketball" },
+        { event: "Tennis Doubles" },
+        { event: "Swimming Relay" },
+        { event: "Foosball" },
+        { event: "Team Texas Hold'em Poker" },
+        { event: "Table Tennis Doubles" },
+        { event: "Billiards" }
+      ],
+      championTeam: "YAO know what I MING: Patrick Wu and The Commish",
+      media: [
+        {
+          label: "2014 Confessional Video",
+          type: "video",
+          url: "photos/2014/MVI_6056.mp4"
+        }
+      ]
+    },
+    {
       year: 2014,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The Second Cumming",
