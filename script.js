@@ -16,18 +16,12 @@ const YAOLYMPICS_DATA = {
         { name: "Dad Bod Squad", members: ["Eli", "Frank"], color: "bronze" }
       ],
       results: [
-        { event: "2v2 Basketball", winner: "Splash Bros", note: "OT thriller" },
-        { event: "Relay Swim", winner: "Dad Bod Squad", note: "??? How." },
-        { event: "Cornhole", winner: "Airball Empire", note: "Dialed in." }
+        { event: "2v2 Basketball" },
+        { event: "Relay Swim" },
+        { event: "Cornhole" }
       ],
       championTeam: "Splash Bros",
-      media: [
-        {
-          label: "Dock Chaos",
-          type: "photo",
-          url: "photos/2024/dock-chaos.jpg"
-        }
-      ]
+      media: []
     },
     {
       year: 2023,
@@ -40,85 +34,28 @@ const YAOLYMPICS_DATA = {
         { name: "Snack Bar All-Stars", members: ["Eli", "Frank"], color: "bronze" }
       ],
       results: [
-        {
-          event: "3-Point Contest",
-          winner: "Bricklayers",
-          note: "Name did not match performance."
-        },
-        {
-          event: "Sprint Relay",
-          winner: "Splash Zone",
-          note: "Won by a shoelace."
-        }
+        { event: "3-Point Contest" },
+        { event: "Sprint Relay" }
       ],
       championTeam: "Bricklayers",
-      media: [
-        {
-          label: "Half-court Shot Video",
-          type: "video",
-          url: "https://example.com/yaolympics-2023-halfcourt"
-        }
-      ]
+      media: []
     },
-    {
-  year: 2013,
-  location: "The Yaolympic Village: Basking Ridge, NJ",
-  theme: "The OG Yaolympics",
-  blurb: "The year it all began!",
-  teams: [
-    { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "gold" },
-    { name: "Jew Gypsy", members: ["Nicolae Done", "Brandon Liebeskind"], color: "silver" },
-    { name: "The Doctors", members: ["Jim Li", "The Commish"], color: "bronze" }
-  ],
-  results: [
-    {
-      event: "2v2 Basketball",
-      winner: "Chicken Dinner",
-      note: "Started the dynasty."
-    },
-    {
-      event: "Relay Swim",
-      winner: "Jew Gypsy",
-      note: "Came out of nowhere."
-    }
-  ],
-  // Champions line will render as:
-  // 🏆 Champions: *Chicken Dinner* Patrick Wu and Jin Bin Liu
-  championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
-  media: [
-    {
-      label: "2013 Highlight Video",
-      type: "video",
-      url: "photos/2013/yaolympics-2013-highlight.mp4" // update when you have the real file
-    }
-  ]
-},
     {
       year: 2014,
-      location: "The Yaolympic Village: Basking Ridge, NJ",
-      theme: "The OG Yaolympics",
+      location: "Your Original Spot",
+      theme: "The Second Coming",
       blurb:
-        "Year two: The Madness Continues and the Trophy is awarded for the first time!",
+        "Chaos returns. Rules slightly refined, rivalries fully ignited.",
       teams: [
-        { name: "YAO know what I MING", members: ["Patrick Wu", "The Commish"], color: "gold" },
+        { name: "Team Legend", members: ["Nicolae", "JB"], color: "gold" },
         { name: "Team Chaos", members: ["Brandon", "Tim"], color: "silver" },
         { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
       ],
       results: [
-        {
-          event: "2v2 Basketball",
-          winner: "Team Legend",
-          note: "Started the dynasty."
-        },
-        {
-          event: "Relay Swim",
-          winner: "Team Chaos",
-          note: "Came out of nowhere."
-        }
+        { event: "2v2 Basketball" },
+        { event: "Relay Swim" }
       ],
-      // You can change this to e.g.
-      // "Chicken Dinner: Patrick Wu and Jin Bin Liu"
-      championTeam: "YAO know what I MING: Patrick Wu and The Commish",
+      championTeam: "Team Legend",
       media: [
         {
           label: "2014 Highlight Video",
@@ -126,6 +63,28 @@ const YAOLYMPICS_DATA = {
           url: "photos/2014/MVI_6039.MOV"
         }
       ]
+    },
+    {
+      year: 2013,
+      location: "The Yaolympic Village: Basking Ridge, NJ",
+      theme: "The OG Yaolympics",
+      blurb: "The year it all began!",
+      // 👇 This special hero photo will be shown big instead of a collage
+      heroPhoto: "photos/2013/yaolympics-2013-hero.jpg", // TODO: change to your real file
+      teams: [
+        { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "gold" },
+        { name: "Jew Gypsy", members: ["Nicolae Done", "Brandon Liebeskind"], color: "silver" },
+        { name: "The Doctors", members: ["Jim Li", "The Commish"], color: "bronze" }
+      ],
+      results: [
+        { event: "2v2 Basketball" },
+        { event: "Relay Swim" },
+        { event: "Watermelon Heist" },
+        { event: "Billiards" }
+      ],
+      // Renders as: 🏆 Champions: *Chicken Dinner* Patrick Wu and Jin Bin Liu
+      championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
+      media: [] // no video -> no highlight box
     }
   ],
   players: [
@@ -151,19 +110,19 @@ const YAOLYMPICS_DATA = {
       funFact: "Hit the game winner in 2018 and won't let anyone forget it.",
       photoUrl: "photos/yaolympians/jinbin_liu_yaolympian.png",
       bio: "Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the celebrated course 'Justice' by Prof. Michael Sandel. JB makes three (!) appearances in the Justice MOOC that has been watched by over 2.74M people on YouTube; he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs to the promised land.",
-      yearsAttended: [2014, 2015, 2016, 2017, 2018]
+      yearsAttended: [2013, 2014, 2015, 2016, 2017, 2018]
     },
     {
       id: "Brandon",
       name: "Brandon Liebeskind",
       displayName: 'Brandon "The Jew" Liebeskind',
       nickname: "The Jew",
-      joinedYear: 2014,
+      joinedYear: 2013,
       hometown: "",
-      funFact: "Hit the game winner in 2018 and won't let anyone forget it.",
+      funFact: "Still claims the refs were biased.",
       photoUrl: "photos/yaolympians/brandon_liebeskind_yaolympian.png",
-      bio: "Dr. Jin Bin Liu ranked 7th in his class at Boston Latin School. Not great, but better than fellow Yaolympian Patrick Wu! No one is really sure what JB actually does for a living - he supposedly went to medical school and graduated, but all signs point to a nomadic lifestyle delivering uberEats in NYC (by bicycle). In addition to being The Gypsy's roommate during college, JB's college experience has been forever immortalized via his performance in the celebrated course 'Justice' by Prof. Michael Sandel. JB makes three (!) appearances in the Justice MOOC that has been watched by over 2.74M people on YouTube; he is only awake in one of those appearances. While his strengths are few, JB has never lost in foosball and is the only Yaolympian to ever bring the Liebs to the promised land.",
-      yearsAttended: [2014, 2015, 2016, 2017, 2018]
+      bio: "Dr. Brandon Liebeskind is the stuff of Yaolympic legend, equal parts chaos and clutch. Though stories about him tend to grow taller with each retelling, one thing is certain: wherever there’s a controversial foul call, Brandon is not far away, passionately litigating it like a closing argument before the Supreme Court.",
+      yearsAttended: [2013, 2014, 2015, 2016, 2017, 2018]
     },
     {
       id: "Timothy",
@@ -180,6 +139,7 @@ const YAOLYMPICS_DATA = {
   ]
 };
 
+// Collage images (2014 only for now)
 const YEAR_COLLAGE_IMAGES = {
   2014: [
     "photos/2014/IMG_1860.JPG",
@@ -345,14 +305,14 @@ function renderYearDetail(year) {
 
   const title = createEl("h2", null, `Yaolympics ${yearObj.year}`);
 
-  // Big champions line with styled team name
+  // Big champions line with styled team name, no colon after name
   const championsLine = createEl("div", "year-champions");
   const championsLabel = document.createElement("span");
   championsLabel.textContent = "🏆 Champions: ";
   championsLine.appendChild(championsLabel);
 
   const teamText = yearObj.championTeam || "";
-  const parts = teamText.split(":"); // "Chicken Dinner: Patrick Wu..." -> ["Chicken Dinner", " Patrick Wu..."]
+  const parts = teamText.split(":");
 
   if (parts.length >= 2) {
     const namePart = parts[0].trim();
@@ -363,8 +323,8 @@ function renderYearDetail(year) {
     nameSpan.textContent = namePart;
 
     championsLine.appendChild(nameSpan);
+    // no colon re-added, just a space
     championsLine.appendChild(document.createTextNode(` ${restPart}`));
-
   } else {
     championsLine.appendChild(document.createTextNode(teamText));
   }
@@ -375,7 +335,18 @@ function renderYearDetail(year) {
   meta.appendChild(createEl("span", null, `📍 ${yearObj.location}`));
   meta.appendChild(createEl("span", null, `🎭 ${yearObj.theme}`));
 
-  const layout = createEl("div", "two-column");
+  // Special hero photo for years like 2013
+  let heroPhotoEl = null;
+  if (yearObj.heroPhoto) {
+    heroPhotoEl = createEl("div", "year-hero-photo-wrapper");
+    const img = createEl("img", "year-hero-photo");
+    img.src = yearObj.heroPhoto;
+    img.alt = `Yaolympics ${yearObj.year} hero photo`;
+    heroPhotoEl.appendChild(img);
+  }
+
+  const media = yearObj.media || [];
+  const videos = media.filter((m) => m.type === "video");
 
   // Left: Teams + Events
   const teamsBlock = createEl("div", "card-block");
@@ -400,25 +371,23 @@ function renderYearDetail(year) {
 
   const eventsList = createEl("ul", "simple-list");
   yearObj.results.forEach((r) => {
-    const li = createEl(
-      "li",
-      null,
-      `${r.event} — ${r.winner}${r.note ? " • " + r.note : ""}`
-    );
+    // Only list event name, ignore winner/note
+    const li = createEl("li", null, r.event || "");
     eventsList.appendChild(li);
   });
   teamsBlock.appendChild(eventsList);
 
-  // Right: Highlight Video
-  const rightBlock = createEl("div", "card-block");
-  rightBlock.appendChild(
-    createEl("div", "section-heading", "Highlight Video")
-  );
-
-  const media = yearObj.media || [];
-  const videos = media.filter((m) => m.type === "video");
+  let layout;
 
   if (videos.length > 0) {
+    // Normal years: two-column layout with highlight video
+    layout = createEl("div", "two-column");
+
+    const rightBlock = createEl("div", "card-block");
+    rightBlock.appendChild(
+      createEl("div", "section-heading", "Highlight Video")
+    );
+
     const m = videos[0];
     const cardVideo = createEl("div", "video-card");
     const titleVideo = createEl("div", "video-title", m.label || "Video");
@@ -442,22 +411,21 @@ function renderYearDetail(year) {
     }
 
     rightBlock.appendChild(cardVideo);
+
+    layout.append(teamsBlock, rightBlock);
   } else {
-    rightBlock.appendChild(
-      createEl(
-        "p",
-        null,
-        "Add a highlight video for this year in the data model."
-      )
-    );
+    // Special years like 2013: full-width teams/events card
+    layout = createEl("div", "single-column");
+    layout.appendChild(teamsBlock);
   }
 
-  layout.append(teamsBlock, rightBlock);
-
-  const collage = createYearCollage(yearObj.year);
+  // Collage only for years that have one, and only if no heroPhoto
+  const collage = !yearObj.heroPhoto ? createYearCollage(yearObj.year) : null;
 
   yearDetail.append(title, championsLine, blurb, meta);
-  if (collage) {
+  if (heroPhotoEl) {
+    yearDetail.appendChild(heroPhotoEl);
+  } else if (collage) {
     yearDetail.appendChild(collage);
   }
   yearDetail.appendChild(layout);
@@ -570,6 +538,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const seasonSelect = $("#seasonSelect");
   const playerSelect = $("#playerSelect");
+
+  // Top-left Yaolympics button -> home
+  const homeButton =
+    document.getElementById("homeButton") ||
+    document.querySelector(".logo-text");
+  if (homeButton) {
+    homeButton.addEventListener("click", (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      if (seasonSelect) seasonSelect.value = "";
+      if (playerSelect) playerSelect.value = "";
+      setView("intro");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
   setView("intro");
 
