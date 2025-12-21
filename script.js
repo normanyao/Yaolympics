@@ -43,7 +43,7 @@ const YAOLYMPICS_DATA = {
     {
       year: 2017,
       location: "The Yaolympic Village: Basking Ridge, NJ",
-      theme: "Hi ya! Gypsy turtles for the win!",
+      theme: "First three-peat in Yaolympic History!",
       blurb:
         "JB for Threeeee!",
       teams: [
