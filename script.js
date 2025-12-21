@@ -62,14 +62,14 @@ const YAOLYMPICS_DATA = {
     },
     {
       year: 2014,
-      location: "The Yaolympics Village: Basking Ridge, NJ",
+      location: "Your Original Spot",
       theme: "The OG Yaolympics",
       blurb:
         "The year it all began. Questionable rules, chaotic scoring, unforgettable moments.",
       teams: [
-        { name: "Chicken Dinner", members: ["Jin Bin Liu", "Patrick Wu"], color: "gold" },
-        { name: "Loser 1", members: ["Jim Li", "Norman Yao"], color: "silver" },
-        { name: "Loser 2", members: ["Nicolae Done", "Brandon Liebeskind"], color: "bronze" }
+        { name: "Team Legend", members: ["Nicolae", "JB"], color: "gold" },
+        { name: "Team Chaos", members: ["Brandon", "Tim"], color: "silver" },
+        { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
       ],
       results: [
         {
@@ -83,17 +83,12 @@ const YAOLYMPICS_DATA = {
           note: "Came out of nowhere."
         }
       ],
-      championTeam: "Chicken Dinner (Jin Bin Liu and Patrick Wu)",
+      championTeam: "Team Legend",
       media: [
-        {
-          label: "2014 Group Photo",
-          type: "photo",
-          url: "photos/2014/group-photo.jpg"
-        },
         {
           label: "2014 Highlight Video",
           type: "video",
-          url: "photos/2014/highlight.mp4"
+          url: "photos/2014/MVI_6039.MOV" // adjust to your actual highlight clip if you like
         }
       ]
     }
@@ -187,12 +182,12 @@ const YEAR_COLLAGE_IMAGES = {
     "photos/2014/IMG_6064.JPG",
     "photos/2014/IMG_6065.JPG",
     "photos/2014/IMG_6066.JPG",
-    "photos/2014/IMG_6067.JPG",
-  ],
+    "photos/2014/IMG_6067.JPG"
+  ]
 };
 
 // ------------------------
-// 2. DOM HELPERS
+// Helpers
 // ------------------------
 
 function $(selector) {
@@ -206,8 +201,40 @@ function createEl(tag, className, text) {
   return el;
 }
 
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function createYearCollage(year) {
+  const urls = YEAR_COLLAGE_IMAGES[year];
+  if (!urls || urls.length === 0) return null;
+
+  const shuffled = shuffleArray(urls);
+  const subset = shuffled.slice(0, 9);
+
+  const wrapper = createEl("div", "year-collage");
+  const grid = createEl("div", "year-collage-grid");
+
+  subset.forEach((url) => {
+    const item = createEl("div", "year-collage-item");
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = `Yaolympics ${year} moment`;
+    item.appendChild(img);
+    grid.appendChild(item);
+  });
+
+  wrapper.appendChild(grid);
+  return wrapper;
+}
+
 // ------------------------
-// 3. VIEW STATE
+// View state
 // ------------------------
 
 function setView(view) {
@@ -244,7 +271,7 @@ function setView(view) {
 }
 
 // ------------------------
-// 4. SELECT POPULATION
+// Dropdown population
 // ------------------------
 
 function populateSeasonSelect() {
@@ -256,9 +283,7 @@ function populateSeasonSelect() {
   placeholder.value = "";
   select.appendChild(placeholder);
 
-  const sortedYears = [...YAOLYMPICS_DATA.years].sort(
-    (a, b) => b.year - a.year
-  );
+  const sortedYears = [...YAOLYMPICS_DATA.years].sort((a, b) => b.year - a.year);
 
   sortedYears.forEach((yearObj) => {
     const opt = createEl("option", null, `Yaolympics ${yearObj.year}`);
@@ -288,41 +313,8 @@ function populatePlayerSelect() {
   });
 }
 
-function shuffleArray(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function createYearCollage(year) {
-  const urls = YEAR_COLLAGE_IMAGES[year];
-  if (!urls || urls.length === 0) return null;
-
-  // Shuffle and take up to 9 images
-  const shuffled = shuffleArray(urls);
-  const subset = shuffled.slice(0, 9);
-
-  const wrapper = createEl("div", "year-collage");
-  const grid = createEl("div", "year-collage-grid");
-
-  subset.forEach((url) => {
-    const item = createEl("div", "year-collage-item");
-    const img = document.createElement("img");
-    img.src = url;
-    img.alt = `Yaolympics ${year} moment`;
-    item.appendChild(img);
-    grid.appendChild(item);
-  });
-
-  wrapper.appendChild(grid);
-  return wrapper;
-}
-
 // ------------------------
-// 5. RENDER YEAR DETAIL
+// Year detail
 // ------------------------
 
 function renderYearDetail(year) {
@@ -346,91 +338,87 @@ function renderYearDetail(year) {
 
   const layout = createEl("div", "two-column");
 
-const layout = createEl("div", "two-column");
+  // Left: Teams + Events
+  const teamsBlock = createEl("div", "card-block");
 
-// Left: teams + events
-const teamsBlock = createEl("div", "card-block");
+  // Teams heading
+  teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
 
-// Teams heading
-teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
+  // Teams list
+  const teamList = createEl("ul", "simple-list");
+  yearObj.teams.forEach((t) => {
+    const li = createEl("li");
+    const nameSpan = createEl("span", null, `${t.name} `);
+    const membersSpan = createEl("span", null, `(${t.members.join(", ")})`);
+    li.append(nameSpan, membersSpan);
+    if (t.color === "gold") {
+      const badge = createEl("span", "badge gold", "Defending Champs");
+      li.append(" ", badge);
+    }
+    teamList.appendChild(li);
+  });
+  teamsBlock.appendChild(teamList);
 
-// Teams list
-const teamList = createEl("ul", "simple-list");
-yearObj.teams.forEach((t) => {
-  const li = createEl("li");
-  const nameSpan = createEl("span", null, `${t.name} `);
-  const membersSpan = createEl("span", null, `(${t.members.join(", ")})`);
-  li.append(nameSpan, membersSpan);
-  if (t.color === "gold") {
-    const badge = createEl("span", "badge gold", "Defending Champs");
-    li.append(" ", badge);
-  }
-  teamList.appendChild(li);
-});
-teamsBlock.appendChild(teamList);
+  // Events heading
+  teamsBlock.appendChild(createEl("div", "section-heading", "Events"));
 
-// Events heading (below teams, same box)
-teamsBlock.appendChild(createEl("div", "section-heading", "Events"));
-
-// Events list (results)
-const eventsList = createEl("ul", "simple-list");
-yearObj.results.forEach((r) => {
-  const li = createEl(
-    "li",
-    null,
-    `${r.event} — ${r.winner}${r.note ? " • " + r.note : ""}`
-  );
-  eventsList.appendChild(li);
-});
-teamsBlock.appendChild(eventsList);
-
-// Right: single highlight video
-const rightBlock = createEl("div", "card-block");
-rightBlock.appendChild(
-  createEl("div", "section-heading", "Highlight Video")
-);
-
-const media = yearObj.media || [];
-const videos = media.filter((m) => m.type === "video");
-
-if (videos.length > 0) {
-  const m = videos[0]; // just the first video
-  const cardVideo = createEl("div", "video-card");
-  const titleVideo = createEl("div", "video-title", m.label || "Video");
-
-  const url = m.url || "";
-  const isDirectVideo =
-    url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg");
-
-  if (isDirectVideo && !/youtube\.com|youtu\.be/.test(url)) {
-    const player = document.createElement("video");
-    player.controls = true;
-    player.src = url;
-    cardVideo.append(titleVideo, player);
-  } else {
-    const link = createEl("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "▶️ Watch video";
-    cardVideo.append(titleVideo, link);
-  }
-
-  rightBlock.appendChild(cardVideo);
-} else {
-  // Fallback text if you haven't added a video yet
-  rightBlock.appendChild(
-    createEl(
-      "p",
+  // Events list (results)
+  const eventsList = createEl("ul", "simple-list");
+  yearObj.results.forEach((r) => {
+    const li = createEl(
+      "li",
       null,
-      "Add a highlight video for this year in the data model."
-    )
+      `${r.event} — ${r.winner}${r.note ? " • " + r.note : ""}`
+    );
+    eventsList.appendChild(li);
+  });
+  teamsBlock.appendChild(eventsList);
+
+  // Right: Highlight Video
+  const rightBlock = createEl("div", "card-block");
+  rightBlock.appendChild(
+    createEl("div", "section-heading", "Highlight Video")
   );
-}
 
-layout.append(teamsBlock, rightBlock);
+  const media = yearObj.media || [];
+  const videos = media.filter((m) => m.type === "video");
 
-  // 👉 NEW: build a collage for this year (if we have images)
+  if (videos.length > 0) {
+    const m = videos[0];
+    const cardVideo = createEl("div", "video-card");
+    const titleVideo = createEl("div", "video-title", m.label || "Video");
+
+    const url = m.url || "";
+    const isDirectVideo =
+      url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg");
+
+    if (isDirectVideo && !/youtube\.com|youtu\.be/.test(url)) {
+      const player = document.createElement("video");
+      player.controls = true;
+      player.src = url;
+      cardVideo.append(titleVideo, player);
+    } else {
+      const link = createEl("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "▶️ Watch video";
+      cardVideo.append(titleVideo, link);
+    }
+
+    rightBlock.appendChild(cardVideo);
+  } else {
+    rightBlock.appendChild(
+      createEl(
+        "p",
+        null,
+        "Add a highlight video for this year in the data model."
+      )
+    );
+  }
+
+  layout.append(teamsBlock, rightBlock);
+
   const collage = createYearCollage(yearObj.year);
 
   yearDetail.append(title, blurb, meta);
@@ -441,7 +429,7 @@ layout.append(teamsBlock, rightBlock);
 }
 
 // ------------------------
-// 6. RENDER PLAYER DETAIL
+// Player detail
 // ------------------------
 
 function renderPlayerDetail(playerId) {
@@ -456,8 +444,7 @@ function renderPlayerDetail(playerId) {
   const page = createEl("div", "player-page");
 
   const displayName =
-    p.displayName ||
-    (p.nickname ? `${p.name} "${p.nickname}"` : p.name);
+    p.displayName || (p.nickname ? `${p.name} "${p.nickname}"` : p.name);
 
   const title = createEl("h1", "player-page-title", displayName);
   page.appendChild(title);
@@ -490,11 +477,8 @@ function renderPlayerDetail(playerId) {
 }
 
 // ------------------------
-// 7. RANDOM SEASON BUTTON
+// Randgen button
 // ------------------------
-
-
-
 
 function setupRandomMoment() {
   const btn = $("#randomMomentBtn");
@@ -509,13 +493,15 @@ function setupRandomMoment() {
     const seasonSelect = $("#seasonSelect");
     const playerSelect = $("#playerSelect");
 
-    // Decide whether to pick a season or a player
     let pickType = Math.random() < 0.5 ? "season" : "player";
 
-    // If that type has no entries, fall back to the other
     if (pickType === "season" && years.length === 0 && players.length > 0) {
       pickType = "player";
-    } else if (pickType === "player" && players.length === 0 && years.length > 0) {
+    } else if (
+      pickType === "player" &&
+      players.length === 0 &&
+      years.length > 0
+    ) {
       pickType = "season";
     }
 
@@ -540,7 +526,7 @@ function setupRandomMoment() {
 }
 
 // ------------------------
-// 8. INIT
+// Init
 // ------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -550,24 +536,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const seasonSelect = $("#seasonSelect");
   const playerSelect = $("#playerSelect");
 
-  const homeLink = $("#homeLink");
-
-  if (homeLink) {
-    homeLink.addEventListener("click", () => {
-      if (seasonSelect) seasonSelect.value = "";
-      if (playerSelect) playerSelect.value = "";
-      setView("intro");
-    });
-  }
-
-  // Start on intro: hero + intro card visible
+  // Start on intro
   setView("intro");
 
   if (seasonSelect) {
     seasonSelect.addEventListener("change", (e) => {
       const value = e.target.value;
       if (!value) {
-        // back to intro
         if (playerSelect) playerSelect.value = "";
         setView("intro");
         return;
@@ -583,7 +558,6 @@ document.addEventListener("DOMContentLoaded", () => {
     playerSelect.addEventListener("change", (e) => {
       const value = e.target.value;
       if (!value) {
-        // back to intro
         if (seasonSelect) seasonSelect.value = "";
         setView("intro");
         return;
