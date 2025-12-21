@@ -228,10 +228,7 @@ const YEAR_COLLAGE_IMAGES = {
     "photos/2015/IMG_8031.JPG",
     "photos/2015/IMG_8033.JPG",
     "photos/2015/IMG_8034.JPG",
-    "photos/2015/IMG_8035.JPG",
-    "photos/2015/USopen.jpg",
-    "photos/2015/USopen2.jpg",
-    "photos/2015/USopen3.jpg"
+    "photos/2015/IMG_8035.JPG"
   ]
 };
 
