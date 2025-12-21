@@ -335,6 +335,18 @@ a {
   border-bottom: 1px dashed #e5e7eb;
 }
 
+/* Bigger team names */
+.teams-list li {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Bigger event names */
+.events-list li {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .simple-list li:last-child {
   border-bottom: none;
 }
