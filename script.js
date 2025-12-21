@@ -100,10 +100,10 @@ const YAOLYMPICS_DATA = {
       theme: "The OG Yaolympics",
       blurb:
         "The year it all began!",
-      teams: [
+      teams:
         { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "gold" },
-        { name: "Shame", members: ["Brandon", "Tim"], color: "silver" },
-        { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
+        { name: "Jew Gypsy", members: ["Nicolae Done", "Brandon Liebeskind"], color: "silver" },
+        { name: "The Doctors", members: ["Jim Li", "The Commish"], color: "bronze" }
       ],
       results: [
         {
