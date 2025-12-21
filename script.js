@@ -62,12 +62,12 @@ const YAOLYMPICS_DATA = {
     },
     {
       year: 2014,
-      location: "Your Original Spot",
+      location: "The Yaolympics Village: Basking Ridge, NJ",
       theme: "The OG Yaolympics",
       blurb:
         "The year it all began. Questionable rules, chaotic scoring, unforgettable moments.",
       teams: [
-        { name: "Team Legend", members: ["Player 1", "Player 2"], color: "gold" },
+        { name: "Chicken Dinner", members: ["Player 1", "Player 2"], color: "gold" },
         { name: "Team Chaos", members: ["Player 3", "Player 4"], color: "silver" },
         { name: "Team Underdogs", members: ["Player 5", "Player 6"], color: "bronze" }
       ],
@@ -83,7 +83,7 @@ const YAOLYMPICS_DATA = {
           note: "Came out of nowhere."
         }
       ],
-      championTeam: "Team Legend",
+      championTeam: "Chicken Dinner (Jin Bin Liu and Patrick Wu)",
       media: [
         {
           label: "2014 Group Photo",
