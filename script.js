@@ -45,9 +45,9 @@ const YAOLYMPICS_DATA = {
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "Hi ya! Gypsy turtles for the win!",
       blurb:
-        "The Year of the Doctors!",
+        "JB for Threeeee!",
       teams: [
-        { name: "Donetello and Liunardo", members: ["Jin Bin Liu", "Nicolae Done"], color: "gold" },
+        { name: "Yao BIN Winning", members: ["Jin Bin Liu", "The Commish"], color: "gold" },
         { name: "Ridge 05", members: ["Brandon Liebeskind", "The Commish"], color: "silver" },
         { name: "BLS", members: ["Patrick Wu", "Jim Li"], color: "bronze" }
       ],
