@@ -150,6 +150,8 @@ const YAOLYMPICS_DATA = {
 };
 
 // Collage images (2014 only for now)
+
+
 const YEAR_COLLAGE_IMAGES = {
   2014: [
     "photos/2014/IMG_1860.JPG",
@@ -170,6 +172,37 @@ const YEAR_COLLAGE_IMAGES = {
     "photos/2014/IMG_6065.JPG",
     "photos/2014/IMG_6066.JPG",
     "photos/2014/IMG_6067.JPG"
+  ],
+  2015: [
+    "photos/2015/IMG_4010.JPG",
+    "photos/2015/IMG_4011.JPG",
+    "photos/2015/IMG_4012.JPG",
+    "photos/2015/IMG_4013.JPG",
+    "photos/2015/IMG_4016.JPG",
+    "photos/2015/IMG_4018.JPG",
+    "photos/2015/IMG_4019.JPG",
+    "photos/2015/IMG_4021.JPG",
+    "photos/2015/IMG_4022.JPG",
+    "photos/2015/IMG_4024.JPG",
+    "photos/2015/IMG_4026.JPG",
+    "photos/2015/IMG_4039.JPG",
+    "photos/2015/IMG_4040.JPG",
+    "photos/2015/IMG_4042.JPG",
+    "photos/2015/IMG_4044.JPG",
+    "photos/2015/IMG_4045.JPG",
+    "photos/2015/IMG_4049.JPG",
+    "photos/2015/IMG_4051.JPG",
+    "photos/2015/IMG_4054.JPG",
+    "photos/2015/IMG_4055.JPG",
+    "photos/2015/IMG_4057.JPG",
+    "photos/2015/IMG_4060 2.JPG",
+    "photos/2015/IMG_8031.JPG",
+    "photos/2015/IMG_8033.JPG",
+    "photos/2015/IMG_8034.JPG",
+    "photos/2015/IMG_8035.JPG",
+    "photos/2015/USopen.jpg",
+    "photos/2015/USopen2.jpg",
+    "photos/2015/USopen3.jpg"
   ]
 };
 
