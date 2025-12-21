@@ -133,7 +133,7 @@ const YAOLYMPICS_DATA = {
       teams: [
         { name: "Who knows?", members: ["Nicolae Done", "Patrick Wu"], color: "gold" },
         { name: "Who cares?", members: ["Patrick Wu", "Jim Li"], color: "silver" },
-        { name: "The Lone Wolf", members: ["Jin Bin Liu"], color: "silver" }
+        { name: "The Lone Wolf", members: ["Jin Bin Liu", "Lieb in Spirit"], color: "bronze" }
       ],
       results: [
         { event: "Beer Pong" },
