@@ -45,7 +45,7 @@ const YAOLYMPICS_DATA = {
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The Second Cumming",
       blurb:
-        "The Year of the Yao",
+        "The Year of the Yao: PengYAO Wu becomes a two time champ!",
       teams: [
         { name: "YAO know what I MING", members: ["Patrick Wu", "The Commish"], color: "gold" },
         { name: "Team Sacko", members: ["Jim Li", "Nicolae Done"], color: "silver" },
