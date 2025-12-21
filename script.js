@@ -1,4 +1,4 @@
-// ------------------------
+o// ------------------------
 // 1. DATA MODEL
 // ------------------------
 
@@ -127,18 +127,25 @@ const YAOLYMPICS_DATA = {
     },
     {
       year: 2012,
-      location: "The Yaolympic Prototype: Basking Ridge, NJ",
+      location: "Before the village was The Village: Basking Ridge, NJ",
       theme: "Prequel to Greatness",
-      blurb: "Before it was Yaolympics, it was… whatever this was.",
+      blurb: "Before it was Yaolympics...",
       teams: [
-        { name: "Proto-Champs", members: ["Player 1", "Player 2"], color: "gold" },
-        { name: "Beta Squad", members: ["Player 3", "Player 4"], color: "silver" }
+        { name: "Who knows?", members: ["Nicolae Done", "Patrick Wu"], color: "gold" },
+        { name: "Who cares?", members: ["Patrick Wu", "Jim Li"], color: "silver" },
+        { name: "The Lone Wolf", members: ["Jin Bin Liu"], color: "silver" }
       ],
       results: [
-        { event: "Basketball" },
-        { event: "Swimming" }
+        { event: "Beer Pong" },
+        { event: "2v2 Basketball" },
+        { event: "Tennis Doubles" },
+        { event: "Swimming Relay" },
+        { event: "Foosball" },
+        { event: "Team Texas Hold'em Poker" },
+        { event: "Table Tennis Doubles" },
+        { event: "Billiards" }
       ],
-      championTeam: "Proto-Champs: Player 1 and Player 2",
+      championTeam: "We were all winners: The Yaolympians",
       media: [] // <= no highlight video
     }
   ],
