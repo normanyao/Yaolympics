@@ -366,6 +366,29 @@ const YEAR_COLLAGE_IMAGES = {
     "photos/2016/IMG_6770.JPG",
     "photos/2016/IMG_6772.JPG",
     "photos/2016/IMG_6795.JPG"
+  ],
+2017: [
+  "photos/2017/20170904_152542.jpeg",
+  "photos/2017/IMG_9647.JPG",
+  "photos/2017/IMG_9648.JPG",
+  "photos/2017/IMG_9651.JPG",
+  "photos/2017/IMG_9657_v2.JPG",
+  "photos/2017/IMG_9659.JPG",
+  "photos/2017/IMG_9662_v2.JPG",
+  "photos/2017/IMG_9665.JPG",
+  "photos/2017/IMG_9670.JPG",
+  "photos/2017/IMG_9671.JPG",
+  "photos/2017/IMG_9680.JPG",
+  "photos/2017/IMG_9686.JPG",
+  "photos/2017/IMG_9692.JPG",
+  "photos/2017/IMG_9696.JPG",
+  "photos/2017/IMG_9698.JPG",
+  "photos/2017/IMG_9701.JPG",
+  "photos/2017/IMG_9703.JPG",
+  "photos/2017/IMG_9707.JPG",
+  "photos/2017/IMG_9715.JPG",
+  "photos/2017/IMG_9722.JPG",
+  "photos/2017/IMG_9727.JPG"
   ]
 };
 
