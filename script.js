@@ -64,9 +64,9 @@ const YAOLYMPICS_DATA = {
       championTeam: "Donetello and Liunardo: Nicolae Done and Jin Bin Liu",
       media: [
         {
-          label: "2016 Highlight Video",
+          label: "2017 Opening Ceremony Video",
           type: "video",
-          url: "photos/2016/2016_doctors_ceremony.mp4"
+          url: "photos/2017/2017_opening_ceremony.mp4"
         }
       ]
     },
