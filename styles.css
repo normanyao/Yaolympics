@@ -144,9 +144,13 @@ a {
   background: #ffffff;
 }
 
+
+
 .hero-inner {
-  max-width: 42rem;
+  max-width: 70rem;         /* was 42rem – this lets the logo get much bigger */
+  width: 100%;
   text-align: center;
+  margin: 0 auto;
 }
 
 .hero-logo-card {
