@@ -327,14 +327,19 @@ function renderYearDetail(year) {
   yearDetail.innerHTML = "";
 
   const title = createEl("h2", null, `Yaolympics ${yearObj.year}`);
+
+  // Big champions line under the heading
+  const championsLine = createEl(
+    "div",
+    "year-champions",
+    `🏆 Champions: ${yearObj.championTeam}`
+  );
+
   const blurb = createEl("p", null, yearObj.blurb || "");
 
   const meta = createEl("div", "detail-meta");
   meta.appendChild(createEl("span", null, `📍 ${yearObj.location}`));
   meta.appendChild(createEl("span", null, `🎭 ${yearObj.theme}`));
-  meta.appendChild(
-    createEl("span", null, `🏆 Champions: ${yearObj.championTeam}`)
-  );
 
   const layout = createEl("div", "two-column");
 
@@ -421,7 +426,7 @@ function renderYearDetail(year) {
 
   const collage = createYearCollage(yearObj.year);
 
-  yearDetail.append(title, blurb, meta);
+  yearDetail.append(title, championsLine, blurb, meta);
   if (collage) {
     yearDetail.appendChild(collage);
   }
@@ -471,103 +476,4 @@ function renderPlayerDetail(playerId) {
     "Add a description here: greatest performances, running jokes, and what they bring to Yaolympics.";
 
   const bio = createEl("div", "player-page-bio", bioText);
-  page.appendChild(bio);
-
-  playerDetail.appendChild(page);
-}
-
-// ------------------------
-// Randgen button
-// ------------------------
-
-function setupRandomMoment() {
-  const btn = $("#randomMomentBtn");
-  if (!btn) return;
-
-  btn.addEventListener("click", () => {
-    const years = YAOLYMPICS_DATA.years;
-    const players = YAOLYMPICS_DATA.players;
-
-    if (years.length === 0 && players.length === 0) return;
-
-    const seasonSelect = $("#seasonSelect");
-    const playerSelect = $("#playerSelect");
-
-    let pickType = Math.random() < 0.5 ? "season" : "player";
-
-    if (pickType === "season" && years.length === 0 && players.length > 0) {
-      pickType = "player";
-    } else if (
-      pickType === "player" &&
-      players.length === 0 &&
-      years.length > 0
-    ) {
-      pickType = "season";
-    }
-
-    if (pickType === "season") {
-      const randomYearObj = years[Math.floor(Math.random() * years.length)];
-
-      if (seasonSelect) seasonSelect.value = String(randomYearObj.year);
-      if (playerSelect) playerSelect.value = "";
-
-      renderYearDetail(randomYearObj.year);
-      setView("season");
-    } else {
-      const player = players[Math.floor(Math.random() * players.length)];
-
-      if (playerSelect) playerSelect.value = player.id;
-      if (seasonSelect) seasonSelect.value = "";
-
-      renderPlayerDetail(player.id);
-      setView("player");
-    }
-  });
-}
-
-// ------------------------
-// Init
-// ------------------------
-
-document.addEventListener("DOMContentLoaded", () => {
-  populateSeasonSelect();
-  populatePlayerSelect();
-
-  const seasonSelect = $("#seasonSelect");
-  const playerSelect = $("#playerSelect");
-
-  // Start on intro
-  setView("intro");
-
-  if (seasonSelect) {
-    seasonSelect.addEventListener("change", (e) => {
-      const value = e.target.value;
-      if (!value) {
-        if (playerSelect) playerSelect.value = "";
-        setView("intro");
-        return;
-      }
-
-      if (playerSelect) playerSelect.value = "";
-      renderYearDetail(Number(value));
-      setView("season");
-    });
-  }
-
-  if (playerSelect) {
-    playerSelect.addEventListener("change", (e) => {
-      const value = e.target.value;
-      if (!value) {
-        if (seasonSelect) seasonSelect.value = "";
-        setView("intro");
-        return;
-      }
-
-      if (seasonSelect) seasonSelect.value = "";
-      renderPlayerDetail(value);
-      setView("player");
-    });
-  }
-
-  setupRandomMoment();
-});
+  page.appe
