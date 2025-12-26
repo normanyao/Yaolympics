@@ -1,4 +1,72 @@
 // ------------------------
+// 0. SIMPLE PASSWORD GATE (client-side only)
+// ------------------------
+
+const SITE_PASSWORD = "winthrop09!";
+const AUTH_KEY = "yao_auth_v1"; // change this if you ever want to force everyone to re-enter
+
+function isAuthed() {
+  return sessionStorage.getItem(AUTH_KEY) === "1";
+}
+
+function unlockSite() {
+  sessionStorage.setItem(AUTH_KEY, "1");
+  const gate = document.getElementById("passwordGate");
+  const shell = document.getElementById("siteShell");
+  if (gate) gate.classList.add("hidden");
+  if (shell) shell.classList.remove("hidden");
+  initSite(); // only initialize the app AFTER unlock
+}
+
+function initPasswordGate() {
+  const gate = document.getElementById("passwordGate");
+  const shell = document.getElementById("siteShell");
+
+  if (!gate || !shell) {
+    // If someone deletes the gate markup, just initialize normally
+    initSite();
+    return;
+  }
+
+  if (isAuthed()) {
+    gate.classList.add("hidden");
+    shell.classList.remove("hidden");
+    initSite();
+    return;
+  }
+
+  // locked state
+  shell.classList.add("hidden");
+  gate.classList.remove("hidden");
+
+  const input = document.getElementById("passwordInput");
+  const btn = document.getElementById("passwordSubmit");
+  const err = document.getElementById("passwordError");
+
+  function attempt() {
+    const val = (input?.value || "").trim();
+    if (val === SITE_PASSWORD) {
+      if (err) err.classList.add("hidden");
+      unlockSite();
+    } else {
+      if (err) err.classList.remove("hidden");
+      if (input) {
+        input.focus();
+        input.select();
+      }
+    }
+  }
+
+  if (btn) btn.addEventListener("click", attempt);
+  if (input) {
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") attempt();
+    });
+    input.focus();
+  }
+}
+
+// ------------------------
 // 1. DATA MODEL
 // ------------------------
 
@@ -44,8 +112,7 @@ const YAOLYMPICS_DATA = {
       year: 2017,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "First three-peat in Yaolympic History!",
-      blurb:
-        "JB for Threeeee!",
+      blurb: "JB for Threeeee!",
       teams: [
         { name: "Yao BIN Winning", members: ["Jin Bin Liu", "The Commish"], color: "gold" },
         { name: "Ridge 05", members: ["Brandon Liebeskind", "The Commish"], color: "silver" },
@@ -74,8 +141,7 @@ const YAOLYMPICS_DATA = {
       year: 2016,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "Hi ya! Gypsy turtles for the win!",
-      blurb:
-        "The Year of the Doctors!",
+      blurb: "The Year of the Doctors!",
       teams: [
         { name: "Donetello and Liunardo", members: ["Jin Bin Liu", "Nicolae Done"], color: "gold" },
         { name: "Ridge 05", members: ["Brandon Liebeskind", "The Commish"], color: "silver" },
@@ -104,8 +170,7 @@ const YAOLYMPICS_DATA = {
       year: 2015,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The Caravan Arrives",
-      blurb:
-        "Fognini in Five!",
+      blurb: "Fognini in Five!",
       teams: [
         { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "gold" },
         { name: "Team Sacko", members: ["Jim Li", "Nicolae Done"], color: "silver" },
@@ -134,8 +199,7 @@ const YAOLYMPICS_DATA = {
       year: 2014,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The Second Cumming",
-      blurb:
-        "The Year of the Yao: PengYAO Wu becomes a two time champ!",
+      blurb: "The Year of the Yao: PengYAO Wu becomes a two time champ!",
       teams: [
         { name: "YAO know what I MING", members: ["Patrick Wu", "The Commish"], color: "gold" },
         { name: "Team Sacko", members: ["Jim Li", "Nicolae Done"], color: "silver" },
@@ -180,9 +244,8 @@ const YAOLYMPICS_DATA = {
         { event: "Table Tennis Doubles" },
         { event: "Billiards" }
       ],
-      // Renders as: 🏆 Champions: *Chicken Dinner* Patrick Wu and Jin Bin Liu
       championTeam: "Chicken Dinner: Patrick Wu and Jin Bin Liu",
-      media: [] // no video -> no highlight box
+      media: []
     },
     {
       year: 2012,
@@ -205,7 +268,7 @@ const YAOLYMPICS_DATA = {
         { event: "Billiards" }
       ],
       championTeam: "We were all winners back then: The Yaolympians",
-      media: [] // <= no highlight video
+      media: []
     }
   ],
   players: [
@@ -260,8 +323,7 @@ const YAOLYMPICS_DATA = {
   ]
 };
 
-// Collage images (2014 only for now)
-
+// Collage images
 const YEAR_COLLAGE_IMAGES = {
   2012: [
     "photos/2012/IMG_0578.JPG",
@@ -367,28 +429,28 @@ const YEAR_COLLAGE_IMAGES = {
     "photos/2016/IMG_6772.JPG",
     "photos/2016/IMG_6795.JPG"
   ],
-2017: [
-  "photos/2017/20170904_152542.jpeg",
-  "photos/2017/IMG_9647.JPG",
-  "photos/2017/IMG_9648.JPG",
-  "photos/2017/IMG_9651.JPG",
-  "photos/2017/IMG_9657_v2.JPG",
-  "photos/2017/IMG_9659.JPG",
-  "photos/2017/IMG_9662_v2.JPG",
-  "photos/2017/IMG_9665.JPG",
-  "photos/2017/IMG_9670.JPG",
-  "photos/2017/IMG_9671.JPG",
-  "photos/2017/IMG_9680.JPG",
-  "photos/2017/IMG_9686.JPG",
-  "photos/2017/IMG_9692.JPG",
-  "photos/2017/IMG_9696.JPG",
-  "photos/2017/IMG_9698.JPG",
-  "photos/2017/IMG_9701.JPG",
-  "photos/2017/IMG_9703.JPG",
-  "photos/2017/IMG_9707.JPG",
-  "photos/2017/IMG_9715.JPG",
-  "photos/2017/IMG_9722.JPG",
-  "photos/2017/IMG_9727.JPG"
+  2017: [
+    "photos/2017/20170904_152542.jpeg",
+    "photos/2017/IMG_9647.JPG",
+    "photos/2017/IMG_9648.JPG",
+    "photos/2017/IMG_9651.JPG",
+    "photos/2017/IMG_9657_v2.JPG",
+    "photos/2017/IMG_9659.JPG",
+    "photos/2017/IMG_9662_v2.JPG",
+    "photos/2017/IMG_9665.JPG",
+    "photos/2017/IMG_9670.JPG",
+    "photos/2017/IMG_9671.JPG",
+    "photos/2017/IMG_9680.JPG",
+    "photos/2017/IMG_9686.JPG",
+    "photos/2017/IMG_9692.JPG",
+    "photos/2017/IMG_9696.JPG",
+    "photos/2017/IMG_9698.JPG",
+    "photos/2017/IMG_9701.JPG",
+    "photos/2017/IMG_9703.JPG",
+    "photos/2017/IMG_9707.JPG",
+    "photos/2017/IMG_9715.JPG",
+    "photos/2017/IMG_9722.JPG",
+    "photos/2017/IMG_9727.JPG"
   ]
 };
 
@@ -421,7 +483,8 @@ function createYearCollage(year) {
   if (!urls || urls.length === 0) return null;
 
   const shuffled = shuffleArray(urls);
-  const subset = shuffled.slice(0, 9);
+  const count = Math.min(9, urls.length); // show all if < 9
+  const subset = shuffled.slice(0, count);
 
   const wrapper = createEl("div", "year-collage");
   const grid = createEl("div", "year-collage-grid");
@@ -552,7 +615,6 @@ function renderYearDetail(year) {
     nameSpan.textContent = namePart;
 
     championsLine.appendChild(nameSpan);
-    // no colon re-added, just a space
     championsLine.appendChild(document.createTextNode(` ${restPart}`));
   } else {
     championsLine.appendChild(document.createTextNode(teamText));
@@ -564,46 +626,28 @@ function renderYearDetail(year) {
   meta.appendChild(createEl("span", null, `📍 ${yearObj.location}`));
   meta.appendChild(createEl("span", null, `🎭 ${yearObj.theme}`));
 
-  // Special hero photo for years like 2013
-  let heroPhotoEl = null;
-  if (yearObj.heroPhoto) {
-    heroPhotoEl = createEl("div", "year-hero-photo-wrapper");
-    const img = createEl("img", "year-hero-photo");
-    img.src = yearObj.heroPhoto;
-    img.alt = `Yaolympics ${yearObj.year} hero photo`;
-    heroPhotoEl.appendChild(img);
-  }
-
   const media = yearObj.media || [];
   const videos = media.filter((m) => m.type === "video");
 
   // Left: Teams + Events
   const teamsBlock = createEl("div", "card-block");
 
-  // Teams heading
   teamsBlock.appendChild(createEl("div", "section-heading", "Teams"));
 
-  // Teams list: name on first line, members on second, indented
   const teamList = createEl("ul", "simple-list teams-list");
   yearObj.teams.forEach((t) => {
     const li = createEl("li", "team-item");
 
     const nameLine = createEl("div", "team-name", t.name);
-    const membersLine = createEl(
-      "div",
-      "team-members",
-      `(${t.members.join(", ")})`
-    );
+    const membersLine = createEl("div", "team-members", `(${t.members.join(", ")})`);
 
     li.append(nameLine, membersLine);
     teamList.appendChild(li);
   });
   teamsBlock.appendChild(teamList);
 
-  // Events heading
   teamsBlock.appendChild(createEl("div", "section-heading", "Events"));
 
-  // Events list: just event names
   const eventsList = createEl("ul", "simple-list events-list");
   yearObj.results.forEach((r) => {
     const li = createEl("li", null, r.event || "");
@@ -611,17 +655,13 @@ function renderYearDetail(year) {
   });
   teamsBlock.appendChild(eventsList);
 
-
   let layout;
 
   if (videos.length > 0) {
-    // Normal years: two-column layout with highlight video
     layout = createEl("div", "two-column");
 
     const rightBlock = createEl("div", "card-block");
-    rightBlock.appendChild(
-      createEl("div", "section-heading", "Highlight Video")
-    );
+    rightBlock.appendChild(createEl("div", "section-heading", "Highlight Video"));
 
     const m = videos[0];
     const cardVideo = createEl("div", "video-card");
@@ -646,23 +686,16 @@ function renderYearDetail(year) {
     }
 
     rightBlock.appendChild(cardVideo);
-
     layout.append(teamsBlock, rightBlock);
   } else {
-    // Special years like 2013: full-width teams/events card
     layout = createEl("div", "single-column");
     layout.appendChild(teamsBlock);
   }
 
-  // Collage only for years that have one, and only if no heroPhoto
-  const collage = !yearObj.heroPhoto ? createYearCollage(yearObj.year) : null;
+  const collage = createYearCollage(yearObj.year);
 
   yearDetail.append(title, championsLine, blurb, meta);
-  if (heroPhotoEl) {
-    yearDetail.appendChild(heroPhotoEl);
-  } else if (collage) {
-    yearDetail.appendChild(collage);
-  }
+  if (collage) yearDetail.appendChild(collage);
   yearDetail.appendChild(layout);
 }
 
@@ -735,11 +768,7 @@ function setupRandomMoment() {
 
     if (pickType === "season" && years.length === 0 && players.length > 0) {
       pickType = "player";
-    } else if (
-      pickType === "player" &&
-      players.length === 0 &&
-      years.length > 0
-    ) {
+    } else if (pickType === "player" && players.length === 0 && years.length > 0) {
       pickType = "season";
     }
 
@@ -764,18 +793,17 @@ function setupRandomMoment() {
 }
 
 // ------------------------
-// Init
+// Init site (only called after password unlock)
 // ------------------------
 
-document.addEventListener("DOMContentLoaded", () => {
+function initSite() {
   populateSeasonSelect();
   populatePlayerSelect();
 
   const seasonSelect = $("#seasonSelect");
   const playerSelect = $("#playerSelect");
 
-  // Top-left Yaolympics button -> home
-
+  // Top-left Yaolympics button -> home (matches your HTML id="homeLink")
   const homeButton = document.getElementById("homeLink");
   if (homeButton) {
     homeButton.addEventListener("click", (e) => {
@@ -820,4 +848,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   setupRandomMoment();
+}
+
+// ------------------------
+// Boot
+// ------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  initPasswordGate();
 });
