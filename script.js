@@ -775,9 +775,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const playerSelect = $("#playerSelect");
 
   // Top-left Yaolympics button -> home
-  const homeButton =
-    document.getElementById("homeButton") ||
-    document.querySelector(".logo-text");
+
+  const homeButton = document.getElementById("homeLink");
   if (homeButton) {
     homeButton.addEventListener("click", (e) => {
       if (e && e.preventDefault) e.preventDefault();
