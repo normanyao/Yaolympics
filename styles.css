@@ -37,6 +37,67 @@ a {
   display: none !important;
 }
 
+/* ------------------------
+   Password Gate
+------------------------ */
+
+.password-gate {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #ffffff;
+}
+
+.password-card {
+  width: 100%;
+  max-width: 460px;
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.8rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.password-title {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.password-subtitle {
+  margin: 0.8rem 0 1.4rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.password-input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.password-input:focus {
+  border-color: var(--accent);
+}
+
+.password-error {
+  margin-top: 1rem;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
 /* Header */
 
 .site-header {
@@ -122,12 +183,14 @@ a {
   font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   background: linear-gradient(to right, #fbbf24, #f97316);
   color: #111827;
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
   transform: translateY(0);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
+  width: 100%;
 }
 
 .primary-btn:hover {
@@ -144,10 +207,8 @@ a {
   background: #ffffff;
 }
 
-
-
 .hero-inner {
-  max-width: 70rem;         /* was 42rem – this lets the logo get much bigger */
+  max-width: 70rem;
   width: 100%;
   text-align: center;
   margin: 0 auto;
@@ -164,8 +225,6 @@ a {
   margin-bottom: 1rem;
 }
 
-
-
 .hero-logo-card img {
   max-width: 900px;
   width: 100%;
@@ -174,11 +233,11 @@ a {
 }
 
 .hero-tagline {
-  color: #A51C30;       /* Harvard crimson-ish */
+  color: #A51C30;
   margin-bottom: 1.4rem;
-  font-size: 1.5rem;    /* bigger */
+  font-size: 1.5rem;
   line-height: 1.7;
-  font-weight: 600;     /* a bit bolder */
+  font-weight: 600;
 }
 
 /* Content area */
@@ -242,7 +301,6 @@ a {
   color: var(--muted);
 }
 
-
 /* Front-page intro layout with trophy on the right */
 #introCard .intro-content {
   display: flex;
@@ -256,7 +314,7 @@ a {
 
 /* Bigger front-page lore text */
 #introCard p {
-  font-size: 1.3rem;        /* bump up/down to taste */
+  font-size: 1.3rem;
   line-height: 1.8;
   color: var(--text);
 }
@@ -270,7 +328,7 @@ a {
 }
 
 .intro-trophy img {
-  max-width: 180px;         /* good for tall/skinny image */
+  max-width: 180px;
   width: 100%;
   height: auto;
   display: block;
@@ -334,21 +392,11 @@ a {
   margin-bottom: 0.6rem;
 }
 
-/* Hero photo for special years (e.g. 2013) */
-
-.year-hero-photo-wrapper {
-  margin: 1.1rem 0 1.3rem;
-  border-radius: 1.25rem;
-  overflow: hidden;
+.card-block {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-  background: #f3f4f6;
-}
-
-.year-hero-photo {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* Two-column layout */
@@ -360,7 +408,7 @@ a {
   margin-top: 0.8rem;
 }
 
-/* Single-column layout for years with no highlight video (e.g. 2013) */
+/* Single-column layout for years with no highlight video */
 .single-column {
   margin-top: 0.8rem;
 }
@@ -369,13 +417,6 @@ a {
   .two-column {
     grid-template-columns: minmax(0, 1fr);
   }
-}
-
-.card-block {
-  border-radius: 1rem;
-  padding: 1rem;
-  background: #f9fafb;
-  border: 1px solid var(--border);
 }
 
 /* Lists */
@@ -392,7 +433,9 @@ a {
   border-bottom: 1px dashed #e5e7eb;
 }
 
-
+.simple-list li:last-child {
+  border-bottom: none;
+}
 
 /* Teams list: name + members on separate lines */
 .teams-list .team-item {
@@ -406,10 +449,10 @@ a {
 }
 
 .teams-list .team-members {
-  margin-left: 1rem;      /* slight indent */
+  margin-left: 1rem;
   margin-top: 0.1rem;
   font-size: 1rem;
-  color: #A51C30;         /* crimson, matching Harvard color */
+  color: #A51C30;
   font-weight: 500;
 }
 
@@ -417,28 +460,6 @@ a {
 .events-list li {
   font-size: 1.1rem;
   font-weight: 500;
-}
-
-.simple-list li:last-child {
-  border-bottom: none;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.78rem;
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  background: #eef2ff;
-  border: 1px solid #e5e7eb;
-  color: #4b5563;
-}
-
-.badge.gold {
-  border-color: var(--accent);
-  color: #92400e;
-  background: var(--accent-soft);
 }
 
 /* Year collage */
@@ -481,13 +502,6 @@ a {
 
 /* Videos */
 
-.video-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
-
 .video-card {
   border-radius: 0.9rem;
   padding: 0.6rem;
@@ -495,14 +509,12 @@ a {
   border: 1px solid var(--border);
 }
 
-
-
 .video-card video {
   width: 100%;
   border-radius: 0.75rem;
   margin-top: 0.4rem;
-  max-height: 480px;   /* was 220px – taller video */
-  object-fit: cover;   /* keeps it nicely filled */
+  max-height: 480px;
+  object-fit: cover;
 }
 
 .video-card a {
