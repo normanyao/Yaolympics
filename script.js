@@ -491,10 +491,18 @@ function createYearCollage(year) {
 
   subset.forEach((url) => {
     const item = createEl("div", "year-collage-item");
+  
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    
     const img = document.createElement("img");
     img.src = url;
     img.alt = `Yaolympics ${year} moment`;
-    item.appendChild(img);
+    
+    link.appendChild(img);
+    item.appendChild(link);
     grid.appendChild(item);
   });
 
