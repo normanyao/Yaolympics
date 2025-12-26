@@ -7,79 +7,108 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- Password Gate (shows first, hides site until unlocked) -->
+  <div id="passwordGate" class="password-gate">
+    <div class="password-card">
+      <h1 class="password-title">Yaolympics</h1>
+      <p class="password-subtitle">Enter password to continue.</p>
+
+      <input
+        id="passwordInput"
+        class="password-input"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        aria-label="Password"
+      />
+
+      <button id="passwordSubmit" class="primary-btn" type="button">
+        Enter
+      </button>
+
+      <p id="passwordError" class="password-error hidden">
+        Incorrect password. Try again.
+      </p>
+    </div>
+  </div>
+
+  <!-- Entire site shell (hidden until password is correct) -->
+  <div id="siteShell" class="hidden">
+    <header class="site-header">
       <button id="homeLink" class="logo-text" type="button">
         Yaolympics
       </button>
-    <div class="header-controls">
-      <div class="control-group">
-        <label for="seasonSelect">Seasons</label>
-        <select id="seasonSelect">
-          <option value="">Select season…</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label for="playerSelect">Yaolympians</label>
-        <select id="playerSelect">
-          <option value="">Select player…</option>
-        </select>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <!-- Hero with logo + tagline. Visible only on intro view. -->
-    <section class="hero" id="hero">
-      <div class="hero-inner">
-        <div class="hero-logo-card">
-          <!-- Logo file is in the repo root -->
-          <img src="yaolympics_logo.png" alt="Yaolympics Logo" />
+      <div class="header-controls">
+        <div class="control-group">
+          <label for="seasonSelect">Seasons</label>
+          <select id="seasonSelect">
+            <option value="">Select season…</option>
+          </select>
         </div>
-        <p class="hero-tagline">
-          An annual saga of friends, questionable athleticism, and eternal bragging rights.
-        </p>
-        <button id="randomMomentBtn" class="primary-btn">
-          🎲 All hail RandGen
-        </button>
-      </div>
-    </section>
 
-    <section id="contentArea" class="content-area">
-      <div id="introCard" class="detail-card">
-      <div class="intro-content">
-        <div class="intro-text">
-          <h2>The Yaolympics Chronicles</h2>
-    
-    
-          <p>
-            Each year, a hexad of warriors travels from the far reaches of the world and converge upon the great Yaolympic village of Basking Ridge, NJ. Much as the 
-            first Olympics in 776 BCE, each Yaolympics represents a test of physical and mental fortitude as the warriors attempt to throw ping-pong balls into Solo cups,
-            to swim across a 25 meter pool without drowning, and to toss bags filled with dried corn kernels onto an inclined board. The middle of each Yaolympics is punctuated
-            by a modern ekecheiria -- a feast of epic proportions where the flow of Chinese food is certainly endless. To the winning team goes eternal glory, their names etched 
-            in the annals of history and the Yaolympics trophy!
+        <div class="control-group">
+          <label for="playerSelect">Yaolympians</label>
+          <select id="playerSelect">
+            <option value="">Select player…</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero with logo + tagline. Visible only on intro view. -->
+      <section class="hero" id="hero">
+        <div class="hero-inner">
+          <div class="hero-logo-card">
+            <img src="yaolympics_logo.png" alt="Yaolympics Logo" />
+          </div>
+
+          <p class="hero-tagline">
+            An annual saga of friends, questionable athleticism, and eternal bragging rights.
           </p>
-        </div>
-    
-        <div class="intro-trophy">
-          <img
-            src="photos/yaolympics_trophy.jpg"
-            alt="Yaolympics trophy"
-          />
-        </div>
-      </div>
-      </div>
 
-      <div id="yearDetail" class="detail-card hidden"></div>
-      <div id="playerDetail" class="detail-card hidden"></div>
-    </section>
-  </main>
+          <button id="randomMomentBtn" class="primary-btn" type="button">
+            🎲 All hail RandGen
+          </button>
+        </div>
+      </section>
 
-<footer class="site-footer">
-  <p>Made with ❤️ and trash talk! Don&apos;t fucking &quot;Jim Li&quot; it!</p>
-</footer>
-  
-  <script src="script.js?v=2"></script>
+      <section id="contentArea" class="content-area">
+        <div id="introCard" class="detail-card">
+          <div class="intro-content">
+            <div class="intro-text">
+              <h2>The Yaolympics Chronicles</h2>
+              <p>
+                Each year, a hexad of warriors travels from the far reaches of the world and converge upon the great Yaolympic village of Basking Ridge, NJ. Much as the
+                first Olympics in 776 BCE, each Yaolympics represents a test of physical and mental fortitude as the warriors attempt to throw ping-pong balls into Solo cups,
+                to swim across a 25 meter pool without drowning, and to toss bags filled with dried corn kernels onto an inclined board. The middle of each Yaolympics is punctuated
+                by a modern ekecheiria -- a feast of epic proportions where the flow of Chinese food is certainly endless. To the winning team goes eternal glory, their names etched
+                in the annals of history and the Yaolympics trophy!
+              </p>
+            </div>
+
+            <div class="intro-trophy">
+              <img
+                src="photos/yaolympics_trophy.jpg"
+                alt="Yaolympics trophy"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div id="yearDetail" class="detail-card hidden"></div>
+        <div id="playerDetail" class="detail-card hidden"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Made with ❤️ and trash talk! Don&apos;t fucking &quot;Jim Li&quot; it!</p>
+    </footer>
+  </div>
+
+  <!-- bump version to break cache -->
+  <script src="script.js?v=3"></script>
 </body>
 </html>
-
-
