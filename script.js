@@ -309,6 +309,18 @@ const YAOLYMPICS_DATA = {
       yearsAttended: [2013, 2014, 2015, 2016, 2017, 2018]
     },
     {
+      id: "Marlowe",
+      name: "Marlowe Rillera",
+      displayName: 'Marlowe "C**slinger" Rillera',
+      nickname: "Marlowe",
+      joinedYear: 2013,
+      hometown: "",
+      funFact: "Still claims the refs were biased.",
+      photoUrl: "photos/yaolympians/marlowe_rillera_yaolympian.png",
+      bio: "Hailing from the lush, tropical paradise of Las Vegas, Marlowe too—like many of his fellow Yaolympians—is a doctor…technically. When he’s not cleaning teeth, DMD Rillera can usually be found on the dancefloor fist-bumping with one hand and clutching a sketchpad with the other. At Harvard, Marlowe was best known for deserting his ever-fragrant roommate in sophomore year to fellow Yaolympian, JB. Upon rejoining the group, he injected much-needed Vegas flair and questionable vibes into an otherwise respectable cohort of Harvard nerds. Despite what his self-given nickname might suggest, Marlowe has only slung losses after losses at the almighty Games. While his time may eventually come, this Pinoy remains focused on his true calling: tirelessly petitioning for the return of Water Pong to Yaolympics (Kobe!).",
+      yearsAttended: [2013, 2014, 2015, 2016, 2017, 2018]
+    },
+    {
       id: "Timothy",
       name: "Tim Kovachy",
       displayName: 'Tim "The Magyar" Kovachy',
