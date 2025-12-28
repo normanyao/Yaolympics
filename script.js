@@ -312,7 +312,7 @@ const YAOLYMPICS_DATA = {
       id: "Marlowe",
       name: "Marlowe Rillera",
       displayName: 'Marlowe "C**slinger" Rillera',
-      nickname: "Marlowe",
+      nickname: "Slinger",
       joinedYear: 2013,
       hometown: "",
       funFact: "Still claims the refs were biased.",
