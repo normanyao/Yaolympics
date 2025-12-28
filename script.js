@@ -305,7 +305,7 @@ const YAOLYMPICS_DATA = {
       hometown: "",
       funFact: "Still claims the refs were biased.",
       photoUrl: "photos/yaolympians/brandon_liebeskind_yaolympian.png",
-      bio: "Dr. Brandon Liebeskind is the stuff of Yaolympic legend, equal parts chaos and clutch. Though stories about him tend to grow taller with each retelling, one thing is certain: wherever there’s a controversial foul call, Brandon is not far away, passionately litigating it like a closing argument before the Supreme Court.",
+      bio: `As the saying goes, Brandon “The Jew” Liebeskind is the jack of no trades and the master of appeals, objections, and postgame jurisprudence. Since graduating from the Harvard of Lewisburg, Pennsylvania (Bucknell University), Brandon has worked an assortment of high-flying jobs: Insurance actuary? Yep! AAA Worldwide Transportation? Yep! Founder and owner of HobokenTennisCoach.com? Yep! The Lieb was a true OG Yaolympian, who graduated (we think?) from the celebrated Ridge high school together with The Commish. A 4.0 USTA tennis player who talks like he’s Fognini, Brandon’s dad-joke-meets-war-crime commentary is matched only by his appetite for spicy beef with longhorn peppers at the annual Yaolympics feast. While family responsibilities have kept him from the Games in recent years, his epic performance as one-half of “Jin and Jews” will forever live in glory.`,
       yearsAttended: [2013, 2014, 2015, 2016, 2017, 2018]
     },
     {
