@@ -304,7 +304,7 @@ const YAOLYMPICS_DATA = {
       joinedYear: 2014,
       hometown: "",
       funFact: "Hit the game winner in 2018 and won't let anyone forget it.",
-      photoUrl: "photos/yaolympians/jinbin_liu_yaolympian.png",
+      photoUrl: "photos/yaolympians/patrick_wu_yaolympian.png",
       bio: `Featured with his DSL (IYKYK), Pengyao "Patrick" "Pat" "Pdubs" "Dubs" Wu hails from the ancient city of Guangzhou. This slick ass muhf'er was on his way to visit some dark corners in Harvard Yard one night with fellow BLS alum Jin Bin "JB" Liu, when a chance encounter with a drunken fool changed his life forever. Because that drunkard happened to be none other than the future corrupt Commish of the yet-to-be-formed Yaolympics Committee. The bonds of brotherhood formed that night would lead to years of carousing in the storied halls of Harvard and beyond. Nearly a decade later, at the inaugural Yaolympic games, he and JB defied all ESPN projections to become the first champions of Yaolympics lore. When he is not giving himself concussions with ludicrous fadeaways, Pat can be seen clutching it out as the Canto Mamba. Having established his place in the Yaolympics pantheon with multiple championships, he now spends his days as a professional Magic: The Gathering player, while masquerading as a finance bro.`,
       yearsAttended: [2013, 2014, 2015, 2016, 2017, 2018]
     },
