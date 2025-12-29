@@ -111,8 +111,8 @@ const YAOLYMPICS_DATA = {
     {
       year: 2019,
       location: "The Yaolympic Village: Basking Ridge, NJ",
-      theme: "The year Laffey visited!",
-      blurb: "Hills highland pool break-in!",
+      theme: "The Zaletel's first presence!",
+      blurb: "Romaniyao claims its second crown!",
       teams: [
         { name: "Jin and Jews", members: ["Brandon Liebeskind", "Jin Bin Liu"], color: "gold" },
         { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "silver" },
