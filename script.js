@@ -133,7 +133,7 @@ const YAOLYMPICS_DATA = {
       championTeam: "Romaniyao: Nicolae Done and The Commish",
       media: [
         {
-          label: "2017 Opening Ceremony Video",
+          label: "2019 Opening Ceremony Video",
           type: "video",
           url: "photos/2019/2019_opening_ceremony.mp4"
         }
@@ -568,6 +568,49 @@ const YEAR_COLLAGE_IMAGES = {
     "photos/2018/IMG_1897.JPG",
     "photos/2018/IMG_1899.JPG",
     "photos/2018/IMG_1901.JPG"
+  ],
+  2019: [
+    "photos/2019/IMG_1179.jpeg",
+    "photos/2019/IMG_1181.jpeg",
+    "photos/2019/IMG_1182.jpeg",
+    "photos/2019/IMG_1185.JPG",
+    "photos/2019/IMG_1186.jpeg",
+    "photos/2019/IMG_1187.jpeg",
+    "photos/2019/IMG_1188.jpeg",
+    "photos/2019/IMG_1191.JPG",
+    "photos/2019/IMG_1194.jpeg",
+    "photos/2019/IMG_1196.jpeg",
+    "photos/2019/IMG_1199.jpeg",
+    "photos/2019/IMG_1200.JPG",
+    "photos/2019/IMG_1202.JPG",
+    "photos/2019/IMG_1203.JPG",
+    "photos/2019/IMG_1204.JPG",
+    "photos/2019/IMG_1211.jpeg",
+    "photos/2019/IMG_1212.jpeg",
+    "photos/2019/IMG_1215.jpeg",
+    "photos/2019/IMG_1217.jpeg",
+    "photos/2019/IMG_1218.jpeg",
+    "photos/2019/IMG_1220.jpeg",
+    "photos/2019/IMG_1221.jpeg",
+    "photos/2019/IMG_1223.jpeg",
+    "photos/2019/IMG_1224.jpeg",
+    "photos/2019/IMG_1226.jpeg",
+    "photos/2019/IMG_1227.jpeg",
+    "photos/2019/IMG_1228.jpeg",
+    "photos/2019/IMG_1231.jpeg",
+    "photos/2019/IMG_1233.jpeg",
+    "photos/2019/IMG_1243.jpeg",
+    "photos/2019/IMG_1245.jpeg",
+    "photos/2019/IMG_1247.jpeg",
+    "photos/2019/IMG_1248.JPG",
+    "photos/2019/IMG_1249.JPG",
+    "photos/2019/IMG_1255.jpeg",
+    "photos/2019/IMG_1256.jpeg",
+    "photos/2019/IMG_1265.JPG",
+    "photos/2019/IMG_20190831_190010.JPG",
+    "photos/2019/IMG_20190901_175242.JPG",
+    "photos/2019/IMG_20190901_175307.JPG",
+    "photos/2019/IMG_20190901_175326.JPG"
   ]
 };
 
