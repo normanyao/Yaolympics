@@ -111,12 +111,13 @@ const YAOLYMPICS_DATA = {
     {
       year: 2021,
       location: "The Yaolympic Village: Basking Ridge, NJ",
-      theme: "The Magnificent Seven!",
-      blurb: "Romaniyao claims its second crown!",
+      theme: "The first showing of the Magyar!",
+      blurb: "The Magnificent Seven!",
       teams: [
-        { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "gold" },
-        { name: "Two White Dudes", members: ["Michael Zaletel", "Brandon Liebeskind"], color: "silver" },
-        { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "bronze" }
+        { name: "The Mercenary", members: ["The Commish"], color: "platinum" },
+        { name: "DentalJew", members: ["Jim Li", "Brandon Liebeskind"], color: "gold" },
+        { name: "Jin and Slav", members: ["Jin Bin Liu", "Tim Kovachy"], color: "silver" },
+        { name: "Transylvania Reunited", members: ["Mike Zaletel", "Nicolar Done"], color: "bronze" }
       ],
       results: [
         { event: "Beer Pong" },
@@ -126,8 +127,8 @@ const YAOLYMPICS_DATA = {
         { event: "Foosball" },
         { event: "Team Texas Hold'em Poker" },
         { event: "Table Tennis Doubles" },
+        { event: "Badminton Doubles" },
         { event: "Mini golf" },
-        { event: "Shooting Range" },
         { event: "Billiards" }
       ],
       championTeam: "Romaniyao: Nicolae Done and The Commish",
