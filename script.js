@@ -130,7 +130,7 @@ const YAOLYMPICS_DATA = {
         { event: "Shooting Range" },
         { event: "Billiards" }
       ],
-      championTeam: "Jin and Jews: Jin Bin Liu and Brandon Liebeskind",
+      championTeam: "Romaniyao: Nicolae Done and The Commish",
       media: [
         {
           label: "When Marat Safin comes to Basking Ridge...",
