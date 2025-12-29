@@ -132,7 +132,7 @@ const YAOLYMPICS_DATA = {
       championTeam: "Jin and Jews: Jin Bin Liu and Brandon Liebeskind",
       media: [
         {
-          label: "2018 Gypsy Rage Video",
+          label: "When Marat Safin comes to Basking Ridge...",
           type: "video",
           url: "photos/2018/2018_gypsy_rage.mp4"
         }
