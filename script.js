@@ -131,12 +131,12 @@ const YAOLYMPICS_DATA = {
         { event: "Mini golf" },
         { event: "Billiards" }
       ],
-      championTeam: "Romaniyao: Nicolae Done and The Commish",
+      championTeam: "The Year of the Mercenary: The Commish",
       media: [
         {
-          label: "2019 Opening Ceremony Video",
+          label: "2021 Opening Ceremony Video",
           type: "video",
-          url: "photos/2019/2019_opening_ceremony.mp4"
+          url: "photos/2021/2021_opening_ceremony.mp4"
         }
       ]
     },
