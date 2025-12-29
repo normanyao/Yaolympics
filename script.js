@@ -133,9 +133,9 @@ const YAOLYMPICS_DATA = {
       championTeam: "Romaniyao: Nicolae Done and The Commish",
       media: [
         {
-          label: "When Marat Safin comes to Basking Ridge...",
+          label: "2017 Opening Ceremony Video",
           type: "video",
-          url: "photos/2018/2018_gypsy_rage.mp4"
+          url: "photos/2019/2019_opening_ceremony.mp4"
         }
       ]
     },
