@@ -109,6 +109,37 @@ const YAOLYMPICS_DATA = {
       media: []
     },
     {
+      year: 2021,
+      location: "The Yaolympic Village: Basking Ridge, NJ",
+      theme: "The Magnificent Seven!",
+      blurb: "Romaniyao claims its second crown!",
+      teams: [
+        { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "gold" },
+        { name: "Two White Dudes", members: ["Michael Zaletel", "Brandon Liebeskind"], color: "silver" },
+        { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "bronze" }
+      ],
+      results: [
+        { event: "Beer Pong" },
+        { event: "2v2 Basketball" },
+        { event: "Tennis Doubles" },
+        { event: "Swimming Relay" },
+        { event: "Foosball" },
+        { event: "Team Texas Hold'em Poker" },
+        { event: "Table Tennis Doubles" },
+        { event: "Mini golf" },
+        { event: "Shooting Range" },
+        { event: "Billiards" }
+      ],
+      championTeam: "Romaniyao: Nicolae Done and The Commish",
+      media: [
+        {
+          label: "2019 Opening Ceremony Video",
+          type: "video",
+          url: "photos/2019/2019_opening_ceremony.mp4"
+        }
+      ]
+    },
+    {
       year: 2019,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "The Zaletel's first presence!",
