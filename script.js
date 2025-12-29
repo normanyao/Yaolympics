@@ -109,6 +109,36 @@ const YAOLYMPICS_DATA = {
       media: []
     },
     {
+      year: 2018,
+      location: "The Yaolympic Village: Basking Ridge, NJ",
+      theme: "The year Laffey visited!",
+      blurb: "Hills highland pool break-in!",
+      teams: [
+        { name: "Jin and Jews", members: ["Brandon Liebeskin", "Jin Bin Liu"], color: "gold" },
+        { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "silver" },
+        { name: "BLS", members: ["Patrick Wu", "Jim Li"], color: "bronze" }
+      ],
+      results: [
+        { event: "Beer Pong" },
+        { event: "2v2 Basketball" },
+        { event: "Tennis Doubles" },
+        { event: "Swimming Relay" },
+        { event: "Foosball" },
+        { event: "Team Texas Hold'em Poker" },
+        { event: "Table Tennis Doubles" },
+        { event: "Mini golf" },
+        { event: "Billiards" }
+      ],
+      championTeam: "Jin and Jews: Jin Bin Liu and Brandon Liebeskind",
+      media: [
+        {
+          label: "2018 Gypsy Rage Video",
+          type: "video",
+          url: "photos/2017/2018_gypsy_rage.mp4"
+        }
+      ]
+    },
+    {
       year: 2017,
       location: "The Yaolympic Village: Basking Ridge, NJ",
       theme: "First three-peat in Yaolympic History!",
