@@ -127,6 +127,7 @@ const YAOLYMPICS_DATA = {
         { event: "Team Texas Hold'em Poker" },
         { event: "Table Tennis Doubles" },
         { event: "Mini golf" },
+        { event: "Shooting Range" },
         { event: "Billiards" }
       ],
       championTeam: "Jin and Jews: Jin Bin Liu and Brandon Liebeskind",
