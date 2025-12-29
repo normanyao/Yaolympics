@@ -114,7 +114,7 @@ const YAOLYMPICS_DATA = {
       theme: "The year Laffey visited!",
       blurb: "Hills highland pool break-in!",
       teams: [
-        { name: "Jin and Jews", members: ["Brandon Liebeskin", "Jin Bin Liu"], color: "gold" },
+        { name: "Jin and Jews", members: ["Brandon Liebeskind", "Jin Bin Liu"], color: "gold" },
         { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "silver" },
         { name: "BLS", members: ["Patrick Wu", "Jim Li"], color: "bronze" }
       ],
@@ -134,7 +134,7 @@ const YAOLYMPICS_DATA = {
         {
           label: "2018 Gypsy Rage Video",
           type: "video",
-          url: "photos/2017/2018_gypsy_rage.mp4"
+          url: "photos/2018/2018_gypsy_rage.mp4"
         }
       ]
     },
@@ -505,6 +505,38 @@ const YEAR_COLLAGE_IMAGES = {
     "photos/2017/IMG_9715.JPG",
     "photos/2017/IMG_9722.JPG",
     "photos/2017/IMG_9727.JPG"
+  ],
+  2018: [
+    "photos/2018/IMG_1826.JPG",
+    "photos/2018/IMG_1827.JPG",
+    "photos/2018/IMG_1831.JPG",
+    "photos/2018/IMG_1833.JPG",
+    "photos/2018/IMG_1834.JPG",
+    "photos/2018/IMG_1839.JPG",
+    "photos/2018/IMG_1840.JPG",
+    "photos/2018/IMG_1842.JPG",
+    "photos/2018/IMG_1843.JPG",
+    "photos/2018/IMG_1845.JPG",
+    "photos/2018/IMG_1852_v2.JPG",
+    "photos/2018/IMG_1853.JPG",
+    "photos/2018/IMG_1856.JPG",
+    "photos/2018/IMG_1857.JPG",
+    "photos/2018/IMG_1872.JPG",
+    "photos/2018/IMG_1874.JPG",
+    "photos/2018/IMG_1876.JPG",
+    "photos/2018/IMG_1878.JPG",
+    "photos/2018/IMG_1879.JPG",
+    "photos/2018/IMG_1880.JPG",
+    "photos/2018/IMG_1881.JPG",
+    "photos/2018/IMG_1882.JPG",
+    "photos/2018/IMG_1887.JPG",
+    "photos/2018/IMG_1888.JPG",
+    "photos/2018/IMG_1889.JPG",
+    "photos/2018/IMG_1894.JPG",
+    "photos/2018/IMG_1896.JPG",
+    "photos/2018/IMG_1897.JPG",
+    "photos/2018/IMG_1899.JPG",
+    "photos/2018/IMG_1901.JPG"
   ]
 };
 
