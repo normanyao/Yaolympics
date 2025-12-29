@@ -114,9 +114,9 @@ const YAOLYMPICS_DATA = {
       theme: "The Zaletel's first presence!",
       blurb: "Romaniyao claims its second crown!",
       teams: [
-        { name: "Jin and Jews", members: ["Brandon Liebeskind", "Jin Bin Liu"], color: "gold" },
-        { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "silver" },
-        { name: "BLS", members: ["Patrick Wu", "Jim Li"], color: "bronze" }
+        { name: "Romaniyao", members: ["Nicolae Done", "The Commish"], color: "gold" },
+        { name: "Two White Dudes", members: ["Michael Zaletel", "Brandon Liebeskind"], color: "silver" },
+        { name: "Chicken Dinner", members: ["Patrick Wu", "Jin Bin Liu"], color: "bronze" }
       ],
       results: [
         { event: "Beer Pong" },
